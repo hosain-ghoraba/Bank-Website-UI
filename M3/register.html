@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Page</title>
+  <style>
+    body {
+      
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 100px auto 0;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 25px;
+
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .flash-message {
+      background-color: #f44336;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .login-link {
+      text-align: center;
+    }
+
+    .login-link a {
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="bank logo.jpeg" alt="Bank Logo" width="200">
+    </div>
+    <h2>Registration</h2>
+    <form id="registration-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Register">
+    </form>
+    <div class="login-link">
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+  <script>
+    const registrationForm = document.getElementById('registration-form');
+    const takenEmails = ['takenEmail1@gmail.com', 'takenEmail2@gmail.com'];
+
+    registrationForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value.trim();
+
+      if (takenEmails.includes(email)) {
+        alert('Email already taken. Please use another email address.');
+      } else {
+        window.location.href = 'login.html';
+      }
+    });
+
+    function displayFlashMessage(message) {
+      const container = document.querySelector('.container');
+      const flashMessage = document.createElement('div');
+      flashMessage.classList.add('flash-message');
+      flashMessage.textContent = message;
+      container.appendChild(flashMessage);
+      setTimeout(function () {
+        flashMessage.remove();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

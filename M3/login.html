@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+     body {
+      
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .container {
+      max-width: 400px;
+      margin: 100px auto 0;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: normal;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 10px;
+      
+    }
+
+    .forgot-password a {
+      color: blue;
+      text-decoration: underline;
+
+    }
+
+    .flash-message {
+      background-color: #f2f2f2;
+      color: #333;
+      padding: 10px;
+      margin-top: 20px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .register-link a {
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="bank logo.jpeg" alt="Bank Logo" width="200">
+    </div>
+    <h2>Login</h2>
+    <form action="/login" method="post" id="login-form">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Login">
+    </form>
+    <div class="forgot-password">
+      <a href="/forgot-password">Forgot Password?</a>
+    </div>
+    <div class="register-link" style="margin-top: 10px;">
+      <p style="margin: 0;">Don't have an account? <a href="/register">Register</a></p>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value.trim();
+
+      if (email === 'admin@gmail.com') {
+        window.location.href = 'admin.html';
+      } else if (email === 'banker@gmail.com') {
+        window.location.href = 'banker.html';
+      } else if (email === 'user@gmail.com') {
+        window.location.href = 'user.html';
+      } else {
+        alert('Invalid email. Please try again.');
+      }
+    });
+
+    // Redirect to registration page
+    const registerLink = document.querySelector('.register-link a');
+    registerLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.location.href = 'register.html';
+    });
+
+    // Redirect to password reset page
+    const forgotPasswordLink = document.querySelector('.forgot-password a');
+    forgotPasswordLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.location.href = 'passwordReset.html';
+    });
+  </script>
+</body>
+</html>
