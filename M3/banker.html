@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quick Bank: Banker </title>
+</head>
+
+<body>
+<h1>Welcome to Quick Bank</h1>
+
+<html>
+<head>
+<style>
+.myDiv {
+  border: 5px outset rgb(21, 0, 255);
+  background-color: lightblue;
+  text-align: center;
+  height: 600px;
+  width : 30%;
+  float : left;
+}
+
+.myDivCC {
+  border: 5px outset rgb(21, 0, 255);
+  background-color: lightblue;
+  text-align: center;
+  height: 600px;
+  width : 30%;
+  float: right;
+}
+</style>
+</head>
+<body>
+
+<div class="myDiv">
+  <h2>Loans</h2>
+  <html>
+    <head>
+    <style>
+    .button {
+      border: none;
+      color: rgb(248, 248, 248);
+      padding: 12px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 2px 2px;
+      cursor: pointer;
+    }
+    
+    .button1 {background-color: #4CAF50;} /* Green */
+    .button2 {background-color: #d13004;} /* Blue */
+    </style>
+    </head>
+    <body>
+
+    
+ 
+    
+    </body>
+    </html>
+  <p id="0">Client 1 requests a loan of $1000  </p>
+  <button class="button button1" id="1">Accept</button>
+  <button class="button button2" id = "2">Reject</button>
+  <p id="2502">Client 2 requests a loan of $500  </p>
+  <button class="button button1" id="2500">Accept</button>
+  <button class="button button2" id ="2501">Reject</button>
+  <p id ="37">Client 3 requests a loan of $7000  </p>
+  <button class="button button1" id="37000">Accept</button>
+  <button class="button button2" id="37001">Reject</button>
+</div>
+
+<div class="myDivCC">
+    <h2>Credit Cards</h2>
+  <html>
+    <head>
+    <style>
+    .button {
+      border: none;
+      color: rgb(248, 248, 248);
+      padding: 12px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 2px 2px;
+      cursor: pointer;
+    }
+    
+    .button1 {background-color: #4CAF50;} /* Green */
+    .button2 {background-color: #d13004;} /* Blue */
+    </style>
+    </head>
+    <body>
+
+    
+ 
+    
+    </body>
+    </html>
+  <p id="0">Client 1 requests a loan of $1000  </p>
+  <button class="button button1" id="1">Accept</button>
+  <button class="button button2" id = "2">Reject</button>
+  <p id="2502">Client 2 requests a loan of $500  </p>
+  <button class="button button1" id="2500">Accept</button>
+  <button class="button button2" id ="2501">Reject</button>
+  <p id ="37">Client 3 requests a loan of $7000  </p>
+  <button class="button button1" id="37000">Accept</button>
+  <button class="button button2" id="37001">Reject</button>
+
+
+</div>
+
+ <script>
+    document.getElementById("2500").onclick = function() {myFunction()};
+    document.getElementById("2501").onclick = function() {myFunction()};
+
+    function myFunction() {
+      document.getElementById("2500").remove();
+      document.getElementById("2501").remove();
+      document.getElementById("2502").remove();
+    }
+
+    document.getElementById("37000").onclick = function() {myFunction2()};
+    document.getElementById("37001").onclick = function() {myFunction2()};
+
+    function myFunction2() {
+      document.getElementById("37000").remove();
+      document.getElementById("37001").remove();
+      document.getElementById("37").remove();
+    }
+
+    document.getElementById("37000").onclick = function() {myFunction2()};
+    document.getElementById("37001").onclick = function() {myFunction2()};
+
+    function myFunction2() {
+      document.getElementById("37000").remove();
+      document.getElementById("37001").remove();
+      document.getElementById("37").remove();
+    }
+
+    document.getElementById("1").onclick = function() {myFunction3()};
+    document.getElementById("2").onclick = function() {myFunction3()};
+
+    function myFunction3() {
+      document.getElementById("0").remove();
+      document.getElementById("1").remove();
+      document.getElementById("2").remove();
+    }
+
+
+ </script>
+</body>
+</html>
+</body>
+
+</html>
