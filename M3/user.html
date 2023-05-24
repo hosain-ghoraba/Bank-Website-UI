@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Quick Bank Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./Table V01_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./Table V01_files/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./Table V01_files/animate.css">
+    <link rel="stylesheet" type="text/css" href="./Table V01_files/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="./Table V01_files/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="./Table V01_files/util.css">
+    <link rel="stylesheet" type="text/css" href="./Table V01_files/main.css">
+    <meta name="robots" content="noindex, follow">
+    <script defer="" referrerpolicy="origin" src="./Table V01_files/s.js.download"></script>
+    <script nonce="d297444d-1767-4bcc-830d-52d413ef143e">(function (w, d) { !function (bg, bh, bi, bj) { bg[bi] = bg[bi] || {}; bg[bi].executed = []; bg.zaraz = { deferred: [], listeners: [] }; bg.zaraz.q = []; bg.zaraz._f = function (bk) { return function () { var bl = Array.prototype.slice.call(arguments); bg.zaraz.q.push({ m: bk, a: bl }) } }; for (const bm of ["track", "set", "debug"]) bg.zaraz[bm] = bg.zaraz._f(bm); bg.zaraz.init = () => { var bn = bh.getElementsByTagName(bj)[0], bo = bh.createElement(bj), bp = bh.getElementsByTagName("title")[0]; bp && (bg[bi].t = bh.getElementsByTagName("title")[0].text); bg[bi].x = Math.random(); bg[bi].w = bg.screen.width; bg[bi].h = bg.screen.height; bg[bi].j = bg.innerHeight; bg[bi].e = bg.innerWidth; bg[bi].l = bg.location.href; bg[bi].r = bh.referrer; bg[bi].k = bg.screen.colorDepth; bg[bi].n = bh.characterSet; bg[bi].o = (new Date).getTimezoneOffset(); if (bg.dataLayer) for (const bt of Object.entries(Object.entries(dataLayer).reduce(((bu, bv) => ({ ...bu[1], ...bv[1] }))))) zaraz.set(bt[0], bt[1], { scope: "page" }); bg[bi].q = []; for (; bg.zaraz.q.length;) { const bw = bg.zaraz.q.shift(); bg[bi].q.push(bw) } bo.defer = !0; for (const bx of [localStorage, sessionStorage]) Object.keys(bx || {}).filter((bz => bz.startsWith("_zaraz_"))).forEach((by => { try { bg[bi]["z_" + by.slice(7)] = JSON.parse(bx.getItem(by)) } catch { bg[bi]["z_" + by.slice(7)] = bx.getItem(by) } })); bo.referrerPolicy = "origin"; bo.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bg[bi]))); bn.parentNode.insertBefore(bo, bn) };["complete", "interactive"].includes(bh.readyState) ? zaraz.init() : bg.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+    }
+
+    .bankHeader {
+        font-family: Arial, sans-serif;
+        background-color: #0097b2 !important;
+        margin: 0;
+        width: 100%;
+        height: 150px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        z-index: 20;
+    }
+
+    .logout {
+        float: right;
+        margin-right:50px;
+        margin-top:100px;
+    }
+
+    .welcomeMessage {
+        color: #fff;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        margin-top: 7px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .accountSettings {
+        color: #000;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        margin-top: 7px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .container1 {
+        max-width: 1000px;
+        height: 470px;
+        margin: 20px 20px 0;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+
+    .containerHeader {
+        width: 100%;
+        height: 70px;
+        margin-right: 10px;
+        padding: 30px;
+        background-color: #dedede;
+    }
+
+    .containerTitle {
+        color: #bda366;
+        margin-left: 25px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: normal;
+    }
+
+    .forgot-password {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+        .forgot-password a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+    .flash-message {
+        background-color: #f2f2f2;
+        color: #333;
+        padding: 10px;
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 4px;
+    }
+
+    .register-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .logoutButton {
+        position: relative;
+        display: inline-block;
+    }
+
+        .logoutButton .tooltiptext {
+            visibility: hidden;
+            background-color: #dedede;
+            color: black;
+            font-size: small;
+            text-align: center;
+            border-radius: 6px;
+            padding: 1px 8px;
+            /* Position the tooltip */
+            position: absolute;
+            top: 5px;
+            right: 120%;
+        }
+
+    .logoutButton:hover .tooltiptext {
+        visibility: visible;
+    }
+
+        .register-link a {
+            color: blue;
+            text-decoration: underline;
+        }
+</style>
+</head>
+
+<body>
+    <div class="bankHeader">
+        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+        <div class="logout">
+            <button type="button" class="logoutButton" onclick="logout()">
+                <span class="tooltiptext">Logout?</span>
+                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left" />
+            </button>
+            <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
+        </div>
+    </div>
+    <h1 class="containerTitle">SAVING ACCOUNT</h1>
+    <div class="container1">
+        <div class="containerHeader">
+            <h2 style="float: left; font-weight: 600; margin-right: 20px; font-size:large;">ACCOUNT NO.:  </h2>
+            <h2 style="float: left; font-weight: 400; font-size: medium;">56328838</h2>
+            <h2 style="float: right; font-weight: 400; font-size: medium;">40,269 USD</h2>
+            <h2 style="float: right; font-weight: 600; margin-right: 20px; font-size: large; ">BALANCE:</h2>
+        </div>
+        <div class="table100">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="column1" style="font-weight:600">TRANSACTION DATE</td>
+                        <td class="column2" style="font-weight:600">DETAILS</td>
+                        <td class="column3" style="font-weight:600">DEBIT/CREDIT</td>
+                        <td class="column4" style="font-weight:600">BALANCE</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-28 05:57</td>
+                        <td class="column2">200397 AMAZON - Samsung S8 Black</td>
+                        <td class="column3" style="color:red">-$756.00</td>
+                        <td class="column4">$40,269</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-26 05:57</td>
+                        <td class="column2">200396 AMAZON - Game Console Controller</td>
+                        <td class="column3" style="color:red">-$22.00</td>
+                        <td class="column4">$41,025</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-25 23:06</td>
+                        <td class="column2">200392 AMAZON - USB 3.0 Cable</td>
+                        <td class="column3" style="color:red">-$10.00</td>
+                        <td class="column4">$41,047</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-24 05:57</td>
+                        <td class="column2">200391 AMAZON - Smartwatch 4.0 LTE Wifi</td>
+                        <td class="column3" style="color:red">-$199.00</td>
+                        <td class="column4">$41,057</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-23 05:57</td>
+                        <td class="column2">200390 AMAZON - Camera C430W 4k</td>
+                        <td class="column3" style="color:red">-$699.00</td>
+                        <td class="column4">$41,256</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-22 05:57</td>
+                        <td class="column2">719868 GUC Financial Office</td>
+                        <td class="column3" style="color:green">+$6199.00</td>
+                        <td class="column4">$41,954</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-21 05:57</td>
+                        <td class="column2">200388 AMAZON - Game Console Controller</td>
+                        <td class="column3" style="color:red">-$999.00</td>
+                        <td class="column4">$35,755</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h1 class="containerTitle">CREDIT CARD</h1>
+    <div class="container1">
+        <div class="containerHeader">
+            <h2 style="float: left; font-weight: 600; margin-right: 20px; font-size:large;">CREDIT CARD NO.:  </h2>
+            <h2 style="float: left; font-weight: 400; font-size: medium;">**** **** **** 3085</h2>
+            <h2 style="float: right; font-weight: 400; font-size: medium;">$4940 USD</h2>
+            <h2 style="float: right; font-weight: 600; margin-right: 20px; font-size: large; ">AMOUNT LEFT:</h2>
+        </div>
+        <div class="table100">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="column1" style="font-weight:600">TRANSACTION DATE</td>
+                        <td class="column2" style="font-weight:600">DETAILS</td>
+                        <td class="column3" style="font-weight:600">AMOUNT</td>
+                        <td class="column4" style="font-weight:600">BALANCE</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-28 05:57</td>
+                        <td class="column2">200397 SPOTIFY AB P23150BCB3</td>
+                        <td class="column3" style="color:red">-$10.00</td>
+                        <td class="column4">$4940</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-26 05:57</td>
+                        <td class="column2">200396 NETFLIX 1B5BRK8JVH</td>
+                        <td class="column3" style="color:red">-$10.00</td>
+                        <td class="column4">$4950</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-25 23:06</td>
+                        <td class="column2">200392 AMAZON PRIME VIDEO 4F6FC11J51</td>
+                        <td class="column3" style="color:red">-$10.00</td>
+                        <td class="column4">$4960</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-24 05:57</td>
+                        <td class="column2">200391 DISNEY+ H5BKT8OUDT</td>
+                        <td class="column3" style="color:red">-$10.00</td>
+                        <td class="column4">$4970</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-23 05:57</td>
+                        <td class="column2">200390 HULU GYXA0ZTZWG</td>
+                        <td class="column3" style="color:red">-$10.00</td>
+                        <td class="column4">$4980</td>
+                    </tr>
+                    <tr>
+                        <td class="column1">2017-09-22 05:57</td>
+                        <td class="column2">719868 XBOX LIVE E65I8YGW7B</td>
+                        <td class="column3" style="color:red">-$10.00</td>
+                        <td class="column4">$4990</td>
+                    </tr>
+                   
+                    <tr style="background-color: #dedede">
+                        <td class="column1" id="payForCreditCardButton" onmouseover="payCreditCardHover()" onmouseout="payCreditCardHoverOut()" onclick="payCreditCard()" style="font-weight:600; background-color: #0097b2; color:white; font-size:medium; padding-left:25px; cursor:pointer">PAY FOR CREDIT CARD</td>
+                        <td class="column2" style="font-weight:600  ">AMOUNT TO BE PAID: $60</td>
+                        <td class="column3" style="font-weight:600"></td>
+                        <td class="column4" style="font-weight:600"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value.trim();
+
+            if (email === 'admin@gmail.com') {
+                window.location.href = 'admin.html';
+            } else if (email === 'banker@gmail.com') {
+                window.location.href = 'banker.html';
+            } else if (email === 'user@gmail.com') {
+                window.location.href = 'user.html';
+            } else {
+                alert('Invalid email. Please try again.');
+            }
+        });
+
+        // Redirect to registration page
+        const registerLink = document.querySelector('.register-link a');
+        registerLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = 'register.html';
+        });
+
+        // Redirect to password reset page
+        const forgotPasswordLink = document.querySelector('.forgot-password a');
+        forgotPasswordLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = 'passwordReset.html';
+        });
+
+        function logout() {
+            window.location.href = 'login.html';
+        };
+
+        function payCreditCard() {
+            alert("Service unavailable. Try again later.")
+        }
+
+        function payCreditCardHover() {
+            document.getElementById("payForCreditCardButton").style.backgroundColor = "#11a8c3";
+        }
+
+        function payCreditCardHoverOut() {
+            document.getElementById("payForCreditCardButton").style.backgroundColor = "#0097b2";
+        }
+    </script>
+</body>
+</html>
