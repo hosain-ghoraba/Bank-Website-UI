@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quick Bank: Banker </title>
+<title>Quick Bank : Banker </title>
 </head>
 
 <body>
@@ -11,8 +11,8 @@
 <head>
 <style>
 .myDiv {
-  border: 5px outset rgb(21, 0, 255);
-  background-color: lightblue;
+  border: 5px outset #000708;
+  background-color:  #00a9b2;
   text-align: center;
   height: 600px;
   width : 30%;
@@ -20,8 +20,8 @@
 }
 
 .myDivCC {
-  border: 5px outset rgb(21, 0, 255);
-  background-color: lightblue;
+  border: 5px outset #000708;
+  background-color: #00a9b2;
   text-align: center;
   height: 600px;
   width : 30%;
@@ -32,9 +32,9 @@
 <body>
 
 <div class="myDiv" id="myDiv">
-  <h2>Loans</h2>
+  <h2 style="color :#000708">Loan Requests</h2>
   <img src="loan.png" alt="money" style="width:100px;height:100px;">
-  <hr style="border-top: 4px solid blue;"></hr>
+  <hr style="border-top: 4px solid #004f5d;"></hr>
   <html>
     <head>
     <style>
@@ -48,10 +48,14 @@
       font-size: 16px;
       margin: 2px 2px;
       cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
     }
     
-    .button1 {background-color: #4CAF50;} /* Green */
-    .button2 {background-color: #d13004;} /* Blue */
+    .button1:hover{background-color: #4CAF50;/* Green */
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);} 
+    .button2:hover{background-color: #d13004;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); } /* Blue */
     </style>
     </head>
     <body>
@@ -61,18 +65,18 @@
     
     </body>
     </html>
-  <p id="0" style="font-family: Arial, sans-serif;font-weight: 400;" >Client 1 requests a loan of $1000  </p>
+  <p id="0" style="font-family: Arial, sans-serif;font-weight: 400;color: white" >Client 1 requests a loan of $1000  </p>
   <button class="button button1" id="1">Accept</button>
   <button class="button button2" id = "2">Reject</button>
   <p id="P2"style="color:black ;" > </p>
-  <hr style="border-top: 2px solid blue;"></hr>
-  <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;" >Client 2 requests a loan of $500  </p>
+  <hr style="border-top: 2px solid #004f5d;"></hr>
+  <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;color: white;" >Client 2 requests a loan of $500  </p>
   <button class="button button1" id="2500">Accept</button>
   <button class="button button2" id ="2501">Reject</button>
   <p id="try"style="color:black" > </p>
   <p id="tryAgain" style="color:black"> </p>
-  <hr style="border-top: 2px solid blue;"></hr>
-  <p id ="37"  style="font-family: Arial, sans-serif;font-weight: 400;" >Client 3 requests a loan of $7000  </p>
+  <hr style="border-top: 2px solid #004f5d;"></hr>
+  <p id ="37"  style="font-family: Arial, sans-serif;font-weight: 400;color: white" >Client 3 requests a loan of $7000  </p>
   <button class="button button1" id="37000">Accept</button>
   <button class="button button2" id="37001">Reject</button>
   <p id="P1"style="color:black ;" > </p>
@@ -81,9 +85,9 @@
 
 
 <div class="myDivCC">
-    <h2>Credit Cards</h2>
+    <h2 style="color: #000708;">Credit Card Applications</h2>
     <img src="CC.png" alt="money" style="width:250px;height:110px;">
-    <hr style="border-top: 4px solid blue;"></hr>
+    <hr style="border-top: 4px solid #000708;"></hr>
   <html>
     <head>
     <style>
@@ -100,8 +104,8 @@
     }
  
     
-    .button1 {background-color: #4CAF50;} /* Green */
-    .button2 {background-color: #d13004;} /* Blue */
+    .button1 {background-color: #3eb200;} /* Green */
+    .button2 {background-color: #b21b00;} /* Blue */
     </style>
     </head>
     <body>
@@ -111,17 +115,17 @@
 
     </body>
     </html>
-  <p id="90" style="font-family: Arial, sans-serif;font-weight: 400;">Client 4 applied for a Credit Card </p>
+  <p id="90" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 4 applied for a Credit Card </p>
   <button class="button button1" id="91">Accept</button>
   <button class="button button2" id = "92">Reject</button>
   <p id="CC4"></p>
-  <hr style="border-top: 2px solid blue;"></hr>
-  <p id="93" style="font-family:  Arial, sans-serif;font-weight: 400;" >Client 5 applied for a Credit Card </p>
+  <hr style="border-top: 2px solid #000708;"></hr>
+  <p id="93" style="font-family:  Arial, sans-serif;font-weight: 400;color: white" >Client 5 applied for a Credit Card </p>
   <button class="button button1" id="94">Accept</button>
   <button class="button button2" id ="95">Reject</button>
   <p id="CC5"></p>
-  <hr style="border-top: 2px solid blue;"></hr>
-  <p id ="96" style="font-family: Arial, sans-serif;font-weight: 400;" >Client 6 applied for a Credit Card </p>
+  <hr style="border-top: 2px solid #000708;"></hr>
+  <p id ="96" style="font-family: Arial, sans-serif;font-weight: 400;color: white" >Client 6 applied for a Credit Card </p>
   <button class="button button1" id="97">Accept</button>
   <button class="button button2" id="98">Reject</button>
   <p id="CC6"></p>
