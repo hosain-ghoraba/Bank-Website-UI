@@ -1,151 +1,264 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quick Bank : Banker </title>
+    <title>Quick Bank : Banker </title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .myDiv {
+            border: 5px outset #000708;
+            background-color: #00a9b2;
+            text-align: center;
+            height: 600px;
+            width: 30%;
+            float: left;
+            margin-left: 1px;
+            margin-bottom: 30px;
+        }
+
+        .myDivCC {
+            border: 5px outset #000708;
+            background-color: #00a9b2;
+            text-align: center;
+            height: 600px;
+            width: 30%;
+            float: left;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            border: none;
+            color: rgb(248, 248, 248);
+            padding: 12px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+
+
+        .button1 {
+            background-color: #3eb200;
+        }
+        /* Green */
+        .button2 {
+            background-color: #b21b00;
+        }
+        /* Blue */
+        .button {
+            border: none;
+            color: rgb(248, 248, 248);
+            padding: 12px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+
+        .button1:hover {
+            background-color: #4CAF50; /* Green */
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .button2:hover {
+            background-color: #d13004;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .logoutButton {
+            position: relative;
+            display: inline-block;
+            border: none;
+            background: none;
+        }
+
+            .logoutButton:hover {
+                cursor: pointer;
+            }
+
+            .logoutButton .tooltiptext {
+                visibility: hidden;
+                background-color: #dedede;
+                color: black;
+                font-size: small;
+                text-align: center;
+                border-radius: 6px;
+                padding: 1px 8px;
+                /* Position the tooltip */
+                position: absolute;
+                top: 5px;
+                right: 120%;
+            }
+
+            .logoutButton:hover .tooltiptext {
+                visibility: visible;
+            }
+
+        .bankHeader {
+            font-family: Arial, sans-serif;
+            background-color: #0097b2 !important;
+            margin: 0 0 0 0;
+            margin-bottom: 30px;
+            width: 100%;
+            height: 150px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+        }
+
+        .logout {
+            float: right;
+            margin-right: 50px;
+            margin-top: 100px;
+        }
+
+        .welcomeMessage {
+            color: #fff;
+            margin-left: 15px;
+            margin-bottom: 20px;
+            margin-top: 7px;
+            font-size: medium;
+            font-weight: 600;
+        }
+
+        .AccountsDiv {
+            border: 5px outset #000708;
+            background-color: #00a9b2;
+            text-align: center;
+            height: 600px;
+            width: 38%;
+            float: right;
+        }
+
+        .space {
+            width: 180px;
+            height: 20px;
+        }
+    </style>
 </head>
 
 <body>
-<h1>Welcome to Quick Bank</h1>
-
-<html>
-<head>
-<style>
-.myDiv {
-  border: 5px outset #000708;
-  background-color:  #00a9b2;
-  text-align: center;
-  height: 600px;
-  width : 30%;
-  float : left;
-}
-
-.myDivCC {
-  border: 5px outset #000708;
-  background-color: #00a9b2;
-  text-align: center;
-  height: 600px;
-  width : 30%;
-  float: right;
-}
-</style>
-</head>
-<body>
-
-<div class="myDiv" id="myDiv">
-  <h2 style="color :#000708">Loan Requests</h2>
-  <img src="loan.png" alt="money" style="width:100px;height:100px;">
-  <hr style="border-top: 4px solid #004f5d;"></hr>
-  <html>
-    <head>
-    <style>
-    .button {
-      border: none;
-      color: rgb(248, 248, 248);
-      padding: 12px 16px;
-      text-align: center;
-      text-decoration:none;
-      display:inline-block;
-      font-size: 16px;
-      margin: 2px 2px;
-      cursor: pointer;
-      -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-    }
-    
-    .button1:hover{background-color: #4CAF50;/* Green */
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);} 
-    .button2:hover{background-color: #d13004;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); } /* Blue */
-    </style>
-    </head>
-    <body>
-
-    
- 
-    
-    </body>
-    </html>
-  <p id="0" style="font-family: Arial, sans-serif;font-weight: 400;color: white" >Client 1 requests a loan of $1000  </p>
-  <button class="button button1" id="1">Accept</button>
-  <button class="button button2" id = "2">Reject</button>
-  <p id="P2"style="color:#b21b00;"> </p>
-  <hr style="border-top: 2px solid #004f5d;"></hr>
-  <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;color: white;" >Client 2 requests a loan of $500  </p>
-  <button class="button button1" id="2500">Accept</button>
-  <button class="button button2" id ="2501">Reject</button>
-  <p id="try"style="color:#b21b00; "> </p>
-  <p id="tryAgain" style="color:#b21b00;"> </p>
-  <hr style="border-top: 2px solid #004f5d;"></hr>
-  <p id ="37"  style="font-family: Arial, sans-serif;font-weight: 400;color: white" >Client 3 requests a loan of $7000  </p>
-  <button class="button button1" id="37000">Accept</button>
-  <button class="button button2" id="37001">Reject</button>
-  <p id="P1"style="color:#b21b00; "> </p>
- 
-</div>
-
-
-<div class="myDivCC">
-    <h2 style="color: #000708;">Credit Card Applications</h2>
-    <img src="CC.png" alt="money" style="width:250px;height:110px;">
-    <hr style="border-top: 4px solid #000708;"></hr>
-  <html>
-    <head>
-    <style>
-    .button {
-      border: none;
-      color: rgb(248, 248, 248);
-      padding: 12px 16px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 2px 2px;
-      cursor: pointer;
-    }
- 
-    
-    .button1 {background-color: #3eb200;} /* Green */
-    .button2 {background-color: #b21b00;} /* Blue */
-    </style>
-    </head>
-    <body>
+    <div class="bankHeader">
+        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+        <div class="logout">
+            <button class="logoutButton" onclick="logout()">
+                <span class="tooltiptext">Logout?</span>
+                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left" />
+            </button>
+            <h1 class="welcomeMessage" style="float:right">HELLO, Banker.</h1>
+        </div>
+    </div>
 
 
 
-
-    </body>
-    </html>
-  <p id="90" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 4 applied for a Credit Card </p>
-  <button class="button button1" id="91">Accept</button>
-  <button class="button button2" id = "92">Reject</button>
-  <p id="CC4" style="color:#b21b00;"></p>
-  <hr style="border-top: 2px solid #000708;"></hr>
-  <p id="93" style="font-family:  Arial, sans-serif;font-weight: 400;color: white" >Client 5 applied for a Credit Card </p>
-  <button class="button button1" id="94">Accept</button>
-  <button class="button button2" id ="95">Reject</button>
-  <p id="CC5" style="color:#b21b00;"></p>
-  <hr style="border-top: 2px solid #000708;"></hr>
-  <p id ="96" style="font-family: Arial, sans-serif;font-weight: 400;color: white" >Client 6 applied for a Credit Card </p>
-  <button class="button button1" id="97">Accept</button>
-  <button class="button button2" id="98">Reject</button>
-  <p id="CC6" style="color:#b21b00;"></p>
-
-</div>
+    <div class="myDiv" id="myDiv">
+        <h2 style="color :#000708">Loan Requests</h2>
+        <img src="loan.png" alt="money" style="width:100px;height:100px;">
+        <hr style="border-top: 4px solid #000708;"></hr>
 
 
-<script>
-   
-  //Client 2 accept
-   // select the button and the div
-  const frg = document.getElementById('try');
-  const button = document.getElementById("2500");
- 
-  // define the function to change the HTML content
-  function changeContent() {
-    document.getElementById("2501").remove();
-    document.getElementById("2500").remove();
-    frg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
-  }
+        <p id="0" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 1 requests a loan of $1000  </p>
+        <button class="button button1" id="1">Accept</button>
+        <button class="button button2" id="2">Reject</button>
+        <p id="P2" style="color:#b21b00;"> </p>
+        <hr style="border-top: 2px solid #004f5d;"></hr>
+        <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;color: white;">Client 2 requests a loan of $500  </p>
+        <button class="button button1" id="2500">Accept</button>
+        <button class="button button2" id="2501">Reject</button>
+        <p id="try" style="color:#b21b00; "> </p>
+        <p id="tryAgain" style="color:#b21b00;"> </p>
+        <hr style="border-top: 2px solid #004f5d;"></hr>
+        <p id="37" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 3 requests a loan of $7000  </p>
+        <button class="button button1" id="37000">Accept</button>
+        <button class="button button2" id="37001">Reject</button>
+        <p id="P1" style="color:#b21b00; "> </p>
+
+    </div>
+
+    <div class="AccountsDiv">
+        <h2 style="color: #000708;">Accounts & Info</h2>
+        <img src="Accounts.png" alt="account" style="width:105px;height:105px;">
+        <hr style="border-top: 4px solid #000708;"></hr>
+        <style>
+            .buttonX {
+                border: none;
+                color: rgb(248, 248, 248);
+                padding: 20px 220px;
+                max-width: 220px;
+                max-height: 20px;
+                font-size: 16px;
+                margin: 2px 2px;
+                cursor: pointer;
+                background-color: #b28600;
+                -webkit-transition-duration: 0.4;
+                transition-duration: 0.4s;
+                white-space: nowrap;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .button3:hover {
+                background-color: #b28600;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+        <button class="buttonX button3" id="500">Open a new account </button>
+        <div class="space">
+
+        </div>
+        <button class="buttonX button3" id="501">Close an existing account</button>
+    </div>
+
+    <div class="myDivCC">
+        <h2 style="color: #000708;">Credit Card Applications</h2>
+        <img src="CC.png" alt="money" style="width:250px;height:110px;">
+        <hr style="border-top: 4px solid #000708;"></hr>
+
+        <p id="90" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 4 applied for a Credit Card </p>
+        <button class="button button1" id="91">Accept</button>
+        <button class="button button2" id="92">Reject</button>
+        <p id="CC4" style="color:#b21b00;"></p>
+        <hr style="border-top: 2px solid #000708;"></hr>
+        <p id="93" style="font-family:  Arial, sans-serif;font-weight: 400;color: white">Client 5 applied for a Credit Card </p>
+        <button class="button button1" id="94">Accept</button>
+        <button class="button button2" id="95">Reject</button>
+        <p id="CC5" style="color:#b21b00;"></p>
+        <hr style="border-top: 2px solid #000708;"></hr>
+        <p id="96" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 6 applied for a Credit Card </p>
+        <button class="button button1" id="97">Accept</button>
+        <button class="button button2" id="98">Reject</button>
+        <p id="CC6" style="color:#b21b00;"></p>
+
+    </div>
+
+
+    <script>
+
+        //Client 2 accept
+        // select the button and the div
+        const frg = document.getElementById('try');
+        const button = document.getElementById("2500");
+
+        // define the function to change the HTML content
+        function changeContent() {
+            document.getElementById("2501").remove();
+            document.getElementById("2500").remove();
+            frg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
+        }
 
         // add event listener to the button
         button.addEventListener('click', changeContent);
