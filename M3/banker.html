@@ -5,60 +5,19 @@
 </head>
 
 <body>
+<h1>Welcome to Quick Bank</h1>
+
 <html>
 <head>
 <style>
-   /* .bankHeader {
-        font-family: Arial, sans-serif;
-        background-color: #0097b2 !important;
-        margin: 0;
-        width: 100%;
-        height: 150px;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-        z-index: 20;
-    }
-    .logout {
-        float:right;
-        margin-right:50px;
-        margin-top:100px;
-    }
-    .containerHeader {
-        width: 100%;
-        height: 70px;
-        margin-right: 10px;
-        padding: 30px;
-        background-color: #dedede;
-    } 
-    .logoutButton {
-        display: inline-block;
-    }
-
-        .logoutButton .tooltiptext {
-            visibility: hidden;
-            background-color: #dedede;
-            color: black;
-            font-size: small;
-            text-align: center;
-            border-radius: 6px;
-            padding: 1px 8px;
-            /* Position the tooltip */
-            /* position: absolute;
-            top: 5px;
-            right: 120%;
-        }
-
-    .logoutButton:hover .tooltiptext {
-        visibility: visible;
-    } */ 
 .myDiv {
   border: 5px outset #000708;
   background-color:  #00a9b2;
   text-align: center;
   height: 600px;
   width : 30%;
-  float : right;
-  
-  }
+  float : left;
+}
 
 .myDivCC {
   border: 5px outset #000708;
@@ -66,29 +25,16 @@
   text-align: center;
   height: 600px;
   width : 30%;
-  float:right;
-  
-}
-.AccountsDiv {
-  border: 5px outset #000708;
-  background-color: #00a9b2;
-  text-align: center;
-  height: 600px;
-  width : 38%;
-  float:right;
-  
-}
-.space{
-  width: 180px;
-  height: 20px;
+  float: right;
 }
 </style>
 </head>
 <body>
+
 <div class="myDiv" id="myDiv">
   <h2 style="color :#000708">Loan Requests</h2>
   <img src="loan.png" alt="money" style="width:100px;height:100px;">
-  <hr style="border-top: 4px solid #000708;"></hr>
+  <hr style="border-top: 4px solid #004f5d;"></hr>
   <html>
     <head>
     <style>
@@ -98,7 +44,7 @@
       padding: 12px 16px;
       text-align: center;
       text-decoration:none;
-     display: inline-block;
+      display:inline-block;
       font-size: 16px;
       margin: 2px 2px;
       cursor: pointer;
@@ -109,8 +55,7 @@
     .button1:hover{background-color: #4CAF50;/* Green */
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);} 
     .button2:hover{background-color: #d13004;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); } /* Red */
-
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); } /* Blue */
     </style>
     </head>
     <body>
@@ -125,27 +70,23 @@
   <button class="button button2" id = "2">Reject</button>
   <p id="P2"style="color:#b21b00;"> </p>
   <hr style="border-top: 2px solid #004f5d;"></hr>
-
-
   <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;color: white;" >Client 2 requests a loan of $500  </p>
   <button class="button button1" id="2500">Accept</button>
   <button class="button button2" id ="2501">Reject</button>
-  <p id="try"style="color:#b21b00;" > </p>
-  <p id="tryAgain"style="color:#b21b00;"> </p>
+  <p id="try"style="color:#b21b00; "> </p>
+  <p id="tryAgain" style="color:#b21b00;"> </p>
   <hr style="border-top: 2px solid #004f5d;"></hr>
-
-
   <p id ="37"  style="font-family: Arial, sans-serif;font-weight: 400;color: white" >Client 3 requests a loan of $7000  </p>
   <button class="button button1" id="37000">Accept</button>
   <button class="button button2" id="37001">Reject</button>
-  <p id="P1"style="color:#b21b00;"> </p>
+  <p id="P1"style="color:#b21b00; "> </p>
  
 </div>
 
 
 <div class="myDivCC">
     <h2 style="color: #000708;">Credit Card Applications</h2>
-    <img src="CC.png" alt="money" style="width:250px;height:100px;">
+    <img src="CC.png" alt="money" style="width:250px;height:110px;">
     <hr style="border-top: 4px solid #000708;"></hr>
   <html>
     <head>
@@ -164,9 +105,15 @@
  
     
     .button1 {background-color: #3eb200;} /* Green */
-    .button2 {background-color: #b21b00;} /* Red */
+    .button2 {background-color: #b21b00;} /* Blue */
     </style>
     </head>
+    <body>
+
+
+
+
+    </body>
     </html>
   <p id="90" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 4 applied for a Credit Card </p>
   <button class="button button1" id="91">Accept</button>
@@ -184,41 +131,6 @@
   <p id="CC6" style="color:#b21b00;"></p>
 
 </div>
-<div class="AccountsDiv">
-  <h2 style="color: #000708;">Accounts & Info</h2>
-  <img src="Accounts & Info.png" alt="account" style="width:105px;height:105px;" >
-  <hr style="border-top: 4px solid #000708;"></hr>
-   <style>
-    .buttonX {
-      border: none;
-      color: rgb(248, 248, 248);
-      padding: 20px 220px;
-      max-width: 220px;
-     max-height: 20px;
-    
-
-      font-size: 16px;
-      margin: 2px 2px;
-      cursor: pointer;
-      background-color:#b28600 ;
-      -webkit-transition-duration: 0.4;
-  transition-duration: 0.4s;
-    white-space: nowrap;
-   
-    display:flex;
-      justify-content: center;
-      align-items: center;
-      text-align:center;
-
-    }
-    .button3:hover{background-color: #b28600;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);} /* Gold */
-   </style>
-   <button class="buttonX button3" id="500">Open a new account </button>
-    <div class="space">
-
-    </div>
-   <button class="buttonX button3" id="501">Close an existing account</button>
-</div> 
 
 
 <script>
@@ -232,187 +144,184 @@
   function changeContent() {
     document.getElementById("2501").remove();
     document.getElementById("2500").remove();
-    frg.innerHTML = '<span class="slow"> loan request  is </span><span class="slow"> <b style="color:green">  accepted </b></span> <span> Successfully !</Span>';
+    frg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
   }
 
-  // add event listener to the button
-  button.addEventListener('click', changeContent);
-  
+        // add event listener to the button
+        button.addEventListener('click', changeContent);
 
-    //Client 2 reject
-    // select the button and the div
-    const frgg = document.getElementById('tryAgain');
-  const buttonRejec = document.getElementById("2501");
- 
-  // define the function to change the HTML content
-  function changeContent2() {
-    document.getElementById("2501").remove();
-    document.getElementById("2500").remove();
-    frgg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
-  }
 
-  // add event listener to the button
-  buttonRejec.addEventListener('click', changeContent2);
-  
-//////////////////////////////////////////////////////////////////////////////////////
- // client 3
-   //Client 3 accept
-   // select the button and the div
-  const frggg = document.getElementById('P1');
-  const buttonAcc3 = document.getElementById("37000");
- 
-  // define the function to change the HTML content
-  function changeContentX() {
-    document.getElementById("37001").remove();
-    document.getElementById("37000").remove();
-    frggg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
-  }
+        //Client 2 reject
+        // select the button and the div
+        const frgg = document.getElementById('tryAgain');
+        const buttonRejec = document.getElementById("2501");
 
-  // add event listener to the button
-  buttonAcc3.addEventListener('click', changeContentX);
+        // define the function to change the HTML content
+        function changeContent2() {
+            document.getElementById("2501").remove();
+            document.getElementById("2500").remove();
+            frgg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
+        }
 
-     //Client 3 reject
-   // select the button and the div
-   const frgggg = document.getElementById('P1');
-  const buttonRej3 = document.getElementById("37001");
- 
-  // define the function to change the HTML content
-    function changeContentY() {
-    document.getElementById("37001").remove();
-    document.getElementById("37000").remove();
-    frgggg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
-  }
+        // add event listener to the button
+        buttonRejec.addEventListener('click', changeContent2);
 
-  // add event listener to the button
-  buttonRej3.addEventListener('click', changeContentY);
+        //////////////////////////////////////////////////////////////////////////////////////
+        // client 3
+        //Client 3 accept
+        // select the button and the div
+        const frggg = document.getElementById('P1');
+        const buttonAcc3 = document.getElementById("37000");
 
-///////////////////////////////////////////////////////////////////////////////
-      //Client 1 accept
-   // select the button and the div
-   const frggggg = document.getElementById('P2');
-  const buttonAcc1 = document.getElementById("1");
- 
-  // define the function to change the HTML content
-    function changeContentM() {
-    document.getElementById("1").remove();
-    document.getElementById("2").remove();
-    frggggg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
-  }
+        // define the function to change the HTML content
+        function changeContentX() {
+            document.getElementById("37001").remove();
+            document.getElementById("37000").remove();
+            frggg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
+        }
 
-  // add event listener to the button
-  buttonAcc1.addEventListener('click', changeContentM);
+        // add event listener to the button
+        buttonAcc3.addEventListener('click', changeContentX);
+
+        //Client 3 reject
+        // select the button and the div
+        const frgggg = document.getElementById('P1');
+        const buttonRej3 = document.getElementById("37001");
+
+        // define the function to change the HTML content
+        function changeContentY() {
+            document.getElementById("37001").remove();
+            document.getElementById("37000").remove();
+            frgggg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
+        }
+
+        // add event listener to the button
+        buttonRej3.addEventListener('click', changeContentY);
+
+        ///////////////////////////////////////////////////////////////////////////////
+        //Client 1 accept
+        // select the button and the div
+        const frggggg = document.getElementById('P2');
+        const buttonAcc1 = document.getElementById("1");
+
+        // define the function to change the HTML content
+        function changeContentM() {
+            document.getElementById("1").remove();
+            document.getElementById("2").remove();
+            frggggg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
+        }
+
+        // add event listener to the button
+        buttonAcc1.addEventListener('click', changeContentM);
 
         //Client 1 accept
-   // select the button and the div
-   const frgggggg = document.getElementById('P2');
-  const buttonRej1 = document.getElementById("2");
- 
-  // define the function to change the HTML content
-    function changeContentREJ() {
-    document.getElementById("1").remove();
-    document.getElementById("2").remove();
-    frgggggg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
-  }
+        // select the button and the div
+        const frgggggg = document.getElementById('P2');
+        const buttonRej1 = document.getElementById("2");
 
-  // add event listener to the button
-  buttonRej1.addEventListener('click', changeContentREJ);
+        // define the function to change the HTML content
+        function changeContentREJ() {
+            document.getElementById("1").remove();
+            document.getElementById("2").remove();
+            frgggggg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
+        }
 
-  ///////////////////////////////////////////////////////////////////////////////
-  /// Credit Cards Section                         //////////////////////////////
-  ///////////////////////////////////////////////////////////////////////////////
+        // add event listener to the button
+        buttonRej1.addEventListener('click', changeContentREJ);
+
+        ///////////////////////////////////////////////////////////////////////////////
+        /// Credit Cards Section                         //////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////
         //Client 4 accept
-   // select the button and the div
-   const CC4 = document.getElementById('CC4');
-  const buttonAcc4 = document.getElementById("91");
- 
-  // define the function to change the HTML content
-    function changeContentAcc4() {
-    document.getElementById("91").remove();
-    document.getElementById("92").remove();
-    CC4.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
-  }
+        // select the button and the div
+        const CC4 = document.getElementById('CC4');
+        const buttonAcc4 = document.getElementById("91");
 
-  // add event listener to the button
-  buttonAcc4.addEventListener('click', changeContentAcc4);
+        // define the function to change the HTML content
+        function changeContentAcc4() {
+            document.getElementById("91").remove();
+            document.getElementById("92").remove();
+            CC4.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
+        }
 
-          //Client 4 Reject
-   // select the button and the div
-   const CC4Rej = document.getElementById('CC4');
-  const buttonRej4 = document.getElementById("92");
- 
-  // define the function to change the HTML content
-    function changeContentRej4() {
-    document.getElementById("91").remove();
-    document.getElementById("92").remove();
-    CC4Rej.innerHTML = '<p> Credit Card application  is  <b style="color:red">rejected</b>  Successfully !</p>';
-  }
+        // add event listener to the button
+        buttonAcc4.addEventListener('click', changeContentAcc4);
 
-  // add event listener to the button
-  buttonRej4.addEventListener('click', changeContentRej4);
-  /////////////////////////////////////////////////////////////////
-       //Client 5 accept
-   // select the button and the div
-   const CC5 = document.getElementById('CC5');
-  const buttonAcc5 = document.getElementById("94");
- 
-  // define the function to change the HTML content
-    function changeContentAcc5() {
-    document.getElementById("94").remove();
-    document.getElementById("95").remove();
-    CC5.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
-  }
+        //Client 4 Reject
+        // select the button and the div
+        const CC4Rej = document.getElementById('CC4');
+        const buttonRej4 = document.getElementById("92");
 
-  // add event listener to the button
-  buttonAcc5.addEventListener('click', changeContentAcc5);
+        // define the function to change the HTML content
+        function changeContentRej4() {
+            document.getElementById("91").remove();
+            document.getElementById("92").remove();
+            CC4Rej.innerHTML = '<p> Credit Card application  is  <b style="color:red">rejected</b>  Successfully !</p>';
+        }
 
-        //Client 5 Reject
-   // select the button and the div
-   const CC5Rej = document.getElementById('CC5');
-  const buttonRej5 = document.getElementById("95");
- 
-  // define the function to change the HTML content
-    function changeContentRej5() {
-    document.getElementById("94").remove();
-    document.getElementById("95").remove();
-    CC5Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> Successfully !</p>';
-  }
+        // add event listener to the button
+        buttonRej4.addEventListener('click', changeContentRej4);
+        /////////////////////////////////////////////////////////////////
+        //Client 5 accept
+        // select the button and the div
+        const CC5 = document.getElementById('CC5');
+        const buttonAcc5 = document.getElementById("94");
 
-  // add event listener to the button
-  buttonRej5.addEventListener('click', changeContentRej5);
+        // define the function to change the HTML content
+        function changeContentAcc5() {
+            document.getElementById("94").remove();
+            document.getElementById("95").remove();
+            CC5.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
+        }
 
-  ///////////////////////////////////////////////////////////////////////
-       //Client 6 accept
-   // select the button and the div
-   const CC6 = document.getElementById('CC6');
-  const buttonAcc6 = document.getElementById("97");
- 
-  // define the function to change the HTML content
-    function changeContentAcc6() {
-    document.getElementById("97").remove();
-    document.getElementById("98").remove();
-    CC6.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
-  }
-// add event listener to the button
-buttonAcc6.addEventListener('click', changeContentAcc6);
-
+        // add event listener to the button
+        buttonAcc5.addEventListener('click', changeContentAcc5);
 
         //Client 5 Reject
-   // select the button and the div
-   const CC6Rej = document.getElementById('CC6');
-  const buttonRej6 = document.getElementById("98");
- 
-  // define the function to change the HTML content
-    function changeContentRej6() {
-    document.getElementById("97").remove();
-    document.getElementById("98").remove();
-    CC6Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> Successfully !</p>';
-  }
+        // select the button and the div
+        const CC5Rej = document.getElementById('CC5');
+        const buttonRej5 = document.getElementById("95");
 
-  // add event listener to the button
-  buttonRej6.addEventListener('click', changeContentRej6);
-</script>
-</body>
-</html>
-</body>
+        // define the function to change the HTML content
+        function changeContentRej5() {
+            document.getElementById("94").remove();
+            document.getElementById("95").remove();
+            CC5Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> Successfully !</p>';
+        }
 
+        // add event listener to the button
+        buttonRej5.addEventListener('click', changeContentRej5);
+
+        ///////////////////////////////////////////////////////////////////////
+        //Client 6 accept
+        // select the button and the div
+        const CC6 = document.getElementById('CC6');
+        const buttonAcc6 = document.getElementById("97");
+
+        // define the function to change the HTML content
+        function changeContentAcc6() {
+            document.getElementById("97").remove();
+            document.getElementById("98").remove();
+            CC6.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
+        }
+        // add event listener to the button
+        buttonAcc6.addEventListener('click', changeContentAcc6);
+
+
+        //Client 5 Reject
+        // select the button and the div
+        const CC6Rej = document.getElementById('CC6');
+        const buttonRej6 = document.getElementById("98");
+
+        // define the function to change the HTML content
+        function changeContentRej6() {
+            document.getElementById("97").remove();
+            document.getElementById("98").remove();
+            CC6Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> Successfully !</p>';
+        }
+
+        // add event listener to the button
+        buttonRej6.addEventListener('click', changeContentRej6);
+    </script>
+</body>
 </html>
