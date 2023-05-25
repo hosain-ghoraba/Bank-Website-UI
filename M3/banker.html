@@ -137,15 +137,49 @@
             border: 5px outset #000708;
             background-color: #00a9b2;
             text-align: center;
-            height: 600px;
+            height: 470px;
             width: 38%;
             float: right;
+            
         }
 
         .space {
             width: 180px;
-            height: 20px;
+            height: 10px;
         }
+        .issue{
+            border: 5px outset #000708;
+            background-color: #00a9b2;
+            text-align: center;
+            height: 120px;
+            width: 38%;
+            float: right;
+
+        }
+        .reportButton{
+            background-color: #7400b2;
+            border-radius: 10px;
+            color: white;
+            padding: 20px 140px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            max-width: 140px;
+            max-height: 20px;
+            white-space: nowrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            left: 150px;
+        }
+        .button4:hover {
+                background-color: #7400b2;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
     </style>
 </head>
 
@@ -195,7 +229,7 @@
             .buttonX {
                 border: none;
                 color: rgb(248, 248, 248);
-                padding: 20px 220px;
+                padding: 25px 220px;
                 max-width: 220px;
                 max-height: 20px;
                 font-size: 16px;
@@ -209,6 +243,8 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                position: relative;
+                left: 75px;
             }
 
             .button3:hover {
@@ -216,11 +252,26 @@
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
             }
         </style>
-        <button class="buttonX button3" id="500">Open a new account </button>
-        <div class="space">
 
-        </div>
-        <button class="buttonX button3" id="501">Close an existing account</button>
+        <button class="buttonX button3" id="500">
+            <img  src="addAccount.png" width="90" height="90"/>
+            <span> Add a new account </span>  
+         </button>
+        <div class="space"></div>
+        <button class="buttonX button3" id="501">
+            <img  src="removeAccount.png" width="90" height="90"/>
+            <span>  Remove an existing account </span> 
+        </button>
+        <div class="space"></div>
+        <button class="buttonX button3" id="502">
+            <img  src="AnnouncementIcon.png" width="70" height="70"/>
+            <span>   Send an announcement</span> 
+        </button>
+        <div class="space"></div>
+        <button class="buttonX button3" id="503">
+            <img  src="info_Icon.png" width="50" height="50"/>
+            <span> Get the information of an account</span> 
+            </button>
     </div>
 
     <div class="myDivCC">
@@ -242,6 +293,17 @@
         <button class="button button1" id="97">Accept</button>
         <button class="button button2" id="98">Reject</button>
         <p id="CC6" style="color:#b21b00;"></p>
+
+    </div>
+    <div class="issue">
+        
+        <h3 style="color: #000708;">For any technical issue :</h3>
+        
+        <button class="reportButton button4"> 
+        <img  src="whitSmallFlag.png" width="60" height="60"/>
+        <span>Report a problem </span>  
+    
+      </button>
 
     </div>
 
