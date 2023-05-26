@@ -33,6 +33,7 @@
     }
 
     input[type="text"],
+    input[type="number"],
     input[type="email"],
     input[type="password"] {
       width: 100%;
@@ -87,17 +88,24 @@
     <h2>Registration</h2>
     <form id="registration-form">
       <div class="form-group">
-        <label for="name">Name:</label>
+        <label for="name">Username :</label>
         <input type="text" id="name" name="name" required>
       </div>
+      <br>
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
       </div>
+      <br>
       <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
       </div>
+      <br>
+
+      <label for="accountID">Bank account ID (if applicable) :</label>
+      <input type="number" id="accountID">
+
       <input type="submit" value="Register">
     </form>
     <div class="login-link">
@@ -111,6 +119,15 @@
 
     registrationForm.addEventListener('submit', function (event) {
       event.preventDefault();
+
+      const accountIDInput = document.getElementById('accountID').value;
+      if(!(accountIDInput === "")){
+
+        if(!(accountIDInput == 1234 || accountIDInput == 4321) ){
+          alert("We don't have an account with that ID. Please try again.");
+          return;
+        }
+      }
 
       const emailInput = document.getElementById('email');
       const email = emailInput.value.trim();
