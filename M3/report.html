@@ -130,13 +130,20 @@ a:active {
     .submit:required{
         appearance: auto;
     }
+    .home{
+      appearance: auto;
+    }
+    .home:hover{
+      visibility: visible;
+      cursor: pointer;
+    }
 
     </style>
     </head>
 
     <body>
         <div class="bankHeader">
-            <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+            <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
             <div class="logout">
                 <button type="button" class="logoutButton" onclick="logout()">
                     <span class="tooltiptext">Logout?</span>
@@ -188,7 +195,7 @@ a:active {
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <label for = "number"> CC number: </label>
-                <input type="text" id="number" name="number" placeholder="ex:34xx xxxx xxxx xxxx" >
+                <input type="text" id="number" name="number" placeholder="only digits is allowed" >
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <label for = "name"> CC holder's name: </label>
                 <input type="text" id="name" name="name" placeholder="Full name please" >
@@ -212,9 +219,8 @@ a:active {
                 <input type="reset" class="submit">
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="submit" class="submit" onclick="submitClick2()">
-                <!-- <id="Submit" onclick="submitClick2"></id> -->
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" class="submit" onclick=" location.href='https://google.com';" value="Apply for a new one">
+                <input type="button" class="submit" onclick=" location.href='applyForCreditCard.html';" value="Apply for a new one">
             </div>
         </form>
 
@@ -223,8 +229,9 @@ a:active {
                 window.location.href = 'login.html';
             };
 
-
-
+            function Home() {
+                window.location.href = 'HomePage.html';
+            };
 
             function submitClick() {
     if (formValidation()) {
@@ -239,7 +246,7 @@ a:active {
     flag = true;
 
     if (document.myform.Details1.value == "") {
-      alert("Please fill in your Name!");
+      alert("Please fill in the form description");
       flag = false;
     }
     
@@ -417,11 +424,6 @@ a:active {
 
     return flag;
   }
-            // function submitR(){
-            //     if(formValidation()){
-            //         alert("Thank you for your time! Your details have been submitted!"); 
-            //     }
-            // }
     </script>
 </body>
 </html>
