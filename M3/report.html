@@ -127,6 +127,9 @@ a:active {
         visibility: visible;
         cursor: pointer;
     }
+    .submit:required{
+        appearance: auto;
+    }
 
     </style>
     </head>
@@ -144,7 +147,7 @@ a:active {
         </div>
         
     <h1 class="containerTitle">Report Technical Issue</h1>
-        <form>
+        <form name="myform" >
             <div>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -159,58 +162,59 @@ a:active {
             <div>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for = "lname"> Details: </label>
-                <input type="text" id="lname" name="lname" placeholder="Describe the issue in details" required>
+                <label for = "Details1"> Details: </label>
+                <input type="Details1" id="Details1" name="Details1" placeholder="Describe the issue in details" >
             </div>
             <div>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for = "lname"> When: </label>
-                <input type="date" id="lname" name="lname" required>
+                <label for = "date"> When: </label>
+                <input type="text" id="date" name="date" placeholder="mm/dd/yyyy" >
             </div>
             <div>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="reset" class="submit" >
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="submit" class="submit" onclick="submitR()">
+                <input type="submit" class="submit" onclick="submitClick()" >
             </div>
         </form>
 
         <br><br><br>
        
         <h1 class="containerTitle">Report credit card theft/ loss/ damage</h1>
-        <form>
+        <form name="myform1">
             <div>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for = "lname"> CC number: </label>
-                <input type="text" id="lname" name="lname" placeholder="ex:34xx xxxx xxxx xxxx" required>
+                <label for = "number"> CC number: </label>
+                <input type="text" id="number" name="number" placeholder="ex:34xx xxxx xxxx xxxx" >
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for = "lname"> CC holder's name: </label>
-                <input type="text" id="lname" name="lname" placeholder="Full name please" required>
+                <label for = "name"> CC holder's name: </label>
+                <input type="text" id="name" name="name" placeholder="Full name please" >
             </div>
             <div>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for = "fname"> Specify: </label>
+                <label for = "Specify"> Specify: </label>
                 <select name="Specify" id="Specify">
                     <option value="1">theft</option>
                     <option value="2">loss</option>
                     <option value="3">damage</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <label for = "lname"> When: </label>
-                <input type="date" id="lname" name="lname" required>
+                <label for = "date"> When: </label>
+                <input type="text" id="date1" name="date1" placeholder="mm/dd/yyyy" >
             </div>
             <div>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="reset" class="submit">
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="submit" class="submit" onclick="submitR()" id="Submit">
+                <input type="submit" class="submit" onclick="submitClick2()">
+                <!-- <id="Submit" onclick="submitClick2"></id> -->
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" class="submit" onclick="location.href='https://google.com';" value="Submit and apply for a new one">
+                <input type="button" class="submit" onclick=" location.href='https://google.com';" value="Apply for a new one">
             </div>
         </form>
 
@@ -218,9 +222,206 @@ a:active {
             function logout() {
                 window.location.href = 'login.html';
             };
-            function submitR(){
-                alert("Feedback sent successfully, you will receive a notification when the issue is resolved");
-            }
+
+
+
+
+            function submitClick() {
+    if (formValidation()) {
+      alert("Thank you for your time! Your details have been submitted! You will receive a notification when the issue is resolved");
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function formValidation() {
+    flag = true;
+
+    if (document.myform.Details1.value == "") {
+      alert("Please fill in your Name!");
+      flag = false;
+    }
+    
+    // Validate letters only as Name
+    if (!/^[a-zA-Z]*$/g.test(document.myform.Details1.value)) {
+      alert("Enter alphabetic characters as Name!");
+      flag = false;
+    }
+    
+    var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+    
+    if(!document.myform.date.value.match(dateformat)){
+        alert("Enter correct date format");
+        flag=false;
+    }
+
+//     function validatedate(inputText)
+//   {
+//   // Match the date format through regular expression
+//   if(document.myform.date.value.match(dateformat))
+//   {
+//   document.form1.text1.focus();
+//   //Test which seperator is used '/' or '-'
+//   var opera1 = inputText.value.split('/');
+//   var opera2 = inputText.value.split('-');
+//   lopera1 = opera1.length;
+//   lopera2 = opera2.length;
+//   // Extract the string into month, date and year
+//   if (lopera1>1)
+//   {
+//   var pdate = inputText.value.split('/');
+//   }
+//   else if (lopera2>1)
+//   {
+//   var pdate = inputText.value.split('-');
+//   }
+//   var dd = parseInt(pdate[0]);
+//   var mm  = parseInt(pdate[1]);
+//   var yy = parseInt(pdate[2]);
+//   // Create list of days of a month [assume there is no leap year by default]
+//   var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+//   if (mm==1 || mm>2)
+//   {
+//   if (dd>ListofDays[mm-1])
+//   {
+//   alert('Invalid date format!');
+//   return false;
+//   }
+//   }
+//   if (mm==2)
+//   {
+//   var lyear = false;
+//   if ( (!(yy % 4) && yy % 100) || !(yy % 400)) 
+//   {
+//   lyear = true;
+//   }
+//   if ((lyear==false) && (dd>=29))
+//   {
+//   alert('Invalid date format!');
+//   return false;
+//   }
+//   if ((lyear==true) && (dd>29))
+//   {
+//   alert('Invalid date format!');
+//   return false;
+//   }
+//   }
+//   }
+//   else
+//   {
+//   alert("Invalid date format!");
+//   document.form1.text1.focus();
+//   return false;
+//   }
+//   }
+
+    // // Validate emails
+    // if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)* (\.\w{2,3})+$/.test(myForm.user_email.value)) //Regular expressions to validate email
+    // {
+    //   //alert("Enter Valid Email Address!");
+    //   //flag = false;
+    // }
+
+    // Validate Phone number
+    // if (document.myform1.number.value == "") {
+    //   alert("Please fill in your Phone Number!");
+    //   flag = false;
+    // }
+
+    // if (!/^[0-9]*$/g.test(myForm.number.value)) {
+    //   alert("Enter numeric values as Phone Number!");
+    //   flag = false;
+    // }
+
+    // if ((document.myForm.userGender[0].checked == false) && (document.myForm.userGender[1].checked == false)) {
+    //   alert("Please select your gender!");
+    //   flag = false;
+    // }
+
+    // if (document.myForm.userAge.selectedIndex == 0) {
+    //   alert("Please select your Age from the drop-down list!");
+    //   flag = false;
+    // }
+
+    // if (document.myForm.termsAndConditions.checked == false) {
+    //   alert("Please check the Terms and Conditions box!");
+    //   flag = false;
+    // }
+
+    return flag;
+  }
+
+  function submitClick2() {
+    if (formValidation2()) {
+      alert("Your details have been submitted! You will receive a notification when the issue is resolved");
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function formValidation2() {
+    flag = true;
+
+    if (document.myform1.name.value == "") {
+      alert("Please fill in your Name!");
+      flag = false;
+    }
+    
+    // Validate letters only as Name
+    if (!/^[a-zA-Z]*$/g.test(document.myform1.name.value)) {
+      alert("Enter alphabetic characters as Name!");
+      flag = false;
+    }
+
+    // // Validate emails
+    // if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)* (\.\w{2,3})+$/.test(myForm.user_email.value)) //Regular expressions to validate email
+    // {
+    //   //alert("Enter Valid Email Address!");
+    //   //flag = false;
+    // }
+
+    // Validate Phone number
+    if (document.myform1.number.value == "") {
+      alert("Please fill in your Phone Number!");
+      flag = false;
+    }
+
+    if (!/^[0-9]*$/g.test(myform1.number.value)) {
+      alert("Enter numeric values as Phone Number!");
+      flag = false;
+    }
+
+    var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+    
+    if(!document.myform1.date1.value.match(dateformat)){
+        alert("Enter correct date format");
+        flag=false;
+    }
+
+    // if ((document.myForm.userGender[0].checked == false) && (document.myForm.userGender[1].checked == false)) {
+    //   alert("Please select your gender!");
+    //   flag = false;
+    // }
+
+    // if (document.myForm.userAge.selectedIndex == 0) {
+    //   alert("Please select your Age from the drop-down list!");
+    //   flag = false;
+    // }
+
+    // if (document.myForm.termsAndConditions.checked == false) {
+    //   alert("Please check the Terms and Conditions box!");
+    //   flag = false;
+    // }
+
+    return flag;
+  }
+            // function submitR(){
+            //     if(formValidation()){
+            //         alert("Thank you for your time! Your details have been submitted!"); 
+            //     }
+            // }
     </script>
 </body>
 </html>
