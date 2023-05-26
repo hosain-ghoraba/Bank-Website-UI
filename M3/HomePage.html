@@ -105,8 +105,13 @@ a:active {
 
     .button:hover {
         cursor: pointer;
-
-
+    }
+    .home{
+      appearance: auto;
+    }
+    .home:hover{
+      visibility: visible;
+      cursor: pointer;
     }
 
     </style>
@@ -116,7 +121,7 @@ a:active {
 <body>
     
     <div class="bankHeader">
-        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
         <div class="logout">
             <button type="button" class="logoutButton" onclick="logout()">
                 <span class="tooltiptext">Logout?</span>
@@ -129,15 +134,15 @@ a:active {
     <br> <!--adds a new line-->
     <br>
     &nbsp;&nbsp;<!--adds a space-->
-    <input type="button" class="button" onclick="location.href='user.html';" value="Apply For a Credit Card" />
+    <input type="button" class="button" onclick="location.href='applyForCreditCard.html';" value="Apply For a Credit Card" />
     <br>
     <br> 
     &nbsp;&nbsp;
-    <input type="button" class="button" onclick="location.href='https://google.com';" value="Apply for a loan" />
+    <input type="button" class="button" onclick="location.href='applyForLoan.html';" value="Apply for a loan" />
     <br> 
     <br> 
     &nbsp;&nbsp;
-    <input type="button" class="button" onclick="location.href='https://google.com';"value="Report Issue" />
+    <input type="button" class="button" onclick="location.href='report.html';"value="Report any Issue" />
     <br> 
     <br> 
     &nbsp;&nbsp;
@@ -153,10 +158,6 @@ a:active {
     <br> 
     <br> 
     &nbsp;&nbsp;
-    <input type="button" class="button" onclick="location.href='report.html';" value="Report a problem" />
-    <br> 
-    <br> 
-    &nbsp;&nbsp;
     <input type="button" class="button" onclick="location.href='https://google.com';" value="Transfer Money" />
     <br> 
     <br> 
@@ -167,6 +168,10 @@ a:active {
             
             function logout() {
                 window.location.href = 'login.html';
+            };
+
+            function Home() {
+                window.location.href = 'HomePage.html';
             };
     </script>
 </body>
