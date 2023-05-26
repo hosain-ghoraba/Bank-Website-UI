@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="Icon.ico">
+        <title>Quick Bank - Home Page</title>
+    <style>
+
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: rgb(150, 150, 58);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+    }
+
+    .bankHeader {
+            font-family: Arial, sans-serif;
+            background-color: #0097b2 !important;
+            margin: 0;
+            width: 100%;
+            height: 150px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .welcomeMessage {
+        color: #fff;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        margin-top: 7px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .logout {
+        float: right;
+        margin-right:50px;
+        margin-top:100px;
+        background-color: transparent;
+    }
+
+    .logoutButton {
+        position: relative;
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .logoutButton .tooltiptext {
+            visibility: hidden;
+            background-color: #dedede;
+            color: black;
+            font-size: small;
+            text-align: center;
+            border-radius: 6px;
+            padding: 1px 8px;
+            /* Position the tooltip */
+            position: absolute;
+            top: 5px;
+            right: 120%;
+    }
+
+    .logoutButton:hover .tooltiptext {
+        visibility: visible;
+        cursor: pointer;
+    }
+
+    .button {
+  background-color: #b28600; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
+
+    .button:hover {
+        cursor: pointer;
+
+
+    }
+
+    </style>
+    </head>
+
+<!------------------------------------------------------------>
+<body>
+    
+    <div class="bankHeader">
+        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+        <div class="logout">
+            <button type="button" class="logoutButton" onclick="logout()">
+                <span class="tooltiptext">Logout?</span>
+                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
+            </button>
+            <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
+        </div>
+    </div>
+
+    <br> <!--adds a new line-->
+    <br>
+    &nbsp;&nbsp;<!--adds a space-->
+    <input type="button" class="button" onclick="location.href='user.html';" value="Apply For a Credit Card" />
+    <br>
+    <br> 
+    &nbsp;&nbsp;
+    <input type="button" class="button" onclick="location.href='https://google.com';" value="Apply for a loan" />
+    <br> 
+    <br> 
+    &nbsp;&nbsp;
+    <input type="button" class="button" onclick="location.href='https://google.com';"value="Report Issue" />
+    <br> 
+    <br> 
+    &nbsp;&nbsp;
+    <input type="button" class="button" onclick="location.href='https://google.com';" value="Transfer Money" />
+    <br> 
+    <br> 
+    &nbsp;&nbsp;
+    <input type="button" class="button" onclick="location.href='https://google.com';" value="Account Saving and Credit Card" />
+    <br> 
+    <br> 
+    &nbsp;&nbsp;
+    <input type="button" class="button" onclick="location.href='https://google.com';" value="Pay bills" />
+    <br> 
+    <br> 
+    &nbsp;&nbsp;
+    <input type="button" class="button" onclick="location.href='report.html';" value="Report a problem" />
+    <br> 
+    <br> 
+    &nbsp;&nbsp;
+    <input type="button" class="button" onclick="location.href='https://google.com';" value="Transfer Money" />
+    <br> 
+    <br> 
+    &nbsp;&nbsp;
+
+    <!------------------------------------------------------------>
+    <script>
+            
+            function logout() {
+                window.location.href = 'login.html';
+            };
+    </script>
+</body>
+</html>
+
