@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="Icon.ico">
+        <title>Quick Bank - Report</title>
+    <style>
+
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: rgb(150, 150, 58);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+    }
+
+    .bankHeader {
+            font-family: Arial, sans-serif;
+            background-color: #0097b2 !important;
+            margin: 0;
+            width: 100%;
+            height: 150px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .welcomeMessage {
+        color: #fff;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        margin-top: 7px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .logout {
+        float: right;
+        margin-right:50px;
+        margin-top:100px;
+        background-color: transparent;
+    }
+
+    .logoutButton {
+        position: relative;
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .logoutButton .tooltiptext {
+            visibility: hidden;
+            background-color: #dedede;
+            color: black;
+            font-size: small;
+            text-align: center;
+            border-radius: 6px;
+            padding: 1px 8px;
+            /* Position the tooltip */
+            position: absolute;
+            top: 5px;
+            right: 120%;
+    }
+
+    .logoutButton:hover .tooltiptext {
+        visibility: visible;
+        cursor: pointer;
+    }
+
+    .button {
+  background-color: #b28600;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
+
+    .button:hover {
+        cursor: pointer;
+    }
+
+    .containerTitle {
+        color: #bda366;
+        margin-left: 25px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .submit {
+    appearance: auto;
+    background-color: #bda366;
+    border: none;
+    color: white;
+    }
+
+    .submit:hover{
+        visibility: visible;
+        cursor: pointer;
+    }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="bankHeader">
+            <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+            <div class="logout">
+                <button type="button" class="logoutButton" onclick="logout()">
+                    <span class="tooltiptext">Logout?</span>
+                    <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
+                </button>
+                <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
+            </div>
+        </div>
+        
+    <h1 class="containerTitle">Report Technical Issue</h1>
+        <form>
+            <div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for = "Specify"> Specify: </label>
+                <select name="Specify" id="Specify">
+                    <option value="1">Credit card application</option>
+                    <option value="2">Loan application</option>
+                    <option value="3">Credit card points redeeming</option>
+                    <option value="4">Money Transfer</option>
+                </select>
+            </div>
+            <div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for = "lname"> Details: </label>
+                <input type="text" id="lname" name="lname" placeholder="Describe the issue in details" required>
+            </div>
+            <div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for = "lname"> When: </label>
+                <input type="date" id="lname" name="lname" required>
+            </div>
+            <div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" class="submit" >
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" class="submit" onclick="submitR()">
+            </div>
+        </form>
+
+        <br><br><br>
+       
+        <h1 class="containerTitle">Report credit card theft/ loss/ damage</h1>
+        <form>
+            <div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for = "lname"> CC number: </label>
+                <input type="text" id="lname" name="lname" placeholder="ex:34xx xxxx xxxx xxxx" required>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for = "lname"> CC holder's name: </label>
+                <input type="text" id="lname" name="lname" placeholder="Full name please" required>
+            </div>
+            <div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for = "fname"> Specify: </label>
+                <select name="Specify" id="Specify">
+                    <option value="1">theft</option>
+                    <option value="2">loss</option>
+                    <option value="3">damage</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label for = "lname"> When: </label>
+                <input type="date" id="lname" name="lname" required>
+            </div>
+            <div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" class="submit">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" class="submit" onclick="submitR()" id="Submit">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" class="submit" onclick="location.href='https://google.com';" value="Submit and apply for a new one">
+            </div>
+        </form>
+
+        <script>
+            function logout() {
+                window.location.href = 'login.html';
+            };
+            function submitR(){
+                alert("Feedback sent successfully, you will receive a notification when the issue is resolved");
+            }
+    </script>
+</body>
+</html>
