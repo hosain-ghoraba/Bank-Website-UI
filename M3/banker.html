@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quick Bank : Banker </title>
+
+        <link rel="icon" href="Icon.ico">
+        <title>Quick Bank : Banker Section</title>
+
     <style>
 
         body {
@@ -77,7 +80,12 @@
             background-color: #d13004;
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
         }
-
+        
+        .button2:hover {
+            background-color: #d13004;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        
         .logoutButton {
             position: relative;
             display: inline-block;
@@ -179,7 +187,34 @@
         .button4:hover {
                 background-color: #7400b2;
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-            }
+        }
+        /* dialog part */
+        .dialog {
+           display: none;
+           position: fixed;
+           z-index: 1;
+           left: 0;
+           top: 0;
+           width: 100%;
+           height: 100%;
+           overflow: auto;
+           background-color: rgba(0,0,0,0.4);
+               }
+
+.dialog-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #004f5d;
+  width: 50%;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .dialog-content {
+    width: 80%;
+  }
+}
     </style>
 </head>
 
@@ -200,21 +235,21 @@
     <div class="myDiv" id="myDiv">
         <h2 style="color :#000708">Loan Requests</h2>
         <img src="loan.png" alt="money" style="width:100px;height:100px;">
-        <hr style="border-top: 4px solid #000708;"></hr>
+        <!-- <hr style="border-top: 4px solid #000708;"></hr> -->
 
 
-        <p id="0" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 1 requests a loan of $1000  </p>
+        <p id="0" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 1 requests a $1000 loan  </p>
         <button class="button button1" id="1">Accept</button>
         <button class="button button2" id="2">Reject</button>
         <p id="P2" style="color:#b21b00;"> </p>
         <hr style="border-top: 2px solid #004f5d;"></hr>
-        <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;color: white;">Client 2 requests a loan of $500  </p>
+        <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;color: white;">Client 2 requests a $500 loan  </p>
         <button class="button button1" id="2500">Accept</button>
         <button class="button button2" id="2501">Reject</button>
         <p id="try" style="color:#b21b00; "> </p>
         <p id="tryAgain" style="color:#b21b00;"> </p>
         <hr style="border-top: 2px solid #004f5d;"></hr>
-        <p id="37" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 3 requests a loan of $7000  </p>
+        <p id="37" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 3 requests a $7000 loan  </p>
         <button class="button button1" id="37000">Accept</button>
         <button class="button button2" id="37001">Reject</button>
         <p id="P1" style="color:#b21b00; "> </p>
@@ -224,11 +259,11 @@
     <div class="AccountsDiv">
         <h2 style="color: #000708;">Accounts & Info</h2>
         <img src="Accounts.png" alt="account" style="width:105px;height:105px;">
-        <hr style="border-top: 4px solid #000708;"></hr>
+        <!-- <hr style="border-top: 4px solid #000708;"></hr> -->
         <style>
             .buttonX {
                 border: none;
-                color: rgb(248, 248, 248);
+                color: rgb(0, 0, 0);
                 padding: 25px 220px;
                 max-width: 220px;
                 max-height: 20px;
@@ -253,12 +288,12 @@
             }
         </style>
 
-        <button class="buttonX button3" id="500">
+        <button class="buttonX button3" id="500" onclick="openDialog()">
             <img  src="addAccount.png" width="90" height="90"/>
             <span> Add a new account </span>  
          </button>
         <div class="space"></div>
-        <button class="buttonX button3" id="501">
+        <button class="buttonX button3" id="501" onclick="openDialogRem()">
             <img  src="removeAccount.png" width="90" height="90"/>
             <span>  Remove an existing account </span> 
         </button>
@@ -277,7 +312,7 @@
     <div class="myDivCC">
         <h2 style="color: #000708;">Credit Card Applications</h2>
         <img src="CC.png" alt="money" style="width:250px;height:110px;">
-        <hr style="border-top: 4px solid #000708;"></hr>
+        <!-- <hr style="border-top: 4px solid #000708;"></hr> -->
 
         <p id="90" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 4 applied for a Credit Card </p>
         <button class="button button1" id="91">Accept</button>
@@ -297,15 +332,83 @@
     </div>
     <div class="issue">
         
-        <h3 style="color: #000708;">For any technical issue :</h3>
+        <h3 style="color: #000708;">For any technical issues :</h3>
         
-        <button class="reportButton button4"> 
+        <button class="reportButton button4" id="505"> 
         <img  src="whitSmallFlag.png" width="60" height="60"/>
         <span>Report a problem </span>  
     
       </button>
 
     </div>
+
+    <html>
+
+    <div id="dialog1" class="dialog">
+        <div class="dialog-content">
+           <h3>Fill out this form</h3>
+           <form>
+             <label for="name">Name:</label>
+             <input type="text" id="name" name="name"><br><br>
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email"><br><br>
+             <button type="submit">Submit</button>
+             <button type="button" onclick="closeDialog()">Cancel</button>
+           </form>
+        </div>
+    </div>
+
+
+    <div id="dialogRem" class="dialog" style="background-color: #80cbd9;">
+        <div class="dialog-content" style="background-color: #004f5d;">
+            <label for = "Uname" style="color: white;"> Enter the username : </label>
+            <input type="text" id="Uname" style="border: 2px solid #005b6b;background-color: #cceaf0;">
+             <br>
+             <div class="space"></div>
+            <label for = "Uname" style="color: white;"> Enter the password : </label>
+            <input type="text" id="Uname" style="border: 2px solid #005b6b;background-color: #cceaf0;">
+            <br>
+            <div class="space"></div>
+            <hr></hr>
+            <span style="color: #80cbd9;">Please specify the reason why you want to  close your account</span>
+            <div class="space"></div>
+            <div><label style="color: white;">
+                <input type="radio" name="radio-group" value="option-1">
+                Dissatisfaction with the bank's services
+              </label></div>
+           <div>  <label style="color: white;">
+            <input type="radio" name="radio-group" value="option-2">
+            Poor customer service
+          </label></div> 
+
+          <div>  <label style="color: white;">
+            <input type="radio" name="radio-group" value="option-2">
+            Offer from a competitor
+          </label></div> 
+        
+          <div>  <label style="color: white;">
+            <input type="radio" name="radio-group" value="option-2">
+           A change in financial circumstances
+          </label></div>
+
+          <div>  <label style="color: white;">
+            <input type="radio" name="radio-group" value="option-2" onclick="specifyOtherReason()">
+            Other reason ?
+          </label></div>
+          <div class="space"></div>
+          <input type="text" id="text-input" name="user-text" size="80" placeholder="Enter text here" style="border: 2px solid #005b6b;background-color: #cceaf0;">
+          <br>
+          <div class="space"></div>
+          <button class="button button1" onclick="closeDialogRem()" style="background-color: #3eb200;" >ِApply</button> 
+        <button class="button button2" onclick="closeDialogRem()" style="background-color: #b21b00;" >Cancel</button>
+        </div>
+
+    </div>
+    
+
+    
+
+    </html>
 
 
     <script>
@@ -497,6 +600,35 @@
 
         // add event listener to the button
         buttonRej6.addEventListener('click', changeContentRej6);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+////////Add a new account //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function openDialog() {
+  document.getElementById("dialog1").style.display = "block";
+}
+function closeDialog() {
+  document.getElementById("dialog1").style.display = "none";
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////
+/////  Remove Account
+///////////////////////////////////////
+function closeDialogRem() {
+  document.getElementById("dialogRem").style.display = "none";
+}
+
+function openDialogRem() {
+  document.getElementById("dialogRem").style.display = "block";
+}
+
+function specifyOtherReason(){
+
+}
+
     </script>
 </body>
 </html>
