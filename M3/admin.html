@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="Icon.ico">
+        <title>Quick Bank - Technical Issues Reports</title>
+  <style>
+     body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        /* background-color: white; */
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+    }
+
+    .bankHeader {
+            font-family: Arial, sans-serif;
+            background-color: #0097b2 !important;
+            margin: 0;
+            width: 100%;
+            height: 150px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+    }
+    
+    .panel {
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+    
+    .buttons {
+      margin-top: 20px;
+    }
+    
+    .button {
+      /* b28600 */
+      /* 4caf50 */
+      background-color: #b28600;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+      background-color: #45a049;
+    }
+    
+    .flash-message {
+      background-color: white;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      padding: 10px;
+      display: none;
+      margin-top: 10px;
+      color: #555555;
+    }
+    .welcomeMessage {
+        color: #fff;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        margin-top: 7px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .logout {
+        float: right;
+        margin-right:50px;
+        margin-top:100px;
+        background-color: transparent;
+    }
+
+    .logoutButton {
+        position: relative;
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .logoutButton .tooltiptext {
+            visibility: hidden;
+            background-color: #dedede;
+            color: black;
+            font-size: small;
+            text-align: center;
+            border-radius: 6px;
+            padding: 1px 8px;
+            /* Position the tooltip */
+            position: absolute;
+            top: 5px;
+            right: 120%;
+    }
+
+    .logoutButton:hover .tooltiptext {
+        visibility: visible;
+        cursor: pointer;
+    }
+    /* 0f52cd */
+    /* e66b3e */
+    .header h1 {
+      background-color: #b28600;
+      padding: 20px;
+      color: #ffffff;
+      text-align: center;
+      margin: 0;
+      font-size: 24px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+    <div class="bankHeader">
+        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+        <div class="logout">
+            <button type="button" class="logoutButton" onclick="logout()">
+                <span class="tooltiptext">Logout?</span>
+                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
+            </button>
+            <h1 class="welcomeMessage" style="float:right">HELLO, admin.</h1>
+        </div>
+    </div>
+
+    <br>
+    <div class="header">
+      <h1>Technical Issues Reports</h1>
+    </div>
+    <br>
+    
+
+  <div class="panel">
+    <p>Complainer ID : 4523</p>
+    <h2>System is too slow !</h2>
+    <div class="buttons">
+      <button class="button forward-it">Forward to IT department</button>
+      <button class="button forward-dev">Forward to software development department</button>
+      <button class="button send-resolved">Send resolved message</button>
+    </div>
+    <div class="flash-message"></div>
+  </div>
+  
+  <div class="panel">
+    <p>Complainer ID : 8374</p>
+    <h2>I can't do any transfers ! </h2>
+    <div class="buttons">
+      <button class="button forward-it">Forward to IT department</button>
+      <button class="button forward-dev">Forward to software development department</button>
+      <button class="button send-resolved">Send resolved message</button>
+    </div>
+    <div class="flash-message"></div>
+  </div>
+  
+  <div class="panel">
+    <p>Complainer ID : 33</p>
+    <h2>My progress is lost sometimes !</h2>
+    <div class="buttons">
+      <button class="button forward-it">Forward to IT department</button>
+      <button class="button forward-dev">Forward to software development department</button>
+      <button class="button send-resolved">Send resolved message</button>
+    </div>
+    <div class="flash-message"></div>
+  </div>
+
+  <div class="panel">
+    <p>Complainer ID : 1094</p>
+    <h2>Online payments doesn't work !</h2>
+    <div class="buttons">
+      <button class="button forward-it">Forward to IT department</button>
+      <button class="button forward-dev">Forward to software development department</button>
+      <button class="button send-resolved">Send resolved message</button>
+    </div>
+    <div class="flash-message"></div>
+  </div>
+  
+  <script>
+    // Get all the buttons
+    var buttons = document.getElementsByClassName('button');
+    
+    // Attach click event listeners to the buttons
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function(event) {
+        var parentPanel = event.target.closest('.panel');
+        var flashMessage = parentPanel.querySelector('.flash-message');
+        var message = '';
+        
+        // Hide all buttons
+        var buttons = parentPanel.querySelectorAll('.button');
+        for (var j = 0; j < buttons.length; j++) {
+          buttons[j].style.display = 'none';
+        }
+        
+        // Show appropriate flash message based on button clicked
+        if (event.target.classList.contains('forward-it')) {
+          message = 'Issue forwarded to IT department !';
+        } else if (event.target.classList.contains('forward-dev')) {
+          message = 'Issue forwarded to software development department !';
+        } else if (event.target.classList.contains('send-resolved')) {
+          message = '(Issue resolved) message sent to complainer !';
+        }
+        
+        flashMessage.innerHTML = message;
+        flashMessage.style.display = 'block';
+      });
+    }
+    // Logout function
+    function logout() {
+        window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
