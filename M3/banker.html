@@ -308,7 +308,7 @@
         <div class="space"></div>
         <button class="buttonX button3" id="503" onclick="openSelectDialog()">
             <img  src="info_Icon.png" width="50" height="50"/>
-            <span> Get the information of an account</span> 
+            <span> View the information of an account</span> 
             </button>
     </div>
 
@@ -426,7 +426,9 @@
    
    
     <script>
-
+ function logout() {
+        window.location.href = 'login.html';
+    };
         //Client 2 accept
         // select the button and the div
         const frg = document.getElementById('try');
