@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Quick Bank Account</title>
+    <link rel="icon" href="Icon.ico">
+    <title>Quick Bank - Transaction History</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./Table V01_files/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./Table V01_files/font-awesome.min.css">
@@ -13,6 +14,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name="robots" content="noindex, follow">
     <script defer="" referrerpolicy="origin" src="./Table V01_files/s.js.download"></script>
+
+    <script src="notificationSystem.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="notificationSystemCSS.css">
+
     <script nonce="d297444d-1767-4bcc-830d-52d413ef143e">(function (w, d) { !function (bg, bh, bi, bj) { bg[bi] = bg[bi] || {}; bg[bi].executed = []; bg.zaraz = { deferred: [], listeners: [] }; bg.zaraz.q = []; bg.zaraz._f = function (bk) { return function () { var bl = Array.prototype.slice.call(arguments); bg.zaraz.q.push({ m: bk, a: bl }) } }; for (const bm of ["track", "set", "debug"]) bg.zaraz[bm] = bg.zaraz._f(bm); bg.zaraz.init = () => { var bn = bh.getElementsByTagName(bj)[0], bo = bh.createElement(bj), bp = bh.getElementsByTagName("title")[0]; bp && (bg[bi].t = bh.getElementsByTagName("title")[0].text); bg[bi].x = Math.random(); bg[bi].w = bg.screen.width; bg[bi].h = bg.screen.height; bg[bi].j = bg.innerHeight; bg[bi].e = bg.innerWidth; bg[bi].l = bg.location.href; bg[bi].r = bh.referrer; bg[bi].k = bg.screen.colorDepth; bg[bi].n = bh.characterSet; bg[bi].o = (new Date).getTimezoneOffset(); if (bg.dataLayer) for (const bt of Object.entries(Object.entries(dataLayer).reduce(((bu, bv) => ({ ...bu[1], ...bv[1] }))))) zaraz.set(bt[0], bt[1], { scope: "page" }); bg[bi].q = []; for (; bg.zaraz.q.length;) { const bw = bg.zaraz.q.shift(); bg[bi].q.push(bw) } bo.defer = !0; for (const bx of [localStorage, sessionStorage]) Object.keys(bx || {}).filter((bz => bz.startsWith("_zaraz_"))).forEach((by => { try { bg[bi]["z_" + by.slice(7)] = JSON.parse(bx.getItem(by)) } catch { bg[bi]["z_" + by.slice(7)] = bx.getItem(by) } })); bo.referrerPolicy = "origin"; bo.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bg[bi]))); bn.parentNode.insertBefore(bo, bn) };["complete", "interactive"].includes(bh.readyState) ? zaraz.init() : bg.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
 
     <style>
@@ -47,6 +54,8 @@
 
         .customSwalContainer {
             border-radius: 0px !important;
+            max-height: 700px !important;
+            display: inline-block !important;
         }
 
         .bankHeader {
@@ -59,6 +68,10 @@
             z-index: 20;
         }
 
+        .home:hover {
+            cursor: pointer;
+        }
+
         .logout {
             float: right;
             margin-right: 50px;
@@ -69,7 +82,7 @@
             color: #fff;
             margin-left: 15px;
             margin-bottom: 20px;
-            margin-top: 7px;
+            margin-top: 10px;
             font-size: medium;
             font-weight: 600;
         }
@@ -88,7 +101,7 @@
             max-width: 1000px;
             height: 470px;
             max-height: 470px;
-            margin: 20px 20px 0;
+            margin-left: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 5px;
@@ -173,13 +186,17 @@
 
 <body>
     <div class="bankHeader">
-        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
         <div class="logout">
+            <button type="button" class="notificationButton" onclick="notificationSystem()">
+                <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
+                <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
+            </button>
             <button type="button" class="logoutButton" onclick="logout()">
                 <span class="tooltiptext">Logout?</span>
-                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left" />
+                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
             </button>
-            <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
+            <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
         </div>
     </div>
     <h1 class="containerTitle">SAVING ACCOUNT</h1>
@@ -354,29 +371,28 @@
             <table>
                 <tbody>
                     <tr>
-                        <td class="menuOption"> &nbsp;&nbsp; <i class="material-icons">group</i> Manage bank accounts <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="manageBankAccounts()"> &nbsp;&nbsp; <i class="material-icons">group</i> Manage bank accounts <hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption"> &nbsp;&nbsp; <i class="material-icons">monetization_on</i> Transfer money <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="transferMoney()"> &nbsp;&nbsp; <i class="material-icons">monetization_on</i> Transfer money <hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption"> &nbsp;&nbsp; <i class="material-icons">credit_card</i> Manage credit cards <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="applyForCreditCard()"> &nbsp;&nbsp; <i class="material-icons">credit_card</i> Apply for a new credit card <hr class="menuLine"></td>
                     </tr>
                     <tr>
                         <td class="menuOption" onclick="payCreditCardChoose()"> &nbsp;&nbsp; <i class="material-icons">card_membership</i> Pay credit card bill<hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption"> &nbsp;&nbsp; <i class="material-icons">card_giftcard</i> View credit card points <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="viewCreditCardPoints()"> &nbsp;&nbsp; <i class="material-icons">card_giftcard</i> View credit card points <hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption"> &nbsp;&nbsp; <i class="material-icons">security</i> Report credit card loss/theft <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="reportCreditCard()"> &nbsp;&nbsp; <i class="material-icons">security</i> Report credit card loss/theft <hr class="menuLine"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+        
         <script>
 
             function logout() {
@@ -478,6 +494,34 @@
                     }
                 })
             }
+
+            function Home() {
+                window.location.href = 'HomePage.html';
+            };
+
+            function manageBankAccounts() {
+                window.location.href = 'closeAccount.html';
+            };
+
+            function applyForCreditCard() {
+                window.location.href = 'applyForCreditCard.html';
+            };
+
+            function transferMoney() {
+                window.location.href = 'applyForCreditCard.html';
+            };
+
+            function transferMoney() {
+                window.location.href = 'applyForCreditCard.html';
+            };
+
+            function viewCreditCardPoints() {
+                window.location.href = 'applyForCreditCard.html';
+            };
+
+            function reportCreditCard() {
+                window.location.href = 'report.html';
+            };
         </script>
 </body>
 </html>

@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" href="Icon.ico">
-        <title>Quick Bank - Home Page</title>
+<head>
+    <link rel="icon" href="Icon.ico">
+    <title>Quick Bank - Home Page</title>
+
+    <script src="notificationSystem.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="notificationSystemCSS.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <style>
 
-a:link {
-  color: blue;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:visited {
-  color: purple;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:hover {
-  color: blue;
-  background-color: transparent;
-  text-decoration: underline;
-}
-a:active {
-  color: rgb(150, 150, 58);
-  background-color: transparent;
-  text-decoration: underline;
-}
+        a:link {
+            color: blue;
+            background-color: transparent;
+            text-decoration: none;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f1f1f1;
-        margin: 0;
-        padding: 0;
-        z-index: 10;
-    }
+        a:visited {
+            color: purple;
+            background-color: transparent;
+            text-decoration: none;
+        }
 
-    .bankHeader {
+        a:hover {
+            color: blue;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: rgb(150, 150, 58);
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .bankHeader {
             font-family: Arial, sans-serif;
             background-color: #0097b2 !important;
             margin: 0;
@@ -42,147 +53,175 @@ a:active {
             height: 150px;
             box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
             z-index: 20;
-    }
-    .logo {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+        }
 
-    .welcomeMessage {
-        color: #fff;
-        margin-left: 15px;
-        margin-bottom: 20px;
-        margin-top: 7px;
-        font-size: medium;
-        font-weight: 600;
-    }
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
 
-    .logout {
-        float: right;
-        margin-right:50px;
-        margin-top:100px;
-        background-color: transparent;
-    }
+        .welcomeMessage {
+            color: #fff;
+            margin-left: 15px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: medium;
+            font-weight: 600;
+        }
 
-    .logoutButton {
-        position: relative;
-        display: inline-block;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
+        .logout {
+            float: right;
+            margin-right: 50px;
+            margin-top: 100px;
+            background-color: transparent;
+        }
 
-    .logoutButton .tooltiptext {
-            visibility: hidden;
-            background-color: #dedede;
-            color: black;
-            font-size: small;
+        .logoutButton {
+            position: relative;
+            display: inline-block;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+            .logoutButton .tooltiptext {
+                visibility: hidden;
+                background-color: #dedede;
+                color: black;
+                font-size: small;
+                text-align: center;
+                border-radius: 6px;
+                padding: 1px 8px;
+                /* Position the tooltip */
+                position: absolute;
+                top: 5px;
+                right: 120%;
+            }
+
+            .logoutButton:hover .tooltiptext {
+                visibility: visible;
+                cursor: pointer;
+            }
+
+        .button {
+            background-color: #b28600; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
             text-align: center;
-            border-radius: 6px;
-            padding: 1px 8px;
-            /* Position the tooltip */
-            position: absolute;
-            top: 5px;
-            right: 120%;
-    }
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
 
-    .logoutButton:hover .tooltiptext {
-        visibility: visible;
-        cursor: pointer;
-    }
+            .button:hover {
+                cursor: pointer;
+            }
 
-    .button {
-  background-color: #b28600; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-    }
+        .home {
+            appearance: auto;
+        }
 
-    .button:hover {
-        cursor: pointer;
-    }
-    .home{
-      appearance: auto;
-    }
-    .home:hover{
-      visibility: visible;
-      cursor: pointer;
-    }
-    .container {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 50px auto;
-    max-width: 800px;
-    padding: 30px;
-  }
-  
-  .containerTitle {
-    text-align: center;
-  }
-  
-  .container1 {
-    margin-top: 30px;
-  }
-  
-  .containerHeader {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .containerHeader h2 {
-    margin: 0;
-  }
-  
-  .table100 {
-    margin-bottom: 20px;
-  }
-  
-  table {
-    border-collapse: collapse;
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    padding: 12px 15px;
-    text-align: left;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .negative {
-    color: red;
-  }
-  
-  #payForCreditCardButton {
-    padding: 3px;
-  }
-  
-  #amountToBePaid, #billDueDate {
-    padding: 10px;
-  }
-</style>  
+            .home:hover {
+                visibility: visible;
+                cursor: pointer;
+            }
+
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 50px auto;
+            max-width: 800px;
+            padding: 30px;
+        }
+
+        .containerTitle {
+            text-align: center;
+        }
+
+        .container1 {
+            margin-top: 30px;
+        }
+
+        .containerHeader {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            .containerHeader h2 {
+                margin: 0;
+            }
+
+        .table100 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        td, th {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .negative {
+            color: red;
+        }
+
+        #payForCreditCardButton {
+            padding: 3px;
+        }
+
+        #amountToBePaid, #billDueDate {
+            padding: 10px;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+    </style>
 </head>
   <body>
-    <div class="bankHeader">
-        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
-        <div class="logout">
-            <button type="button" class="logoutButton" onclick="logout()">
-                <span class="tooltiptext">Logout?</span>
-                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
-            </button>
-            <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
-        </div>
-    </div>
+      <div class="bankHeader">
+          <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
+          <div class="logout">
+              <button type="button" class="notificationButton" onclick="notificationSystem()">
+                  <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
+                  <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
+              </button>
+              <button type="button" class="logoutButton" onclick="logout()">
+                  <span class="tooltiptext">Logout?</span>
+                  <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
+              </button>
+              <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
+          </div>
+      </div>
     <div class="container">
       <h1 class="containerTitle">Online Bill Payment</h1>
       <div class="container1">
@@ -192,49 +231,68 @@ a:active {
           <!-- <h2 style="float: right; font-weight: 400; font-size: medium;">Total amount to be paid: $1050.00</h2> -->
           <!-- <h2 style="float: left; font-weight: 600; margin-left: 20px; font-size: large; ">AMOUNT LEFT:</h2> -->
         </div>
+        <style>
+            .setReminderButton {
+                width: 30px;
+                font-size: smaller;
+                color: #0097b2;
+                text-align: center;
+            }
+            .setReminderButton:hover {
+                cursor:pointer;
+            }
+        </style>
         <div class="table100" style="overflow-y: scroll; height: 350px; max-height: 350px">
           <table>
             <tbody>
-              <tr>
-                <td class="column1">Date of issuance</td>
-                <td class="column2">Bill</td>
-                <td class="column3">To be paid</td>
-                <td class="column4">Bill Issuer</td>
-              </tr>
-              <tr>
-                <td class="column1">2017-09-28 05:57</td>
-                <td class="column2">Electricity</td>
-                <td class="column3 negative">$40.00</td>
-                <td class="column4">Electricity of America-EOA</td>
-              </tr>
-              <tr>
-                <td class="column1">2017-09-26 05:57</td>
-                <td class="column2">Gas</td>
-                <td class="column3 negative">$30.00</td>
-                <td class="column4">Gas Amreicana</td>
-              </tr>
-              <tr>
-                <td class="column1">2017-09-25 23:06</td>
-                <td class="column2">Water</td>
-                <td class="column3 negative">$50.00</td>
-                <td class="column4">Nestle</td>              </tr>
-              <tr>
-                <td class="column1">2017-09-24 05:57</td>
-                <td class="column2">Telephone</td>
-                <td class="column3 negative">$30.00</td>
-                <td class="column4">AT&T</td>
-              </tr>
+                <tr>
+                    <td class="column1" style="width:140px">Date of issuance</td>
+                    <td class="column2" style="width:70px">Bill</td>
+                    <td class="column3" style="width:70px">To be paid</td>
+                    <td class="column4" style="width:140px">Bill Issuer</td>
+                    <td class="column5" style="width: 70px; text-align: center;">Reminder</td>
+                </tr>
+                <tr>
+                    <td class="column1">2017-09-28 05:57</td>
+                    <td class="column2">Electricity</td>
+                    <td class="column3 negative">$40.00</td>
+                    <td class="column4">Electricity of America-EOA</td>
+                    <td class="setReminderButton" onclick="setReminder(0)"><i class="material-icons">notifications_active</i></td>
+                </tr>
+                <tr>
+                    <td class="column1">2017-09-26 05:57</td>
+                    <td class="column2">Gas</td>
+                    <td class="column3 negative">$30.00</td>
+                    <td class="column4">Gas Amreicana</td>
+                    <td class="setReminderButton" onclick="setReminder(1)"><i class="material-icons">notifications_active</i></td>
+                </tr>
+                <tr>
+                    <td class="column1">2017-09-25 23:06</td>
+                    <td class="column2">Water</td>
+                    <td class="column3 negative">$50.00</td>
+                    <td class="column4">Nestle</td>
+                    <td class="setReminderButton" onclick="setReminder(2)"><i class="material-icons">notifications_active</i></td>
+                </tr>
+                <tr>
+                    <td class="column1">2017-09-24 05:57</td>
+                    <td class="column2">Telephone</td>
+                    <td class="column3 negative">$30.00</td>
+                    <td class="column4">AT&T</td>
+                    <td class="setReminderButton" onclick="setReminder(3)"><i class="material-icons">notifications_active</i></td>
+                </tr>
               <tr>
                 <td class="column1">2017-09-23 05:57</td>
                 <td class="column2">Telephone</td>
                 <td class="column3 negative">$20.00</td>
-                <td class="column4">Verizon</td>
+                <td class="column4" style="width:60px">Verizon</td>
+                <td class="setReminderButton" onclick="setReminder(4)"><i class="material-icons">notifications_active</i></td>
               </tr>
               <tr>
-                <td class="column1">2017-09-22 05:57</td>
-                <td class="column2">Electricity</td>
-                <td class="column3 negative">$30.00</td>
-                <td class="column4">Electricity of America-EOA</td>
+                  <td class="column1">2017-09-22 05:57</td>
+                  <td class="column2">Electricity</td>
+                  <td class="column3 negative">$30.00</td>
+                  <td class="column4">Electricity of America-EOA</td>
+                  <td class="setReminderButton" onclick="setReminder(5)"><i class="material-icons">notifications_active</i></td>
               </tr>
               <!-- <tr>
                 <td class="column1">2017-09-22 05:57</td>
@@ -369,8 +427,21 @@ function payCreditCard() {
   payForCreditCardButton.style.display = "none";
   
   // Close confirmation modal
-  closeConfirmation();
-}
+    closeConfirmation();
+
+    
+        }
+
+        function setReminder(a) {
+            const element = document.getElementsByClassName("setReminderButton").item(a);
+            if (element.style.color == 'black') {
+                element.innerHTML = '<i class="material-icons">notifications_active</i>';
+                element.style.color = "#0097b2";
+            } else {
+                element.innerHTML = '<i class="material-icons">notifications_off</i>';
+                element.style.color = 'black';
+            }
+        }
 </script>
 
   </body>

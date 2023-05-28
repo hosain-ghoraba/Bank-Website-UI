@@ -1,0 +1,136 @@
+.notificationButton {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    background: none;
+    border: none;
+}
+
+    .notificationButton:hover {
+        cursor:pointer;
+    }
+
+    .notificationButton .tooltiptext {
+        visibility: hidden;
+        background-color: #dedede;
+        color: black;
+        font-size: small;
+        text-align: center;
+        border-radius: 6px;
+        padding: 1px 8px;
+        /* Position the tooltip */
+        position: absolute;
+        top: 5px;
+        right: 120%;
+    }
+
+    .notificationButton:hover .tooltiptext {
+        visibility: visible;
+    }
+
+.notification {
+    font-size: medium;
+    color: gray;
+    background-color: white;
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+    .notification:hover {
+        background-color: #f5f5f5;
+        cursor: pointer;
+    }
+
+.notificationIcon {
+    color: #bda366;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+    .notificationIcon:hover {
+        color: black;
+        cursor: pointer;
+    }
+
+.customConfirmButton {
+    font-weight: 600 !important;
+    background-color: #0097b2 !important;
+    color: white !important;
+    font-size: medium !important;
+    cursor: pointer !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+}
+
+.customCancelButton {
+    font-weight: 600 !important;
+    color: white !important;
+    font-size: medium !important;
+    cursor: pointer !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+}
+
+.customSwalContainer {
+    border-radius: 0px !important;
+    max-height: 700px !important;
+    display: inline-block !important;
+}
+
+.welcomeMessage {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    margin-top: 7px;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.logout {
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 50px;
+    margin-top: 100px;
+    background-color: transparent;
+}
+
+.logoutButton {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+    .logoutButton .tooltiptext {
+        visibility: hidden;
+        background-color: #dedede;
+        color: black;
+        font-size: small;
+        text-align: center;
+        border-radius: 6px;
+        padding: 1px 8px;
+        /* Position the tooltip */
+        position: absolute;
+        top: 5px;
+        right: 120%;
+    }
+
+    .logoutButton:hover .tooltiptext {
+        visibility: visible;
+        cursor: pointer;
+    }
