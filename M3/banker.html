@@ -51,6 +51,7 @@
 
         .button1 {
             background-color: #3eb200;
+            
         }
         /* Green */
         .button2 {
@@ -205,14 +206,16 @@
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
+  max-height: 600px;
   border: 1px solid #004f5d;
   width: 50%;
   text-align: left;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px ) {
   .dialog-content {
     width: 80%;
+  
   }
 }
     </style>
@@ -288,17 +291,17 @@
             }
         </style>
 
-        <button class="buttonX button3" id="500" onclick="openDialog()">
+        <button class="buttonX button3" id="500" onclick="addClick()">
             <img  src="addAccount.png" width="90" height="90"/>
             <span> Add a new account </span>  
          </button>
         <div class="space"></div>
-        <button class="buttonX button3" id="501" onclick="openDialogRem()">
+        <button class="buttonX button3" id="501" onclick="remClick()">
             <img  src="removeAccount.png" width="90" height="90"/>
             <span>  Remove an existing account </span> 
         </button>
         <div class="space"></div>
-        <button class="buttonX button3" id="502">
+        <button class="buttonX button3" id="502"  onclick="openSendDialog()">
             <img  src="AnnouncementIcon.png" width="70" height="70"/>
             <span>   Send an announcement</span> 
         </button>
@@ -342,75 +345,28 @@
 
     </div>
 
-    <html>
-
-    <div id="dialog1" class="dialog">
-        <div class="dialog-content">
-           <h3>Fill out this form</h3>
-           <form>
-             <label for="name">Name:</label>
-             <input type="text" id="name" name="name"><br><br>
-             <label for="email">Email:</label>
-             <input type="email" id="email" name="email"><br><br>
-             <button type="submit">Submit</button>
-             <button type="button" onclick="closeDialog()">Cancel</button>
-           </form>
-        </div>
+    <div id="dialogSendAnnounce" class="dialog" style="background-color: #00a9b2;">
+            <div id="dialogSend" class="dialog-content" style="background-color:#004f5d;">
+                <label for = "Uname1" style="color: white;"> Enter the announcement : </label>
+                <br>
+                <textarea id="2023" rows="4" cols="50"></textarea>
+                <div class="space"></div>
+                <label id="announce" style="color:#b21b00;visibility: hidden;"  >*announcement message cannot be empty</label>
+                <div class="space"></div>
+                <button id="send" class="button button1"  style="background-color: #3eb200;" onclick="sendChecker()" >ِSend</button> 
+                <button class="button button2" onclick="closeDialogSend()" style="background-color: #b21b00;"  >Cancel</button>
+            </div>
     </div>
-
-
-    <div id="dialogRem" class="dialog" style="background-color: #80cbd9;">
-        <div class="dialog-content" style="background-color: #004f5d;">
-            <label for = "Uname" style="color: white;"> Enter the username : </label>
-            <input type="text" id="Uname" style="border: 2px solid #005b6b;background-color: #cceaf0;">
-             <br>
-             <div class="space"></div>
-            <label for = "Uname" style="color: white;"> Enter the password : </label>
-            <input type="text" id="Uname" style="border: 2px solid #005b6b;background-color: #cceaf0;">
-            <br>
-            <div class="space"></div>
-            <hr></hr>
-            <span style="color: #80cbd9;">Please specify the reason why you want to  close your account</span>
-            <div class="space"></div>
-            <div><label style="color: white;">
-                <input type="radio" name="radio-group" value="option-1">
-                Dissatisfaction with the bank's services
-              </label></div>
-           <div>  <label style="color: white;">
-            <input type="radio" name="radio-group" value="option-2">
-            Poor customer service
-          </label></div> 
-
-          <div>  <label style="color: white;">
-            <input type="radio" name="radio-group" value="option-2">
-            Offer from a competitor
-          </label></div> 
-        
-          <div>  <label style="color: white;">
-            <input type="radio" name="radio-group" value="option-2">
-           A change in financial circumstances
-          </label></div>
-
-          <div>  <label style="color: white;">
-            <input type="radio" name="radio-group" value="option-2" onclick="specifyOtherReason()">
-            Other reason ?
-          </label></div>
-          <div class="space"></div>
-          <input type="text" id="text-input" name="user-text" size="80" placeholder="Enter text here" style="border: 2px solid #005b6b;background-color: #cceaf0;">
-          <br>
-          <div class="space"></div>
-          <button class="button button1" onclick="closeDialogRem()" style="background-color: #3eb200;" >ِApply</button> 
-        <button class="button button2" onclick="closeDialogRem()" style="background-color: #b21b00;" >Cancel</button>
+ 
+    <div id="dialogOkay" class="dialog"  >
+       <div id="dialogOK" class="dialog-content" style="background-color:#f1f1f1;">
+        <label for = "Uname1" style="color:#000708;"> Announcement is sent successfully </label>
+        <div class="space"></div>
+        <div class="space"></div>
+        <button id="send" class="button button1"  style="background-color: #3eb200;" onclick="closeDialogOk()" >ِOK</button> 
         </div>
-
-    </div>
-    
-
-    
-
-    </html>
-
-
+     </div>
+   
     <script>
 
         //Client 2 accept
@@ -600,34 +556,40 @@
 
         // add event listener to the button
         buttonRej6.addEventListener('click', changeContentRej6);
-        ///////////////////////////////////////////////////////////////////////////////////////////////////
-////////Add a new account //////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-function openDialog() {
-  document.getElementById("dialog1").style.display = "block";
+function  addClick(){
+    window.location.href = "openAccount.html";
 }
-function closeDialog() {
-  document.getElementById("dialog1").style.display = "none";
+function remClick(){
+    window.location.href = "closeAccount.html";
+}
+function openSendDialog(){
+    document.getElementById("dialogSendAnnounce").style.display = "block";
 }
 
-
-//////////////////////////////////////////////////////////////////////////////////
-/////  Remove Account
-///////////////////////////////////////
-function closeDialogRem() {
-  document.getElementById("dialogRem").style.display = "none";
+function closeDialogSend(){
+    document.getElementById("dialogSendAnnounce").style.display = "none";
 }
 
-function openDialogRem() {
-  document.getElementById("dialogRem").style.display = "block";
+function sendChecker(){
+    var txtArea = document.getElementById("2023");
+    var must = document.getElementById("announce");
+    var okDialog = document.getElementById("dialogOkay");
+    if(txtArea.value === "")
+       must.style.visibility = "visible";
+    else{
+      closeDialogSend();  
+      openDialogOk();
+    } 
+}
+function openDialogOk(){
+  document.getElementById("dialogOkay").style.display = "block";
+}
+function closeDialogOk(){
+  document.getElementById("dialogOkay").style.display = "none";
 }
 
-function specifyOtherReason(){
 
-}
 
     </script>
 </body>
