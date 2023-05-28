@@ -306,7 +306,7 @@
             <span>   Send an announcement</span> 
         </button>
         <div class="space"></div>
-        <button class="buttonX button3" id="503">
+        <button class="buttonX button3" id="503" onclick="openSelectDialog()">
             <img  src="info_Icon.png" width="50" height="50"/>
             <span> Get the information of an account</span> 
             </button>
@@ -369,6 +369,61 @@
         <button id="send" class="button button2"  style="background-color:#004f5d;" onclick="returnBack()" >ِReturn</button> 
         </div>
      </div>
+
+
+     <div id="dialogInfo" class="dialog">
+        <div id="dialogInfo" class="dialog-content" style="background-color:#f1f1f1;">
+         <label for="reason" style="font-size: larger;"><b>Choose an attribute to display account information :<b></label>
+         <div class="space"></div>
+         <select id="2024" onchange="doFunc()"  required>
+           <option>Choose an option</option>
+           <option value="AccountID">Account ID</option>
+           <option value="Phone Number">Phone Number</option>
+           <option value="E-mail">E-mail</option>
+         </select>
+ 
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+         <div class="space"></div>
+        <div id="accountId" style="display: none;">
+         <label>Enter ID :</label>
+         <input id="A1" type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
+         <label id="A2" style="color:#b21b00;display: none;"  >*You must fill this field</label>
+         <label id="A3" style="color:#b21b00;display: none;"  >*This field must be only numbers</label>
+         <label id="A4" style="color:#b21b00;display: none;"  >*No such account</label>
+        </div>
+ 
+        <div id="phoneNumber" style="display: none;">
+         <label>Enter Phone Number :</label>
+         <input id="PN1" type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
+         <label id="PN2" style="color:#b21b00;display: none;"  >*You must fill this field</label>
+         <label id="PN3" style="color:#b21b00;display: none;"  >*This field must be only numbers</label>
+         <label id="PN4" style="color:#b21b00;display: none;"  >*No such account</label>
+        </div>
+ 
+        <div id="E-mail" style="display: none;">
+         <label>Enter E-mail :</label>
+         <input id="E1"  type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
+         <label id="E2" style="color:#b21b00;display: none;"  >*You must fill this field</label>
+         <label id="E3" style="color:#b21b00;display: none;"  >*This field must end with @QuickBank.com</label>
+         <label id="E4" style="color:#b21b00;display: none;"  >*No such account</label>
+        </div>
+ 
+         <div class="space"></div>
+ 
+         <button id="select" class="button button1"  style="background-color: #3eb200;" onclick="displayFunc()" >Display</button> 
+         <button class="button button2" onclick="closeSelectDialog()" style="background-color: #b21b00;"  >Cancel</button>
+        </div>
+      </div>  
+   
    
     <script>
 
@@ -573,7 +628,13 @@ function openSendDialog(){
 function closeDialogSend(){
     document.getElementById("dialogSendAnnounce").style.display = "none";
 }
+function openSelectDialog(){
+    document.getElementById("dialogInfo").style.display = "block";
+}
 
+function closeSelectDialog(){
+    document.getElementById("dialogInfo").style.display = "none";
+}
 function sendChecker(){
     var txtArea = document.getElementById("2023");
     var must = document.getElementById("announce");
@@ -594,6 +655,146 @@ function closeDialogOk(){
 function returnBack(){
     closeDialogOk();
     openSendDialog();
+}
+function doFunc(){
+var selectedOption = document.getElementById("2024").value;
+ if(selectedOption === "AccountID")
+   accountID();
+ if (selectedOption === "Phone Number")
+   phoneNumber();
+ if(selectedOption === "E-mail")
+   Email();  
+}  
+     
+
+function accountID(){
+    var pNum =document.getElementById("phoneNumber");
+    var eM = document.getElementById("E-mail");
+    
+    if(pNum.style.display === "block")
+      pNum.style.display= "none";
+    if(eM.style.display === "block") 
+     eM.style.display = "none";
+
+   var accId = document.getElementById("accountId");
+   accId.style.display = "block" ;
+}
+
+function phoneNumber(){
+    var eM = document.getElementById("E-mail");
+    var accId = document.getElementById("accountId");
+
+    if(eM.style.display === "block") 
+     eM.style.display = "none";
+
+    if(accId.style.display === "block") 
+     accId.style.display = "none";
+
+     var pNum =document.getElementById("phoneNumber");
+     pNum.style.display = "block"; 
+}
+
+function Email(){
+    var accId = document.getElementById("accountId");
+    var pNum =document.getElementById("phoneNumber");
+    if(accId.style.display === "block") 
+     accId.style.display = "none";
+     if(pNum.style.display === "block")
+      pNum.style.display = "none";
+
+      var eM = document.getElementById("E-mail");
+      eM.style.display = "block";  
+}
+
+function displayFunc(){
+    var pNum =document.getElementById("phoneNumber");
+    var eM = document.getElementById("E-mail");
+    var accId = document.getElementById("accountId");
+
+    if(accId.style.display === "block"){
+       var acc = document.getElementById("A1");
+       var msg = document.getElementById("A2"); 
+       var l1 =   document.getElementById("A3");   
+       var s1 = document.getElementById("A4");
+       const specificVal = '1234';
+       var value = acc.value;
+       if(value === ""){
+        l1.style.display = "none";
+        s1.style.display = "none";  
+        msg.style.display = "block";
+       } 
+       else if(!Number.isInteger(parseInt(value))){
+          msg.style.display = "none";
+          s1.style.display = "none";
+          l1.style.display = "block";  
+       } 
+       else if(value === specificVal){
+        window.location.href = "AccountInformation.html";
+       }
+       else{
+          msg.style.display = "none";
+          l1.style.display = "none"; 
+          s1.style.display = "block"; 
+       }
+          
+    }
+
+
+    if(pNum.style.display === "block"){
+       var phone = document.getElementById("PN1");
+       var msg2 = document.getElementById("PN2"); 
+       var l2 =   document.getElementById("PN3");
+       var s2 = document.getElementById("PN4");
+       if(phone.value === ""){
+        l2.style.display = "none"; 
+        s2.style.display = "none"; 
+        msg2.style.display = "block";
+       }  
+       else if(!Number.isInteger(parseInt(phone.value))){
+        msg2.style.display = "none";
+        s2.style.display = "none"; 
+        l2.style.display = "block";     
+       }  
+       else if(phone.value ==="0123456789"){
+          window.location.href ="AccountInformation.html" ;
+       }
+       else{
+        msg2.style.display = "none";
+        l2.style.display = "none";  
+        s2.style.display = "block";  
+       }
+    }
+
+    if(eM.style.display === "block"){
+       var eM = document.getElementById("E1");
+       var msg3 = document.getElementById("E2");
+       var l3 =   document.getElementById("E3");
+       var s3 = document.getElementById("E4");
+       var value = eM.value;
+       const specificVal2 ="client@QuickBank.com";
+       if(eM.value === ""){
+        l3.style.display = "none";
+        s3.style.display = "none";
+        msg3.style.display = "block";
+       }
+       else if(!value.endsWith("@QuickBank.com")){
+          msg3.style.display = "none";
+          s3.style.display = "none";
+          l3.style.display = "block";
+       } 
+       else if (eM.value === specificVal2){
+          window.location.href = "AccountInformation.html";
+       }
+       else
+       {
+          msg3.style.display = "none";
+          l3.style.display = "none";
+          s3.style.display = "block";
+       }  
+    }
+
+
+
 }
 
     </script>
