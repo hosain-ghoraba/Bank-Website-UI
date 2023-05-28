@@ -360,10 +360,13 @@
  
     <div id="dialogOkay" class="dialog"  >
        <div id="dialogOK" class="dialog-content" style="background-color:#f1f1f1;">
-        <label for = "Uname1" style="color:#000708;"> Announcement message is sent successfully </label>
+        <label for = "Uname1" style="color:#3eb200;font-size: larger;"> Announcement message is sent successfully </label>
+        <br>
+        <label><i>If you want to modify your message , press on return </i></label>
         <div class="space"></div>
         <div class="space"></div>
-        <button id="send" class="button button1"  style="background-color: #3eb200;" onclick="closeDialogOk()" >ِOK</button> 
+        <button id="send" class="button button1"  style="background-color: #3eb200;" onclick="closeDialogOk()" >ِDone</button> 
+        <button id="send" class="button button2"  style="background-color:#004f5d;" onclick="returnBack()" >ِReturn</button> 
         </div>
      </div>
    
@@ -588,8 +591,10 @@ function openDialogOk(){
 function closeDialogOk(){
   document.getElementById("dialogOkay").style.display = "none";
 }
-
-
+function returnBack(){
+    closeDialogOk();
+    openSendDialog();
+}
 
     </script>
 </body>
