@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="icon" href="Icon.ico">
-  <title>Quick Bank - apply for a loan</title>
+  <title>Quick Bank - apply for credit card</title>
   <style>
     .bankHeader {
       font-family: Arial, sans-serif;
@@ -136,46 +136,36 @@
       margin-top: 20px;
       font-weight: bold;
     }
+    .home{
+      appearance: auto;
+    }
+    .home:hover{
+      visibility: visible;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div class="bankHeader">
-    <div style="width: 500px; float: left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
+    <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
     <div class="logout">
-      <button type="button" class="logoutButton" onclick="logout()">
-        <span class="tooltiptext">Logout?</span>
-        <img src="logout_icon.png" alt="logout" width="30" height="30" style="float: left">
-      </button>
-      <h1 class="welcomeMessage" style="float: right">HELLO, user.</h1>
+        <button type="button" class="logoutButton" onclick="logout()">
+            <span class="tooltiptext">Logout?</span>
+            <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
+        </button>
+        <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
     </div>
-  </div>
+</div>
   <br>
 
   <div class="container">
-    <h1>Apply for a loan</h1>
+    <h1>Credit card Application </h1>
     <form id="accountForm">
-
-      <br>
-      <label for="accountID">Bank account ID (the one you are applying a loan for ) :</label>
+      <br>  
+      <label for="accountID">Bank account ID (the one you are applying a credit card for ) :</label>
       <input type="number" id="accountID" required>
 
-      <label for="currentJob">Current Job :</label>
-      <input type="text" id="currentJob" required>
-
-      <label for="loanType">Loan Type :</label>
-      <select id="loanType" required>
-        <option value="">Select Loan Type</option>
-        <option value="current">Personal</option>
-        <option value="recurring">Car</option>
-      </select>
-
-      <label for="loanAmount">Amount (in USD):</label>
-      <input type="number" id="loanAmount" required>
-
-      <label for="loanDuration">When will you be able to pay off the loan?</label>
-      <input type="date" id="loanDuration" required>
-
-      <button type="submit" class="button">Submit</button>
+      <button type="submit" class="button">Apply</button>
     </form>
 
     <div id="flashMessage" class="flash-message"></div>
@@ -188,14 +178,15 @@
     accountForm.addEventListener('submit', function(event) {
       event.preventDefault();
 
+      // Retrieve form values
       var accountID = document.getElementById('accountID').value;
-      if(!(accountID == 1234 || accountID == 4321))
-        {
-            alert("You don't have an account with this ID");
-            return;
-        }
+      if(!(accountID == 1234 || accountID == 4321) ){
+        alert("You don't have an account with this ID");
+        return;
+      }
       // Display success message with account ID
-      var message = "Your loan application has been submitted , we will review it and get back to you soon."
+      var message = "Your credit card application has been submitted , we will review it and get back to you soon."
+
       flashMessage.innerHTML = message;
       flashMessage.style.display = 'block';
       flashMessage.scrollIntoView({ behavior: 'smooth' });
@@ -208,6 +199,9 @@
     function logout() {
         window.location.href = "login.html";
     }
+    function Home() {
+                window.location.href = 'HomePage.html';
+            };
   </script>
 </body>
 </html>
