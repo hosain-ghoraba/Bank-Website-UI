@@ -160,19 +160,26 @@
       
 
     }
+    .home{
+      appearance: auto;
+    }
+    .home:hover{
+      visibility: visible;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-    <div class="bankHeader">
-        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" alt="Bank Logo" width="500"></div>
-        <div class="logout">
-            <button type="button" class="logoutButton" onclick="logout()">
-                <span class="tooltiptext">Logout?</span>
-                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
-            </button>
-            <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
-        </div>
+  <div class="bankHeader">
+    <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="bankerHome()"></div>
+    <div class="logout">
+        <button type="button" class="logoutButton" onclick="logout()">
+            <span class="tooltiptext">Logout?</span>
+            <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
+        </button>
+        <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
     </div>
+</div>
 
     <br>
     
@@ -249,6 +256,9 @@
     // logout function
     function logout() {
         window.location.href = "login.html";
+    }
+    function bankerHome() {
+        window.location.href = "banker.html";
     }
   </script>
 </body>
