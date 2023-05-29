@@ -231,29 +231,7 @@
   
   }
 }
-.container {
-  display: flex; /* Make the container a flexbox */
-  justify-content: space-between; /* Space out the items */
-  float: left;
-  border: 5px outset #000708;
-            background-color: #00a9b2;
-            text-align: center;
-            height: 100px;
-            width: 99%;
-}
-
-.line {
-  border-left: 1px solid black; /* Add a solid black vertical border */
-  height: 100%; /* Set the height to match the container */
-  margin: 0 10px; /* Add some margin between the items and lines */
-}
-
-.item {
-  flex-basis: 30%; /* Set the width of the items */
-  text-align: center; /* Center the text */
-}
-
-    </style>
+  </style>
 </head>
 
 <body>
@@ -328,7 +306,7 @@
 
         <button class="buttonX button3" id="500" onclick="addClick()">
             <img  src="addAccount.png" width="90" height="90"/>
-            <span> Add a new account </span>  
+            <span>View "Adding a new account" requests </span>  
          </button>
         <div class="space"></div>
         <button class="buttonX button3" id="501" onclick="remClick()">
@@ -397,6 +375,7 @@
        <div id="dialogOK" class="dialog-content" style="background-color:#f1f1f1;">
         <label for = "Uname1" style="color:#3eb200;font-size: larger;"> Announcement message is sent successfully </label>
         <br>
+        <hr>
         <label><i>If you want to modify your message , press on return </i></label>
         <div class="space"></div>
         <div class="space"></div>
@@ -458,19 +437,35 @@
          <button class="button button2" onclick="closeSelectDialog()" style="background-color: #b21b00;"  >Cancel</button>
         </div>
       </div>  
-      <div class="container">
-        <div class="item">Client 56 requests opening a new account</div>
-        <button class="button button1" id="3433" onclick="addClick()">Accept</button>
-        <button class="button button2" id="3434">Reject</button>
-        <div class="line"></div>
-        <div class="item">Client 98 requests opening a new account</div>
-        <button class="button button1" id="3444" onclick="addClick()">Accept</button>
-        <button class="button button2" id="3455">Reject</button>
-        <div class="line"></div>
-        <div class="item">Client 53 requests opening a new account</div>
-        <button class="button button1" id="3444" onclick="addClick()">Accept</button>
-        <button class="button button2" id="3455">Reject</button>
+
+      <div id="add2023"   class="dialog">
+         <div class="dialog-content"  style="background-color:#f1f1f1;">
+          <a href="bankerOpenAccount.html"> click here to go to 'open Account' page directly</a>
+          <hr style="height: 3px;background-color:  #b28600;">
+          <h2>Opening new account requests</h2>
+          <hr style="height: 3px;background-color:  #b28600;">
+          <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 10 requests opening a new account </span>
+          <button class="button button1" id="-2" onclick="acceptGo()">Accept</button>
+          <button class="button button2" id="10" onclick="rejFunc10()">Reject</button>
+          <br>
+          <label id="R1" style="color:#b21b00;visibility: hidden;"  > Request is rejected successfully</label>
+          <hr>
+          <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 44 requests opening a new account </span>
+          <button class="button button1" id="-4" onclick="acceptGo()">Accept</button>
+          <button class="button button2" id="44" onclick="rejFunc44()">Reject</button>
+          <br>
+          <label id="R2" style="color:#b21b00;visibility: hidden;"  > Request is rejected successfully</label>
+          <hr>
+          <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 33 requests opening a new account </span>
+          <button class="button button1" id="-6" onclick="acceptGo()">Accept</button>
+          <button  class="button button2" id="33" onclick="rejFunc33()">Reject</button>
+          <br>
+          <label id="R3" style="color:#b21b00;visibility: hidden;"  > Request is rejected successfully</label>
+          <hr>
+          <button class="button button2" id="-6" onclick="closeOpen()">cancel</button>
+         </div>
       </div>
+
    
     <script>
  function logout() {
@@ -665,7 +660,7 @@
         buttonRej6.addEventListener('click', changeContentRej6);
 
 function  addClick(){
-    window.location.href = "bankerOpenAccount.html";
+    document.getElementById("add2023").style.display = "block";
 }
 function remClick(){
     window.location.href = "BankerCloseAccount.html";
@@ -844,6 +839,26 @@ function displayFunc(){
 
 
 
+}
+function acceptGo(){
+    window.location.href = "bankerOpenAccount.html";
+}
+function closeOpen(){
+    document.getElementById("add2023").style.display = "none";
+}
+function rejFunc10(){
+    var C10 =  document.getElementById("R1");
+    C10.style.visibility = "visible";  
+}
+
+function rejFunc44(){
+    var C44 =  document.getElementById("R2");
+    C44.style.visibility = "visible"; 
+}
+
+function rejFunc33(){
+    var C33 =  document.getElementById("R3");
+    C33.style.visibility = "visible"; 
 }
 
     </script>
