@@ -31,29 +31,8 @@
             z-index: 10;
         }
 
-        .customConfirmButton {
-            font-weight: 600 !important;
-            background-color: #0097b2 !important;
-            color: white !important;
-            font-size: medium !important;
-            cursor: pointer !important;
-            border: none !important;
-            box-shadow: none !important;
-            border-radius: 0px !important;
-        }
-
-        .customCancelButton {
-            font-weight: 600 !important;
-            color: white !important;
-            font-size: medium !important;
-            cursor: pointer !important;
-            border: none !important;
-            box-shadow: none !important;
-            border-radius: 0px !important;
-        }
-
         .customSwalContainer {
-            border-radius: 0px !important;
+            border-radius: 10px !important;
             max-height: 700px !important;
             display: inline-block !important;
         }
@@ -102,11 +81,12 @@
             height: 470px;
             max-height: 470px;
             margin-left: 20px;
-            background-color: #fff;
+            background-color: #dedede;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 5px;
             margin-bottom: 30px;
             display: inline-block;
+            border-radius: 10px;
         }
 
         .container2 {
@@ -115,19 +95,23 @@
             height: 400px;
             max-height: 400px;
             margin: 20px 40px 0;
-            background-color: #fff;
+            background-color: #dedede;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 5px;
             margin-bottom: 30px;
             display: inline-block;
+            border-radius: 10px !important;
         }
 
         .containerHeader {
             width: 100%;
-            height: 70px;
+            height: 60px;
+            margin-top:10px;
             margin-right: 10px;
             padding: 30px;
+            padding-top:20px;
             background-color: #dedede;
+
         }
 
         .containerTitle {
@@ -181,6 +165,11 @@
             .logoutButton:hover .tooltiptext {
                 visibility: visible;
             }
+
+        .notificationIcon:hover {
+            color: black !important;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -363,30 +352,28 @@
                 }
 
                 .material-icons {
-                    font-size: x-large;
-                    vertical-align: bottom;
-                    color: #bda366;
+                    
                 }
             </style>
             <table>
                 <tbody>
                     <tr>
-                        <td class="menuOption" onclick="manageBankAccounts()"> &nbsp;&nbsp; <i class="material-icons">group</i> Manage bank accounts <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="manageBankAccounts()"> &nbsp;&nbsp; <i class="material-icons" style="font-size: x-large; vertical-align: bottom; color: #bda366;">group</i> Manage bank accounts <hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption" onclick="transferMoney()"> &nbsp;&nbsp; <i class="material-icons">monetization_on</i> Transfer money <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="transferMoney()"> &nbsp;&nbsp; <i class="material-icons" style="font-size: x-large; vertical-align: bottom; color: #bda366;">monetization_on</i> Transfer money <hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption" onclick="applyForCreditCard()"> &nbsp;&nbsp; <i class="material-icons">credit_card</i> Apply for a new credit card <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="applyForCreditCard()"> &nbsp;&nbsp; <i class="material-icons" style="font-size: x-large; vertical-align: bottom; color: #bda366;">credit_card</i> Apply for a new credit card <hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption" onclick="payCreditCardChoose()"> &nbsp;&nbsp; <i class="material-icons">card_membership</i> Pay credit card bill<hr class="menuLine"></td>
+                        <td class="menuOption" onclick="payCreditCardChoose()"> &nbsp;&nbsp; <i class="material-icons" style="font-size: x-large; vertical-align: bottom; color: #bda366;">card_membership</i> Pay credit card bill<hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption" onclick="viewCreditCardPoints()"> &nbsp;&nbsp; <i class="material-icons">card_giftcard</i> View credit card points <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="viewCreditCardPoints()"> &nbsp;&nbsp; <i class="material-icons" style="font-size: x-large; vertical-align: bottom; color: #bda366;">card_giftcard</i> View credit card points <hr class="menuLine"></td>
                     </tr>
                     <tr>
-                        <td class="menuOption" onclick="reportCreditCard()"> &nbsp;&nbsp; <i class="material-icons">security</i> Report credit card loss/theft <hr class="menuLine"></td>
+                        <td class="menuOption" onclick="reportCreditCard()"> &nbsp;&nbsp; <i class="material-icons" style="font-size: x-large; vertical-align: bottom; color: #bda366;">security</i> Report credit card loss/theft <hr class="menuLine"></td>
                     </tr>
                 </tbody>
             </table>
@@ -406,6 +393,7 @@
                         confirmButton: 'customConfirmButton',
                         cancelButton: 'customCancelButton',
                         popup: 'customSwalContainer',
+                        input: 'customSwalInput'
                     },
                     input: 'select',
                     inputOptions: {
@@ -423,9 +411,10 @@
                                 confirmButton: 'customConfirmButton',
                                 cancelButton: 'customCancelButton',
                                 popup: 'customSwalContainer',
+                                input: 'customSwalInput'
                             },
                             input: 'number',
-                            inputLabel: 'Enter an amount in USD',
+                            inputLabel: 'Current bill is 60.00 USD. Enter an amount in USD.',
                             inputValue: 60.00,
                             showCancelButton: true,
                             confirmButtonText: 'Confirm',
@@ -479,6 +468,7 @@
                         confirmButton: 'customConfirmButton',
                         cancelButton: 'customCancelButton',
                         popup: 'customSwalContainer',
+                        input: 'customSwalInput'
                     },
                     input: 'select',
                     inputOptions: {
@@ -500,19 +490,15 @@
             };
 
             function manageBankAccounts() {
-                window.location.href = 'closeAccount.html';
+                window.location.href = 'clientCloseAccount.html';
             };
 
             function applyForCreditCard() {
-                window.location.href = 'applyForCreditCard.html';
+                window.location.href = 'clientApplyForCreditCard.html';
             };
 
             function transferMoney() {
-                window.location.href = 'applyForCreditCard.html';
-            };
-
-            function transferMoney() {
-                window.location.href = 'applyForCreditCard.html';
+                window.location.href = 'clientApplyForCreditCard.html';
             };
 
             function viewCreditCardPoints() {

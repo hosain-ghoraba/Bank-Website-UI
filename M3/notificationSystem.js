@@ -12,23 +12,23 @@ function notificationSystem() {
         html: '<table>' +
             '<tbody>' +
             '<tr>' +
-            '<td class="notificationIcon" onclick="markRead1()" style="width:30px; padding-bottom:40px; margin-right:10px"> &nbsp;&nbsp; <i class="material-icons" id="notificationIcon1">mail</i></td>' +
+            '<td class="notificationIcon" onclick="markRead1()" style="width:40px; padding-bottom:15px; margin-right:20px !important"> <i class="material-icons" id="notificationIcon1">mail</i></td>' +
             '<td class="notification" onclick="notificationClick1()"> [REMINDER] Your credit card (ends with 3085) bill is due in 3 days <hr class="menuLine"></td>' +
             '</tr>' +
             '<tr>' +
-            '<td class="notificationIcon" onclick="markRead2()" style="width:30px; padding-bottom:40px"; margin-right:10px> &nbsp;&nbsp; <i class="material-icons" id="notificationIcon2">mail</i></td>' +
+            '<td class="notificationIcon" onclick="markRead2()" style="width:40px; padding-bottom:15px; margin-right:20px !important"> <i class="material-icons" id="notificationIcon2">mail</i></td>' +
             '<td class="notification" onclick="notificationClick2()"> [REMINDER] The due date for your loan payment ID 5432 is in 3 days <hr class="menuLine"></td>' +
             '</tr> ' +
             '<tr>' +
-            '<td class="notificationIcon" onclick="markRead3()" style="width:30px; padding-bottom:40px"; margin-right:10px> &nbsp;&nbsp; <i class="material-icons" id="notificationIcon3">mail</i></td>' +
+            '<td class="notificationIcon" onclick="markRead3()" style="width:40px; padding-bottom:15px; margin-right:20px !important"> <i class="material-icons" id="notificationIcon3">mail</i></td>' +
             '<td class="notification" onclick="notificationClick3()"> [REMINDER] The due date for your bill from Electricity of America-EOA is in 3 days <hr class="menuLine"></td>' +
             '</tr> ' +
             '<tr>' +
-            '<td class="notificationIcon" onclick="markRead4()" style="width:30px; padding-bottom:40px"; margin-right:10px> &nbsp;&nbsp; <i class="material-icons" id="notificationIcon4">mail</i></td>' +
+            '<td class="notificationIcon" onclick="markRead4()" style="width:40px; padding-bottom:15px; margin-right:20px !important"> <i class="material-icons" id="notificationIcon4">mail</i></td>' +
             '<td class="notification" onclick="notificationClick4()"> [BANK ANNOUNCEMENT] Quick Bank is celebrating its first anniversary!  <hr class="menuLine"></td>' +
             '</tr>' +
             '<tr>' +
-            '<td class="notificationIcon" onclick="markRead5()" style="width:30px; padding-bottom:40px"; margin-right:10px> &nbsp;&nbsp; <i class="material-icons" id="notificationIcon5">mail</i></td>' +
+            '<td class="notificationIcon" onclick="markRead5()" style="width:40px; padding-bottom:15px; margin-right:20px !important"> <i class="material-icons" id="notificationIcon5">mail</i></td>' +
             '<td class="notification" onclick="notificationClick5()"> [TECHNICAL ISSUE] Thank you for your valuable feedback. Your issue ID 8762 has now been resolved. <hr class="menuLine"></td>' +
             '</tr>' +
             '</tbody>' +
@@ -70,7 +70,7 @@ function notificationClick2() {
 };
 
 function notificationClick3() {
-    window.location.href = 'Pay2.html';
+    window.location.href = 'billPayment.html';
 };
 
 function notificationClick4() {
