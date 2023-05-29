@@ -466,7 +466,7 @@
          </div>
       </div>
 
-      <div id="Report" class="dialog">
+      <div id="Report" class="dialog" >
         <div class="dialog-content">
             <h2 style="color: #b28600;">Please specify the technical issue:</h2>
             <div class="space"></div>
@@ -496,12 +496,13 @@
           </label></div>
           <div class="space"></div>
           <div>  <label style="color: #004f5d;">
-            <input type="radio" name="radio-group" value="option-6" onclick="specifyOtherReason()" style="accent-color: #b28600">
+            <input id="2007" type="radio" name="radio-group" value="option-6" onclick="specifyOtherReason()" style="accent-color: #b28600">
             Other 
           </label></div>
           <div class="space"></div>
           <div id="inputField" style="visibility: hidden">
             <input  type="text"  id="text-input" name="user-text" size="80" placeholder="Enter the issue here" style="border: 2px solid #005b6b;background-color: #cceaf0;">
+            <label id="applier4" style="color:#b21b00;visibility: hidden;"  >*You cannot leave this field empty</label>
           </div>
           <label id="applier3" style="color:#b21b00;visibility: hidden;"  >*You must choose an option</label>
           <br>   
@@ -511,7 +512,17 @@
 
         </div>
       </div>
+         <div class="dialog" id="okMsg" style="display:none;">
+            <div class="dialog-content">
 
+
+
+                <label id="bjhnou" style="color:#3eb200;"  >your issue has been sent , it'll be resolved soon</label>
+                <button onclick="eqfl()"> ok</button>
+            </div>
+             
+
+         </div>
    
     <script>
  function logout() {
@@ -910,29 +921,54 @@ function reportAprob(){
   document.getElementById("Report").style.display = "block";
 }
 function ApplyChecker(){
-
+var xlk = document.getElementById("okMsg");
+var inputField = document.getElementById("inputField");
+     var txt = document.getElementById("text-input");
     var radioButtons = document.querySelectorAll('input[type="radio"]');
     var isChecked = false;
      for (var i = 0; i < radioButtons.length; i++) {
        if (radioButtons[i].checked) {
-         isChecked = true;
+        isChecked = true;
            break;
            }  
       }
+    
    var label = document.getElementById("applier3");
      if(!isChecked){
         label.style.visibility= "visible";
      }
-    else
+    else{
           label.style.visibility= "hidden";
+         
+          if(inputField.style.visibility !== "visible" || txt.value !==""){
+            xlk.style.display = "block";
+            closeDialogRep();
+          }
+    }
+  
+
+         
   }
   function specifyOtherReason(){
     var inputField = document.getElementById("inputField");
    var radios = document.getElementsByName("radio-group");
    inputField.style.visibility = "visible";
+   var oop = document.getElementById("applier4");     
+       //text-input
+     var inputField = document.getElementById("inputField");
+     var txt = document.getElementById("text-input");
+    if(inputField.style.visibility === "visible" && txt.value==="")
+             oop.style.visibility="visible";
+    else
+      oop.style.visibility="hidden";      
 }
 function closeDialogRep() {
   document.getElementById("Report").style.display = "none";
+} 
+
+function eqfl(){
+    var dfedvfedfv = document.getElementById("okMsg");
+    dfedvfedfv.style.display="none";
 }
 
 
