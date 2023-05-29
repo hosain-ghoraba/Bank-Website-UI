@@ -61,9 +61,10 @@
     }
 
 .customSwalInput {
-    width: 100% !important;
+    width: 70% !important;
     padding: 12px 20px !important;
-    margin: 8px 0 !important;
+    margin-left: 82px !important;
+    justify-content:center !important;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -93,7 +94,7 @@
 }
 
 .customSwalContainer {
-    border-radius: 1    0px !important;
+    border-radius: 10px !important;
     max-height: 700px !important;
     display: inline-block !important;
 }
