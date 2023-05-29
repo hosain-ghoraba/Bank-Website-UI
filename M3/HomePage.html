@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="Icon.ico">
+    <title>Quick Bank - Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="notificationSystem.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="notificationSystemCSS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: rgb(150, 150, 58);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+    }
+
+    .bankHeader {
+            font-family: Arial, sans-serif;
+            background-color: #0097b2 !important;
+            margin: 0;
+            width: 100%;
+            height: 150px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .welcomeMessage {
+        color: #fff;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        margin-top: 7px;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .logout {
+        float: right;
+        margin-right:50px;
+        margin-top:100px;
+        background-color: transparent;
+    }
+
+    .logoutButton {
+        position: relative;
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .logoutButton .tooltiptext {
+            visibility: hidden;
+            background-color: #dedede;
+            color: black;
+            font-size: small;
+            text-align: center;
+            border-radius: 6px;
+            padding: 1px 8px;
+            /* Position the tooltip */
+            position: absolute;
+            top: 5px;
+            right: 120%;
+    }
+
+    .logoutButton:hover .tooltiptext {
+        visibility: visible;
+        cursor: pointer;
+    }
+
+    .button {
+  background-color: #b28600; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
+
+    .button:hover {
+        cursor: pointer;
+    }
+    .home{
+      appearance: auto;
+    }
+    .home:hover{
+      visibility: visible;
+      cursor: pointer;
+    }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            /* background-image: url(background.jpg) !important; */
+            background-size: cover;
+            background-position: right ;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .menu-bar {
+            background: #0097b2;
+            text-align: center;
+        }
+        
+        .menu-bar ul {
+            display: inline-flex;
+            list-style: none;
+            color: #fff;
+        }
+
+        .menu-bar ul li {
+            width: 120px ;
+            margin: 15px;
+            padding: 15px;
+        }
+
+        .menu-bar ul li a{
+            text-decoration:none ;
+            color: #fff;
+        }
+        
+        .active, .menu-bar ul li:hover{
+            background: #0097b2;
+            border-radius: 3px;
+        }
+
+        .menu-bar .fa {
+           margin-right: 8px; 
+        }
+
+        .sub-menu-1{
+            display: none;
+        }
+        .menu-bar ul li:hover .sub-menu-1{
+            display: block;
+            position: absolute;
+            background: #bfa366;
+            margin-top: 15px;
+            margin-left: -15px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul{
+            display: block;
+            margin: 10px;
+        }
+        .menu-bar ul li:hover .sub-menu-1 ul li{
+            width: 150px;
+            padding: 10px;
+            border-bottom: 1px dotted #fff;
+            background: transparent;
+            border-radius: 0;
+            text-align: left;
+        }
+
+        .menu-bar ul li:hover .sub-menu-1 ul li:last-child{
+            border-bottom: none;
+        }
+
+        .menu-bar ul li:hover .sub-menu-1 ul li a:hover{
+            color: #1e6496;
+        }
+
+        .fa-angle-right {
+         float: right ;   
+        }
+
+        .fa-credit-card-alt {
+            float: left;
+        }
+        .fa-handshake-o{
+            float: left;
+        }
+
+        .fa-bullhorn{
+            float: left;
+        }
+
+        .fa-money{
+            float: left;
+        }
+
+        .fa-user{
+            float: left;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* html{
+            scroll-behavior: smooth;
+            font-family:Tahoma;
+        } */
+
+        /* h1{
+            text-align: center;
+            position: fixed;
+            top: 0; left: 35%;
+            color: purple;
+        } */
+
+         /* .sec {
+            background: #0097b2;
+            text-align: left;
+
+        }
+
+        .sec ul {
+           list-style: none;
+           height: 100%;
+           width: 100px; 
+           position: fixed;
+           top: 0; left: 0;
+           background: crimson;
+           box-shadow: 2px 0px 5px black;
+        }
+
+        .sec ul li{
+            margin: 5px;
+            padding: 5px;
+            margin-top: 75px;
+        }
+
+        .sec ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        .sec ul li a:hover{
+            background: white;
+            color: blue;
+        }
+
+        .section{
+            height: 100vh;
+            width: 100vw ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase ;
+        }
+
+        #section1{
+            background: linear-gradient(-45deg,#b28600 30%, yellow 0%);
+        }
+
+        #section2{
+            background: linear-gradient(-45deg,#b28600 30%, lightgreen 0%);
+        }
+
+        #section3{
+            background: linear-gradient(-45deg,#b28600 30%, lightblue 0%);
+        }  */
+
+        /* Style for the unordered list */
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the list items */
+/* li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* Style for the links */
+/* a {
+  text-decoration: none;
+  color: black;
+} */
+
+/* Style for the sections */
+/* section {
+  display: none;
+} */
+
+/* Style for the active section */
+/* section:target {
+  display: block;
+} */
+
+/* ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f1f1f1;
+    } */
+
+    lip {
+        float: left;
+    }
+
+    lip a {
+        display: block;
+        color: #000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    lip a:hover {
+        background-color: #ddd;
+    }
+
+    .section {
+        display: none;
+        padding: 50px;
+        clear: both;
+    }
+
+    :target {
+        display: block;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+        
+            .notificationButton{
+                margin-bottom: 20%;
+            }
+
+            .announcement-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.announcement-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 40px;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0099ff;
+}
+
+.card-date {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.card-text {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.card-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0099ff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.2s ease-in-out;
+  margin-right: 10px;
+}
+
+.card-link:hover {
+  background-color: #0077cc;
+  cursor: pointer;
+}
+
+
+
+    </style>
+</head>
+
+    <body>
+        <div class="bankHeader">
+            <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
+            <div class="logout">
+                <button type="button" class="notificationButton" onclick="notificationSystem()">
+                    <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
+                    <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
+                </button>
+                <button type="button" class="logoutButton" onclick="logout()">
+                    <span class="tooltiptext">Logout?</span>
+                    <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
+                </button>
+                <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+        <ul>
+            <li><a href="#">Payment</a><i class="fa fa-money"></i>
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href="billPayment.html">Bills</a><i class="fa fa-angle-right"></i></li>
+                    <li><a href="clientApplyForLoan.html">Loans</a><i class="fa fa-angle-right"></i></li>
+                    <!-- <li><a href="#">Team</a><i class="fa fa-angle-right"></i></li> -->
+                </ul>
+            </div>
+            </li> 
+            <!-- <li>
+                <a href="billPayment.html"><i class="fa fa-money" aria-hidden="true"></i>Bill Payment</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="#">Web Designing</a><i class="fa fa-angle-right"></i></li>
+                        <li class="hover-me"><a href="#">Markeing</a><i class="fa fa-angle-right"></i> -->
+                        <!-- <div class="sub-menu-2">
+                            <ul>
+                                <li><a href="#">SEO</a></li>
+                                <li><a href="#">Social Media</a></li>
+                                <li><a href="#">Email Marketing</a></li>
+                            </ul>
+                        </div> -->
+                        <!-- </li>
+                        <li><a href="#">Mobile App</a><i class="fa fa-angle-right"></i></li>
+                    </ul>
+                </div>
+            </li> -->
+            <li><a href="#">Credit Card</a><i class="fa fa-credit-card-alt"></i>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="user.html">Transactions</a><i class="fa fa-angle-right"></i></li>
+                        <li><a href="user.html">Bills</a><i class="fa fa-angle-right"></i></li>
+                        <li><a href="https://www.google.com/">Points</a><i class="fa fa-angle-right"></i></li>
+                        <li><a href="clientApplyForCreditCard.html">Application</a><i class="fa fa-angle-right"></i></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- <li><a href="#">Payment</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="billPayment.html">Bills</a><i class="fa fa-money" aria-hidden="true"></i><i class="fa fa-angle-right"></i></li>
+                        <li><a href="user.html">Credit Card Bills</a><i class="fa fa-credit-card-alt"></i><i class="fa fa-angle-right"></i></li>
+                    </ul>
+                </div>
+            </li> -->
+            <li><a href="#">Bank Account</a><i class="fa fa-user" aria-hidden="true"></i>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="https://www.google.com/">Transfer Money</a><i class="fa fa-angle-right"></i></li>
+                        <li><a href="user.html">Transactions</a><i class="fa fa-angle-right"></i></li>
+                        <li><a href="clientCloseAccount.html">Close Account</a><i class="fa fa-angle-right"></i></li>
+                    </ul>
+                </div>
+            </li>
+            <ul>
+              <li class="active"><a href="clientApplyForLoan.html">Loan Application</a><i class="fa fa-handshake-o" aria-hidden="true"></i>
+              </li> 
+          </ul>
+            <ul>
+                <li><a href="#section1">Announcements</a><i class="fa fa-bullhorn" aria-hidden="true"></i></li>
+              </ul>
+                <ul>
+                  <li class="active"><a href="report.html"><i class="fa fa-flag"></i>Report</a></li> 
+              </ul>
+
+
+        </ul>
+        </div>
+
+        <!-- <ul>
+            <li><a href="section1">section1</li>
+            <li><a href="section2">section2</li>
+            <li><a href="section3">section3</li>
+
+        </ul>
+        <div class="content">
+            <section id = "section1">
+                <h2>section1</h2>
+            </section>
+            <section id = "section2">
+                <h2>section2</h2>
+            </section>
+            <section id = "section3">
+                <h2>section3</h2>
+            </section>
+        </div> -->
+
+        <!-- <ul> -->
+            <!-- <li><a href="#section1">Announcements</a></li> -->
+            <!-- <li><a href="#section2">Notifications</a></li> -->
+            <!-- <li><a href="#section3">Section 3</a></li> -->
+          <!-- </ul> -->
+          <!-- <div class="content">
+    <section id="section1" class="section">
+      <h2>Section 1</h2>
+      <p>This is the content for section 1.</p>
+    </section>
+    <section id="section2" class="section">
+      <h2>Section 2</h2>
+      <p>This is the content for section 2.</p>
+    </section>
+  </div> -->
+  <div class="announcement-section">
+    <section id="section1" class="section">
+    <h2 class="section-title">Announcements</h2>
+    <div class="announcement-card">
+      <h3 class="card-title">Online Bill Pay</h3>
+      <p class="card-date">May 28, 2023</p>
+      <p class="card-text">Payments can be sent by your bank electronically or via paper check, so you can pay even if the biller isn't online — virtually eliminating the need for a checkbook. You can also choose a one-time payment or set up a recurring one</p>
+      <button type="button"  a href="#" class="card-link"></a>Read More</a>
+        <button type="button" class="card-link" onclick="Pay()"> Pay Now</a>
+
+    </div>
+    <div class="announcement-card">
+      <h3 class="card-title">Scheduled Maintenance on June 1st</h3>
+      <p class="card-date">May 25, 2023</p>
+      <p class="card-text">System will shutdown on June 1st from 15:00 to 18:00 PM</p>
+      <button type="button" a href="#" class="card-link">Read More</a>
+    </div>
+    <div class="announcement-card">
+     <h3 class="card-title">New Feature: Mobile Check Deposit</h3>
+      <p class="card-date">May 15, 2023</p>
+      <p class="card-text">With mobile check deposit, can simply deposit your check into your bank account just by using the camera on your mobile device — you no longer have to go to your bank or find an ATM to deposit a physical check</p>
+      <button type="button" a href="#" class="card-link">Read More</a>
+
+    </div>
+  </div>
+
+        <script>
+            
+            function logout() {
+                window.location.href = 'login.html';
+            };
+
+            function Home() {
+                window.location.href = 'HomePage.html';
+            };
+
+            function Pay() {
+                window.location.href = 'billPayment.html';
+            };
+    </script>
+    </body>
+    </html>
