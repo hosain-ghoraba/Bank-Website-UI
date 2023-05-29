@@ -2,7 +2,13 @@
 <html>
 <head>
   <link rel="icon" href="Icon.ico">
-  <title>Quick Bank - apply for credit card</title>
+  <title>Quick Bank - Transfer</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="notificationSystem.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="notificationSystemCSS.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     .bankHeader {
       font-family: Arial, sans-serif;
@@ -152,11 +158,15 @@
   <div class="bankHeader">
     <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
     <div class="logout">
+        <button type="button" class="notificationButton" onclick="notificationSystem()">
+            <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
+            <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
+        </button>
         <button type="button" class="logoutButton" onclick="logout()">
             <span class="tooltiptext">Logout?</span>
-            <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
+            <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
         </button>
-        <h1 class="welcomeMessage" style="float:right" >HELLO, user.</h1>
+        <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
     </div>
 </div>
   <br>
