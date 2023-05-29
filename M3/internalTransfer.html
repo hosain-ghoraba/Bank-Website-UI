@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="Icon.ico">
+    <title>Quick Bank - internal transfer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="notificationSystem.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="notificationSystemCSS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+     .bankHeader {
+      font-family: Arial, sans-serif;
+      background-color: #0097b2 !important;
+      margin: 0;
+      width: 100%;
+      height: 150px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      z-index: 20;
+    }
+
+    .welcomeMessage {
+      color: #fff;
+      margin-left: 15px;
+      margin-bottom: 20px;
+      margin-top: 7px;
+      font-size: medium;
+      font-weight: 600;
+    }
+
+    .logout {
+      float: right;
+      margin-right: 50px;
+      margin-top: 100px;
+      background-color: transparent;
+    }
+
+    .logoutButton {
+      position: relative;
+      display: inline-block;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .logoutButton .tooltiptext {
+      visibility: hidden;
+      background-color: #dedede;
+      color: black;
+      font-size: small;
+      text-align: center;
+      border-radius: 6px;
+      padding: 1px 8px;
+      /* Position the tooltip */
+      position: absolute;
+      top: 5px;
+      right: 120%;
+    }
+
+    .logoutButton:hover .tooltiptext {
+      visibility: visible;
+      cursor: pointer;
+    }
+    .home{
+      appearance: auto;
+    }
+    .home:hover{
+      visibility: visible;
+      cursor: pointer;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0097b2;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      color: #555555;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .button {
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      padding: 14px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 20px auto 0;
+      width: 50%;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    .transaction-summary {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    .confirmation-message {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e6f6ff;
+      border-radius: 5px;
+    }
+
+    .receipt {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+    .coloredText {
+      color: #3d08ec;
+    }
+  </style>
+</head>
+<body>
+    <div class="bankHeader">
+        <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
+        <div class="logout">
+            <button type="button" class="notificationButton" onclick="notificationSystem()">
+                <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
+                <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
+            </button>
+            <button type="button" class="logoutButton" onclick="logout()">
+                <span class="tooltiptext">Logout?</span>
+                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
+            </button>
+            <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
+        </div>
+    </div>
+      <br>
+
+  <div class="container">
+    <h1>Internal transfer</h1>
+
+    <form id="moneyTransferForm">
+      <label for="senderAccountNumber">Sender's Account Number:</label>
+      <input type="number" id="senderAccountNumber" name="senderAccountNumber" min = 1 required>
+
+      <label for="senderAccountType">Sender's Account Type:</label>
+      <select id="senderAccountType" name="senderAccountType" required >
+        <option value="">Select Account Type</option>
+        <option value="current">Current</option>
+        <option value="recurring">Recurring</option>
+        <option value="saving">Saving</option>
+      </select>
+
+      <label for="senderName">Sender's Name:</label>
+      <input type="text" id="senderName" name="senderName" required >
+
+      <label for="recipientAccountNumber">Recipient's Account Number:</label>
+      <input type="number" id="recipientAccountNumber" name="recipientAccountNumber" required>
+
+      <label for="recipientAccountType">Recipient's Account Type:</label>
+      <select id="recipientAccountType" name="recipientAccountType" required >
+        <option value="">Select Account Type</option>
+        <option value="current">Current</option>
+        <option value="recurring">Recurring</option>
+        <option value="saving">Saving</option>
+      </select>
+<!-- 
+      <label for="recipientName">Recipient's Name:</label>
+      <input type="text" id="recipientName" name="recipientName" > -->
+
+      <label for="transferAmount" >Transfer Amount: (in USD) </label>
+      <input type="number" id="transferAmount" oninput="updateFee()" name="transferAmount" min = 1 required >
+
+      <label for="transferDetails">Message to recipient (optional) :</label>
+      <textarea id="transferDetails" name="transferDetails"></textarea>
+
+      <p>Total Fees : <span id = "fee" class="coloredText">0</span> USD </p>
+
+      <button type="submit" class="button">Transfer</button>
+    </form>
+
+    <div class="confirmation-message" id="confirmationMessage" style="display: none;">
+      <h2>Confirmation Message:</h2>
+      <p>Your money transfer was successful. Transaction reference: <span id="transactionReference"></span></p>
+    </div>
+
+    <div class="receipt" id="receipt" style="display: none;">
+      <h2>Transaction Receipt:</h2>
+      <p>Date: <span id="transactionDate"></span></p>
+      <p>Time: <span id="transactionTime"></span></p>
+      <p>Transfereed amount: <span id="transactionAmount"></span> USD</p>
+      <p>Fees: <span id="transactionFees"></span> USD</p>
+      <p>Sender name: <span id="transactionSender"></span></p>
+      <p>Sender account number: <span id="senderAccount"></span></p>
+      <p>Recipient account number: <span id="transactionRecipient"></span></p>
+    </div>
+  </div> 
+
+  <script>
+    document.getElementById("moneyTransferForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get form values
+      var senderAccountNumber = document.getElementById("senderAccountNumber").value;
+      var senderAccountType = document.getElementById("senderAccountType").value;
+      var senderName = document.getElementById("senderName").value;
+      var recipientAccountNumber = document.getElementById("recipientAccountNumber").value;
+    //   var recipientName = document.getElementById("recipientName").value;
+      var transferAmount = document.getElementById("transferAmount").value;
+      var transferDetails = document.getElementById("transferDetails").value;
+    
+      // update fees to be equal 1 % of transfer amount
+
+
+    //   Update transaction summary
+    //   document.getElementById("senderSummary").textContent = senderName + " (Account: " + senderAccountNumber + ")";
+    //   document.getElementById("recipientSummary").textContent = recipientName + " (Account: " + recipientAccountNumber + ")";
+    //   document.getElementById("transferAmountSummary").textContent = transferAmount;
+
+
+      // Display confirmation message
+      document.getElementById("confirmationMessage").style.display = "block";
+
+      // Simulate transaction processing
+
+        var transactionReference = generateTransactionReference();
+        var transactionDate = getCurrentDate();
+        var transactionTime = getCurrentTime();
+
+        // Update transaction receipt
+        document.getElementById("transactionReference").textContent = transactionReference;
+        document.getElementById("transactionDate").textContent = transactionDate;
+        document.getElementById("transactionTime").textContent = transactionTime;
+        document.getElementById("transactionAmount").textContent = transferAmount;
+        document.getElementById("transactionFees").textContent = getInternalTransferFees();
+        document.getElementById("transactionSender").textContent = senderName;
+        document.getElementById("senderAccount").textContent = senderAccountNumber;
+        document.getElementById("transactionRecipient").textContent = recipientAccountNumber ;
+
+        document.getElementById("receipt").style.display = "block";
+        // Display transaction receipt using scrollIntoView()
+        document.getElementById("receipt").scrollIntoView({ behavior: 'smooth' });
+        // flashMessage.scrollIntoView({ behavior: 'smooth' });
+
+
+    });
+    function getInternalTransferFees(){
+        var transferAmount = document.getElementById("transferAmount").value;
+        var fee = transferAmount / 1000;
+        return fee;
+     }
+     function updateFee(){
+        var fee = getInternalTransferFees();
+        document.getElementById("fee").textContent = fee;
+        
+     }
+
+    function generateTransactionReference() {
+      return "TXN" + Math.floor(Math.random() * 1000000000);
+    }
+
+    function getCurrentDate() {
+      var currentDate = new Date();
+      return currentDate.toDateString();
+    }
+
+    function getCurrentTime() {
+      var currentTime = new Date();
+      return currentTime.toLocaleTimeString();
+    }
+    function logout() {
+        window.location.href = "login.html";
+    }
+    function Home() {
+        window.location.href = 'HomePage.html';
+    };
+  </script>
+</body>
+</html>
