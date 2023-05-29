@@ -147,7 +147,7 @@ a:active {
         }
 
         .menu-bar ul li {
-            width: 120px ;
+            width: 180px ;
             margin: 15px;
             padding: 15px;
         }
@@ -442,62 +442,64 @@ a:active {
     </style>
 </head>
 
-    <body>
-        <div class="bankHeader">
-            <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
-            <div class="logout">
-                <button type="button" class="notificationButton" onclick="notificationSystem()">
-                    <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
-                    <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
-                </button>
-                <button type="button" class="logoutButton" onclick="logout()">
-                    <span class="tooltiptext">Logout?</span>
-                    <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
-                </button>
-                <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
-            </div>
-        </div>
+  <body>
+      <div class="bankHeader">
+          <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
+          <div class="logout">
+              <button type="button" class="notificationButton" onclick="notificationSystem()">
+                  <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
+                  <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
+              </button>
+              <button type="button" class="logoutButton" onclick="logout()">
+                  <span class="tooltiptext">Logout?</span>
+                  <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
+              </button>
+              <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
+          </div>
+      </div>
 
-        <div class="menu-bar">
-        <ul>
-            <li><a href="#">Payment</a><i class="fa fa-money"></i>
-            <div class="sub-menu-1">
-                <ul>
-                    <li><a href="billPayment.html">Bills</a><i class="fa fa-angle-right"></i></li>
-                    <li><a href="clientApplyForLoan.html">Loans</a><i class="fa fa-angle-right"></i></li>
-                    <!-- <li><a href="#">Team</a><i class="fa fa-angle-right"></i></li> -->
-                </ul>
-            </div>
-            </li> 
-            <!-- <li>
+      <div class="menu-bar">
+          <ul>
+              <li class="menuOption">
+                  <a href="#"><i class="fa fa-money"></i> Payment</a>
+                  <div class="sub-menu-1">
+                      <ul>
+                          <li><a href="billPayment.html">Bills</a><i class="fa fa-angle-right"></i></li>
+                          <li><a href="clientApplyForLoan.html">Loans</a><i class="fa fa-angle-right"></i></li>
+                          <!-- <li><a href="#">Team</a><i class="fa fa-angle-right"></i></li> -->
+                      </ul>
+                  </div>
+              </li>
+              <!-- <li>
                 <a href="billPayment.html"><i class="fa fa-money" aria-hidden="true"></i>Bill Payment</a>
                 <div class="sub-menu-1">
                     <ul>
                         <li><a href="#">Web Designing</a><i class="fa fa-angle-right"></i></li>
                         <li class="hover-me"><a href="#">Markeing</a><i class="fa fa-angle-right"></i> -->
-                        <!-- <div class="sub-menu-2">
-                            <ul>
-                                <li><a href="#">SEO</a></li>
-                                <li><a href="#">Social Media</a></li>
-                                <li><a href="#">Email Marketing</a></li>
-                            </ul>
-                        </div> -->
-                        <!-- </li>
+              <!-- <div class="sub-menu-2">
+                <ul>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Social Media</a></li>
+                    <li><a href="#">Email Marketing</a></li>
+                </ul>
+            </div> -->
+              <!-- </li>
                         <li><a href="#">Mobile App</a><i class="fa fa-angle-right"></i></li>
                     </ul>
                 </div>
             </li> -->
-            <li><a href="#">Credit Card</a><i class="fa fa-credit-card-alt"></i>
-                <div class="sub-menu-1">
-                    <ul>
-                        <li><a href="user.html">Transactions</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="user.html">Bills</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="creditCardPoints.html">Points</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="clientApplyForCreditCard.html">Application</a><i class="fa fa-angle-right"></i></li>
-                    </ul>
-                </div>
-            </li>
-            <!-- <li><a href="#">Payment</a>
+              <li class="menuOption">
+                  <a href="#"><i class="fa fa-credit-card-alt"></i> Credit Card</a>
+                  <div class="sub-menu-1">
+                      <ul>
+                          <li><a href="user.html">Transactions</a><i class="fa fa-angle-right"></i></li>
+                          <li><a href="user.html">Bills</a><i class="fa fa-angle-right"></i></li>
+                          <li><a href="creditCardPoints.html">Points</a><i class="fa fa-angle-right"></i></li>
+                          <li><a href="clientApplyForCreditCard.html">Application</a><i class="fa fa-angle-right"></i></li>
+                      </ul>
+                  </div>
+              </li>
+              <!-- <li><a href="#">Payment</a>
                 <div class="sub-menu-1">
                     <ul>
                         <li><a href="billPayment.html">Bills</a><i class="fa fa-money" aria-hidden="true"></i><i class="fa fa-angle-right"></i></li>
@@ -505,103 +507,107 @@ a:active {
                     </ul>
                 </div>
             </li> -->
-            <li><a href="#">Bank Account</a><i class="fa fa-user" aria-hidden="true"></i>
-                <div class="sub-menu-1">
-                    <ul>
-                        <li><a href="tranferMoney.html">Transfer Money</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="user.html">Transactions</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="clientOpenAccount.html">Open Account</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="clientCloseAccount.html">Close Account</a><i class="fa fa-angle-right"></i></li>
-                    </ul>
-                </div>
-            </li>
-            <ul>
-              <li class="active"><a href="clientApplyForLoan.html">Loan Application</a><i class="fa fa-handshake-o" aria-hidden="true"></i>
-              </li> 
+              <li>
+                  <a href="#">Bank Account</a><i class="fa fa-user" aria-hidden="true"></i>
+                  <div class="sub-menu-1">
+                      <ul>
+                          <li><a href="tranferMoney.html">Transfer Money</a><i class="fa fa-angle-right"></i></li>
+                          <li><a href="user.html">Transactions</a><i class="fa fa-angle-right"></i></li>
+                          <li><a href="clientOpenAccount.html">Open Account</a><i class="fa fa-angle-right"></i></li>
+                          <li><a href="clientCloseAccount.html">Close Account</a><i class="fa fa-angle-right"></i></li>
+                      </ul>
+                  </div>
+              </li>
+              <ul>
+                  <li class="active">
+                      <a href="clientApplyForLoan.html">Loan Application</a><i class="fa fa-handshake-o" aria-hidden="true"></i>
+                  </li>
+              </ul>
+              <ul>
+                  <li><a href="#section1">Announcements</a><i class="fa fa-bullhorn" aria-hidden="true"></i></li>
+              </ul>
+              <ul>
+                  <li class="active"><a href="report.html"><i class="fa fa-flag"></i>Report</a></li>
+              </ul>
+
+
           </ul>
-            <ul>
-                <li><a href="#section1">Announcements</a><i class="fa fa-bullhorn" aria-hidden="true"></i></li>
-              </ul>
-                <ul>
-                  <li class="active"><a href="report.html"><i class="fa fa-flag"></i>Report</a></li> 
-              </ul>
+      </div>
 
+      <!-- <ul>
+        <li><a href="section1">section1</li>
+        <li><a href="section2">section2</li>
+        <li><a href="section3">section3</li>
 
-        </ul>
-        </div>
+    </ul>
+    <div class="content">
+        <section id = "section1">
+            <h2>section1</h2>
+        </section>
+        <section id = "section2">
+            <h2>section2</h2>
+        </section>
+        <section id = "section3">
+            <h2>section3</h2>
+        </section>
+    </div> -->
+      <!-- <ul> -->
+      <!-- <li><a href="#section1">Announcements</a></li> -->
+      <!-- <li><a href="#section2">Notifications</a></li> -->
+      <!-- <li><a href="#section3">Section 3</a></li> -->
+      <!-- </ul> -->
+      <!-- <div class="content">
+      <section id="section1" class="section">
+        <h2>Section 1</h2>
+        <p>This is the content for section 1.</p>
+      </section>
+      <section id="section2" class="section">
+        <h2>Section 2</h2>
+        <p>This is the content for section 2.</p>
+      </section>
+    </div> -->
+      <!--<img src="stockphoto1.jpeg" style="margin-left:440px; margin-top:60px; border:3px solid gray;"/>-->
 
-        <!-- <ul>
-            <li><a href="section1">section1</li>
-            <li><a href="section2">section2</li>
-            <li><a href="section3">section3</li>
+      <div class="announcement-section">
+          <section id="section1" class="section">
+              <h2 class="section-title">Announcements</h2>
+              <div class="announcement-card">
+                  <h3 class="card-title">Online Bill Pay</h3>
+                  <p class="card-date">May 28, 2023</p>
+                  <p class="card-text">Payments can be sent by your bank electronically or via paper check, so you can pay even if the biller isn't online — virtually eliminating the need for a checkbook. You can also choose a one-time payment or set up a recurring one</p>
+                  <button type="button" a href="#" class="card-link">
+                      </a>Read More</a>
+                      <button type="button" class="card-link" onclick="Pay()"> Pay Now</a>
 
-        </ul>
-        <div class="content">
-            <section id = "section1">
-                <h2>section1</h2>
-            </section>
-            <section id = "section2">
-                <h2>section2</h2>
-            </section>
-            <section id = "section3">
-                <h2>section3</h2>
-            </section>
-        </div> -->
+              </div>
+              <div class="announcement-card">
+                  <h3 class="card-title">Scheduled Maintenance on June 1st</h3>
+                  <p class="card-date">May 25, 2023</p>
+                  <p class="card-text">System will shutdown on June 1st from 15:00 to 18:00 PM</p>
+                  <button type="button" a href="#" class="card-link">Read More</a>
+              </div>
+              <div class="announcement-card">
+                  <h3 class="card-title">New Feature: Mobile Check Deposit</h3>
+                  <p class="card-date">May 15, 2023</p>
+                  <p class="card-text">With mobile check deposit, can simply deposit your check into your bank account just by using the camera on your mobile device — you no longer have to go to your bank or find an ATM to deposit a physical check</p>
+                  <button type="button" a href="#" class="card-link">Read More</a>
 
-        <!-- <ul> -->
-            <!-- <li><a href="#section1">Announcements</a></li> -->
-            <!-- <li><a href="#section2">Notifications</a></li> -->
-            <!-- <li><a href="#section3">Section 3</a></li> -->
-          <!-- </ul> -->
-          <!-- <div class="content">
-    <section id="section1" class="section">
-      <h2>Section 1</h2>
-      <p>This is the content for section 1.</p>
-    </section>
-    <section id="section2" class="section">
-      <h2>Section 2</h2>
-      <p>This is the content for section 2.</p>
-    </section>
-  </div> -->
-  <div class="announcement-section">
-    <section id="section1" class="section">
-    <h2 class="section-title">Announcements</h2>
-    <div class="announcement-card">
-      <h3 class="card-title">Online Bill Pay</h3>
-      <p class="card-date">May 28, 2023</p>
-      <p class="card-text">Payments can be sent by your bank electronically or via paper check, so you can pay even if the biller isn't online — virtually eliminating the need for a checkbook. You can also choose a one-time payment or set up a recurring one</p>
-      <button type="button"  a href="#" class="card-link"></a>Read More</a>
-        <button type="button" class="card-link" onclick="Pay()"> Pay Now</a>
+              </div>
+      </div>
 
-    </div>
-    <div class="announcement-card">
-      <h3 class="card-title">Scheduled Maintenance on June 1st</h3>
-      <p class="card-date">May 25, 2023</p>
-      <p class="card-text">System will shutdown on June 1st from 15:00 to 18:00 PM</p>
-      <button type="button" a href="#" class="card-link">Read More</a>
-    </div>
-    <div class="announcement-card">
-     <h3 class="card-title">New Feature: Mobile Check Deposit</h3>
-      <p class="card-date">May 15, 2023</p>
-      <p class="card-text">With mobile check deposit, can simply deposit your check into your bank account just by using the camera on your mobile device — you no longer have to go to your bank or find an ATM to deposit a physical check</p>
-      <button type="button" a href="#" class="card-link">Read More</a>
+      <script>
 
-    </div>
-  </div>
+          function logout() {
+              window.location.href = 'login.html';
+          };
 
-        <script>
-            
-            function logout() {
-                window.location.href = 'login.html';
-            };
+          function Home() {
+              window.location.href = 'HomePage.html';
+          };
 
-            function Home() {
-                window.location.href = 'HomePage.html';
-            };
-
-            function Pay() {
-                window.location.href = 'billPayment.html';
-            };
-    </script>
-    </body>
+          function Pay() {
+              window.location.href = 'billPayment.html';
+          };
+      </script>
+  </body>
     </html>

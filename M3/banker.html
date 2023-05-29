@@ -16,14 +16,19 @@
         }
 
         .myDiv {
-            border: 5px outset #000708;
-            background-color: #00a9b2;
+            width: 450px;
+            max-width: 450px;
+            height: 560px;
+            
+            margin-left: 30px;
             text-align: center;
-            height: 600px;
-            width: 30%;
-            float: left;
-            margin-left: 1px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
             margin-bottom: 30px;
+            display: inline-block;
+            border-radius: 10px;
+            float:left;
         }
         
         .myDivReq{
@@ -40,13 +45,18 @@
         }
 
         .myDivCC {
-            border: 5px outset #000708;
-            background-color: #00a9b2;
+            width: 450px;
+            max-width: 1000px;
+            height: 560px;
+            margin-left: 30px;
             text-align: center;
-            height: 600px;
-            width: 30%;
-            float: left;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
             margin-bottom: 30px;
+            display: inline-block;
+            border-radius: 10px;
+            float:left;
         }
 
         .button {
@@ -59,6 +69,7 @@
             font-size: 16px;
             margin: 2px 2px;
             cursor: pointer;
+            border-radius:4px;
         }
 
 
@@ -156,13 +167,18 @@
         }
 
         .AccountsDiv {
-            border: 5px outset #000708;
-            background-color: #00a9b2;
+            width: 500px;
+            max-width: 1000px;
+            height: 560px;
+            margin-left: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+            margin-bottom: 30px;
+            display: inline-block;
+            border-radius: 10px;
             text-align: center;
-            height: 470px;
-            width: 38%;
-            float: right;
-            
+            float:left;
         }
 
         .space {
@@ -176,7 +192,8 @@
             height: 120px;
             width: 38%;
             float: right;
-
+            margin-bottom:30px;
+            margin-right:30px;
         }
         .reportButton{
             background-color: #7400b2;
@@ -213,6 +230,7 @@
            height: 100%;
            overflow: auto;
            background-color: rgba(0,0,0,0.4);
+           border-radius: 10px;
                }
 
 .dialog-content {
@@ -250,35 +268,59 @@
 
     <div class="myDiv" id="myDiv">
         <h2 style="color :#000708">Loan Requests</h2>
-        <img src="loan.png" alt="money" style="width:100px;height:100px;">
+        <img src="loan1.png" alt="money" style="width:100px;height:100px;">
         <!-- <hr style="border-top: 4px solid #000708;"></hr> -->
 
-
-        <p id="0" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 1 requests a $1000 loan  </p>
+        <hr style="border-top: 2px solid #004f5d;">
+        <p id="0" style="font-family: Arial, sans-serif; font-weight: 400; color: gray">Client ID 1234 requests a $1000 loan  </p>
         <button class="button button1" id="1">Accept</button>
         <button class="button button2" id="2">Reject</button>
         <p id="P2" style="color:#b21b00;"> </p>
-        <hr style="border-top: 2px solid #004f5d;"></hr>
-        <p id="2502" style="font-family: Arial, sans-serif;font-weight: 400;color: white;">Client 2 requests a $500 loan  </p>
+        <hr style="border-top: 2px solid #004f5d;">
+        <p id="2502" style="font-family: Arial, sans-serif; font-weight: 400; color: gray;">Client ID 2270 requests a $500 loan  </p>
         <button class="button button1" id="2500">Accept</button>
         <button class="button button2" id="2501">Reject</button>
         <p id="try" style="color:#b21b00; "> </p>
         <p id="tryAgain" style="color:#b21b00;"> </p>
-        <hr style="border-top: 2px solid #004f5d;"></hr>
-        <p id="37" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 3 requests a $7000 loan  </p>
+        <hr style="border-top: 2px solid #004f5d;">
+        <p id="37" style="font-family: Arial, sans-serif; font-weight: 400; color: gray">Client ID 3169 requests a $7000 loan  </p>
         <button class="button button1" id="37000">Accept</button>
         <button class="button button2" id="37001">Reject</button>
         <p id="P1" style="color:#b21b00; "> </p>
-
+        <hr style="border-top: 2px solid #004f5d;">
     </div>
 
+
+
+    <div class="myDivCC">
+        <h2 style="color: #000708;">Credit Card Applications</h2>
+        <img src="CC.png" alt="money" style="width:100px;height:100px;">
+        <!-- <hr style="border-top: 4px solid #000708;"></hr> -->
+        <hr style="border-top: 2px solid #004f5d;">
+        <p id="90" style="font-family: Arial, sans-serif; font-weight: 400; color: gray">Client ID 4378 applied for a Credit Card </p>
+        <button class="button button1" id="91">Accept</button>
+        <button class="button button2" id="92">Reject</button>
+        <p id="CC4" style="color:#b21b00;"></p>
+        <hr style="border-top: 2px solid #000708;">
+        <p id="93" style="font-family: Arial, sans-serif; font-weight: 400; color: gray">Client ID 5383 applied for a Credit Card </p>
+        <button class="button button1" id="94">Accept</button>
+        <button class="button button2" id="95">Reject</button>
+        <p id="CC5" style="color:#b21b00;"></p>
+        <hr style="border-top: 2px solid #000708;">
+        <p id="96" style="font-family: Arial, sans-serif; font-weight: 400; color: gray">Client ID 6183 applied for a Credit Card </p>
+        <button class="button button1" id="97">Accept</button>
+        <button class="button button2" id="98">Reject</button>
+        <p id="CC6" style="color:#b21b00;"></p>
+        <hr style="border-top: 2px solid #004f5d;">
+    </div>
     <div class="AccountsDiv">
         <h2 style="color: #000708;">Accounts & Info</h2>
-        <img src="Accounts.png" alt="account" style="width:105px;height:105px;">
+        <img src="Accounts.png" alt="account" style="width:100px;height:100px;">
         <!-- <hr style="border-top: 4px solid #000708;"></hr> -->
         <style>
             .buttonX {
                 border: none;
+                border-radius:4px;
                 color: rgb(0, 0, 0);
                 padding: 25px 220px;
                 max-width: 220px;
@@ -293,9 +335,9 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                text-align: center;
+                text-align: left;
                 position: relative;
-                left: 75px;
+                left: 30px;
             }
 
             .button3:hover {
@@ -305,229 +347,219 @@
         </style>
 
         <button class="buttonX button3" id="500" onclick="addClick()">
-            <img  src="addAccount.png" width="90" height="90"/>
-            <span>View "Adding a new account" requests </span>  
-         </button>
-        <div class="space"></div>
-        <button class="buttonX button3" id="501" onclick="remClick()">
-            <img  src="removeAccount.png" width="90" height="90"/>
-            <span>  Remove an existing account </span> 
+            <img src="addAccount.png" width="90" height="90" style="float:left"/>
+            <div style="float:right">View "Adding a new account" requests </div>
         </button>
         <div class="space"></div>
-        <button class="buttonX button3" id="502"  onclick="openSendDialog()">
-            <img  src="AnnouncementIcon.png" width="70" height="70"/>
-            <span>   Send an announcement</span> 
+        <button class="buttonX button3" id="501" onclick="remClick()">
+            <img src="removeAccount.png" width="90" height="90" />
+            <span>  Remove an existing account </span>
+        </button>
+        <div class="space"></div>
+        <button class="buttonX button3" id="502" onclick="openSendDialog()">
+            <img src="AnnouncementIcon.png" width="70" height="70" />
+            <span>   Send an announcement</span>
         </button>
         <div class="space"></div>
         <button class="buttonX button3" id="503" onclick="openSelectDialog()">
-            <img  src="info_Icon.png" width="50" height="50"/>
-            <span> View the information of an account</span> 
-            </button>
-    </div>
-
-    <div class="myDivCC">
-        <h2 style="color: #000708;">Credit Card Applications</h2>
-        <img src="CC.png" alt="money" style="width:250px;height:110px;">
-        <!-- <hr style="border-top: 4px solid #000708;"></hr> -->
-
-        <p id="90" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 4 applied for a Credit Card </p>
-        <button class="button button1" id="91">Accept</button>
-        <button class="button button2" id="92">Reject</button>
-        <p id="CC4" style="color:#b21b00;"></p>
-        <hr style="border-top: 2px solid #000708;"></hr>
-        <p id="93" style="font-family:  Arial, sans-serif;font-weight: 400;color: white">Client 5 applied for a Credit Card </p>
-        <button class="button button1" id="94">Accept</button>
-        <button class="button button2" id="95">Reject</button>
-        <p id="CC5" style="color:#b21b00;"></p>
-        <hr style="border-top: 2px solid #000708;"></hr>
-        <p id="96" style="font-family: Arial, sans-serif;font-weight: 400;color: white">Client 6 applied for a Credit Card </p>
-        <button class="button button1" id="97">Accept</button>
-        <button class="button button2" id="98">Reject</button>
-        <p id="CC6" style="color:#b21b00;"></p>
-
+            <img src="info_Icon.png" width="50" height="50" />
+            <span> View the information of an account</span>
+        </button>
     </div>
     <div class="issue">
-        
+
         <h3 style="color: #000708;">For any technical issues :</h3>
-        
-        <button class="reportButton button4" id="505" onclick="reportAprob()"> 
-        <img  src="whitSmallFlag.png" width="60" height="60"/>
-        <span>Report a problem </span>  
-    
-      </button>
+
+        <button class="reportButton button4" id="505" onclick="reportAprob()">
+            <img src="whitSmallFlag.png" width="60" height="60" />
+            <span>Report a problem </span>
+
+        </button>
 
     </div>
 
     <div id="dialogSendAnnounce" class="dialog">
-            <div id="dialogSend" class="dialog-content" style="background-color:#f1f1f1;">
-                <label for = "Uname1" style="color:#0097b2;"> Enter the announcement : </label>
-                <br>
-                <textarea id="2023" rows="4" cols="50"></textarea>
-                <div class="space"></div>
-                <label id="announce" style="color:#b21b00;visibility: hidden;"  >*announcement message cannot be empty</label>
-                <div class="space"></div>
-                <button id="send" class="button button1"  style="background-color: #3eb200;" onclick="sendChecker()" >ِSend</button> 
-                <button class="button button2" onclick="closeDialogSend()" style="background-color: #b21b00;"  >Cancel</button>
-            </div>
+        <div id="dialogSend" class="dialog-content" style="background-color:#f1f1f1;">
+            <label for="Uname1" style="color:#0097b2;"> Enter the announcement : </label>
+            <br>
+            <textarea id="2023" rows="4" cols="50"></textarea>
+            <div class="space"></div>
+            <label id="announce" style="color:#b21b00;visibility: hidden;">*announcement message cannot be empty</label>
+            <div class="space"></div>
+            <button id="send" class="button button1" style="background-color: #3eb200;" onclick="sendChecker()">ِSend</button>
+            <button class="button button2" onclick="closeDialogSend()" style="background-color: #b21b00;">Cancel</button>
+        </div>
     </div>
- 
-    <div id="dialogOkay" class="dialog"  >
-       <div id="dialogOK" class="dialog-content" style="background-color:#f1f1f1;">
-        <label for = "Uname1" style="color:#3eb200;font-size: larger;"> Announcement message is sent successfully </label>
-        <br>
-        <hr>
-        <label><i>If you want to modify your message , press on return </i></label>
-        <div class="space"></div>
-        <div class="space"></div>
-        <button id="send" class="button button1"  style="background-color: #3eb200;" onclick="closeDialogOk()" >ِDone</button> 
-        <button id="send" class="button button2"  style="background-color:#004f5d;" onclick="returnBack()" >ِReturn</button> 
+
+    <div id="dialogOkay" class="dialog">
+        <div id="dialogOK" class="dialog-content" style="background-color:#f1f1f1;">
+            <label for="Uname1" style="color:#3eb200;font-size: larger;"> Announcement message is sent successfully </label>
+            <br>
+            <hr>
+            <label><i>If you want to modify your message , press on return </i></label>
+            <div class="space"></div>
+            <div class="space"></div>
+            <button id="send" class="button button1" style="background-color: #3eb200;" onclick="closeDialogOk()">ِDone</button>
+            <button id="send" class="button button2" style="background-color:#004f5d;" onclick="returnBack()">ِReturn</button>
         </div>
-     </div>
+    </div>
 
 
-     <div id="dialogInfo" class="dialog">
+    <div id="dialogInfo" class="dialog">
         <div id="dialogInfo" class="dialog-content" style="background-color:#f1f1f1;">
-         <label for="reason" style="font-size: larger;"><b>Choose an attribute to display account information :<b></label>
-         <div class="space"></div>
-         <select id="2024" onchange="doFunc()"  required>
-           <option>Choose an option</option>
-           <option value="AccountID">Account ID</option>
-           <option value="Phone Number">Phone Number</option>
-           <option value="E-mail">E-mail</option>
-         </select>
- 
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-         <div class="space"></div>
-        <div id="accountId" style="display: none;">
-         <label>Enter ID :</label>
-         <input id="A1" type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
-         <label id="A2" style="color:#b21b00;display: none;"  >*You must fill this field</label>
-         <label id="A3" style="color:#b21b00;display: none;"  >*This field must be only numbers</label>
-         <label id="A4" style="color:#b21b00;display: none;"  >*No such account</label>
-        </div>
- 
-        <div id="phoneNumber" style="display: none;">
-         <label>Enter Phone Number :</label>
-         <input id="PN1" type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
-         <label id="PN2" style="color:#b21b00;display: none;"  >*You must fill this field</label>
-         <label id="PN3" style="color:#b21b00;display: none;"  >*This field must be only numbers</label>
-         <label id="PN4" style="color:#b21b00;display: none;"  >*No such account</label>
-        </div>
- 
-        <div id="E-mail" style="display: none;">
-         <label>Enter E-mail :</label>
-         <input id="E1"  type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
-         <label id="E2" style="color:#b21b00;display: none;"  >*You must fill this field</label>
-         <label id="E3" style="color:#b21b00;display: none;"  >*This field must end with @QuickBank.com</label>
-         <label id="E4" style="color:#b21b00;display: none;"  >*No such account</label>
-        </div>
- 
-         <div class="space"></div>
- 
-         <button id="select" class="button button1"  style="background-color: #3eb200;" onclick="displayFunc()" >Display</button> 
-         <button class="button button2" onclick="closeSelectDialog()" style="background-color: #b21b00;"  >Cancel</button>
-        </div>
-      </div>  
+            <label for="reason" style="font-size: larger;"><b>Choose an attribute to display account information :<b></label>
+            <div class="space"></div>
+            <select id="2024" onchange="doFunc()" required>
+                <option>Choose an option</option>
+                <option value="AccountID">Account ID</option>
+                <option value="Phone Number">Phone Number</option>
+                <option value="E-mail">E-mail</option>
+            </select>
 
-      <div id="add2023"   class="dialog">
-         <div class="dialog-content"  style="background-color:#f1f1f1;">
-          <a href="bankerOpenAccount.html"> click here to go to 'open Account' page directly</a>
-          <hr style="height: 3px;background-color:  #b28600;">
-          <h2>Opening new account requests</h2>
-          <hr style="height: 3px;background-color:  #b28600;">
-          <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 10 requests opening a new account </span>
-          <button class="button button1" id="-2" onclick="acceptGo()">Accept</button>
-          <button class="button button2" id="10" onclick="rejFunc10()">Reject</button>
-          <br>
-          <label id="R1" style="color:#b21b00;visibility: hidden;"  > Request is rejected successfully</label>
-          <hr>
-          <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 44 requests opening a new account </span>
-          <button class="button button1" id="-4" onclick="acceptGo()">Accept</button>
-          <button class="button button2" id="44" onclick="rejFunc44()">Reject</button>
-          <br>
-          <label id="R2" style="color:#b21b00;visibility: hidden;"  > Request is rejected successfully</label>
-          <hr>
-          <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 33 requests opening a new account </span>
-          <button class="button button1" id="-6" onclick="acceptGo()">Accept</button>
-          <button  class="button button2" id="33" onclick="rejFunc33()">Reject</button>
-          <br>
-          <label id="R3" style="color:#b21b00;visibility: hidden;"  > Request is rejected successfully</label>
-          <hr>
-          <button class="button button2" id="-6" onclick="closeOpen()">cancel</button>
-         </div>
-      </div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div id="accountId" style="display: none;">
+                <label>Enter ID :</label>
+                <input id="A1" type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
+                <label id="A2" style="color:#b21b00;display: none;">*You must fill this field</label>
+                <label id="A3" style="color:#b21b00;display: none;">*This field must be only numbers</label>
+                <label id="A4" style="color:#b21b00;display: none;">*No such account</label>
+            </div>
 
-      <div id="Report" class="dialog" >
+            <div id="phoneNumber" style="display: none;">
+                <label>Enter Phone Number :</label>
+                <input id="PN1" type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
+                <label id="PN2" style="color:#b21b00;display: none;">*You must fill this field</label>
+                <label id="PN3" style="color:#b21b00;display: none;">*This field must be only numbers</label>
+                <label id="PN4" style="color:#b21b00;display: none;">*No such account</label>
+            </div>
+
+            <div id="E-mail" style="display: none;">
+                <label>Enter E-mail :</label>
+                <input id="E1" type="text" style="border: 2px solid #005b6b;background-color: #cceaf0;" required>
+                <label id="E2" style="color:#b21b00;display: none;">*You must fill this field</label>
+                <label id="E3" style="color:#b21b00;display: none;">*This field must end with @QuickBank.com</label>
+                <label id="E4" style="color:#b21b00;display: none;">*No such account</label>
+            </div>
+
+            <div class="space"></div>
+
+            <button id="select" class="button button1" style="background-color: #3eb200;" onclick="displayFunc()">Display</button>
+            <button class="button button2" onclick="closeSelectDialog()" style="background-color: #b21b00;">Cancel</button>
+        </div>
+    </div>
+
+    <div id="add2023" class="dialog">
+        <div class="dialog-content" style="background-color:#f1f1f1;">
+            <a href="bankerOpenAccount.html"> click here to go to 'open Account' page directly</a>
+            <hr style="height: 3px;background-color:  #b28600;">
+            <h2>Opening new account requests</h2>
+            <hr style="height: 3px;background-color:  #b28600;">
+            <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 1000 requests opening a new account </span>
+            <button class="button button1" id="-2" onclick="acceptGo()">Accept</button>
+            <button class="button button2" id="10" onclick="rejFunc10()">Reject</button>
+            <br>
+            <label id="R1" style="color:#b21b00;visibility: hidden;"> Request is rejected successfully</label>
+            <hr>
+            <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 4444 requests opening a new account </span>
+            <button class="button button1" id="-4" onclick="acceptGo()">Accept</button>
+            <button class="button button2" id="44" onclick="rejFunc44()">Reject</button>
+            <br>
+            <label id="R2" style="color:#b21b00;visibility: hidden;"> Request is rejected successfully</label>
+            <hr>
+            <span id="-1" style="font-family: Arial, sans-serif;font-weight: 400;color:#004f5d">Client with id= 3333 requests opening a new account </span>
+            <button class="button button1" id="-6" onclick="acceptGo()">Accept</button>
+            <button class="button button2" id="33" onclick="rejFunc33()">Reject</button>
+            <br>
+            <label id="R3" style="color:#b21b00;visibility: hidden;"> Request is rejected successfully</label>
+            <hr>
+            <button class="button button2" id="-6" onclick="closeOpen()">Cancel</button>
+        </div>
+    </div>
+
+    <div id="Report" class="dialog">
         <div class="dialog-content">
             <h2 style="color: #b28600;">Please specify the technical issue:</h2>
             <div class="space"></div>
-            <div><label style="color:#004f5d;">
-                <input type="radio" name="radio-group" value="option-1"style="accent-color: #b28600">
-                server downtime
-              </label></div>
-              <div class="space"></div>
-           <div>  <label style="color: #004f5d;">
-            <input type="radio" name="radio-group" value="option-3" style="accent-color: #b28600">
-            slow loading speed
-          </label></div> 
-          <div class="space"></div>
-          <div>  <label style="color: #004f5d;">
-            <input type="radio" name="radio-group" value="option-4" style="accent-color: #b28600" >
-            broken links
-          </label></div> 
-          <div class="space"></div>
-          <div>  <label style="color: #004f5d;">
-            <input type="radio" name="radio-group" value="option-5" style="accent-color: #b28600">
-            security breaches
-          </label></div>
-          <div class="space"></div>
-          <div>  <label style="color: #004f5d;">
-            <input type="radio" name="radio-group" value="option-5" style="accent-color: #b28600">
-            login authentication issues
-          </label></div>
-          <div class="space"></div>
-          <div>  <label style="color: #004f5d;">
-            <input id="2007" type="radio" name="radio-group" value="option-6" onclick="specifyOtherReason()" style="accent-color: #b28600">
-            Other 
-          </label></div>
-          <div class="space"></div>
-          <div id="inputField" style="visibility: hidden">
-            <input  type="text"  id="text-input" name="user-text" size="80" placeholder="Enter the issue here" style="border: 2px solid #005b6b;background-color: #cceaf0;">
-            <label id="applier4" style="color:#b21b00;visibility: hidden;"  >*You cannot leave this field empty</label>
-          </div>
-          <label id="applier3" style="color:#b21b00;visibility: hidden;"  >*You must choose an option</label>
-          <br>   
-          <div class="space"></div>
-            <button id="apply" class="button button1"  style="background-color: #3eb200;" onclick="ApplyChecker()" >ِApply</button> 
-            <button class="button button2" onclick="closeDialogRep()" style="background-color: #b21b00;"  >Cancel</button>
+            <div>
+                <label style="color:#004f5d;">
+                    <input type="radio" name="radio-group" value="option-1" style="accent-color: #b28600">
+                    server downtime
+                </label>
+            </div>
+            <div class="space"></div>
+            <div>
+                <label style="color: #004f5d;">
+                    <input type="radio" name="radio-group" value="option-3" style="accent-color: #b28600">
+                    slow loading speed
+                </label>
+            </div>
+            <div class="space"></div>
+            <div>
+                <label style="color: #004f5d;">
+                    <input type="radio" name="radio-group" value="option-4" style="accent-color: #b28600">
+                    broken links
+                </label>
+            </div>
+            <div class="space"></div>
+            <div>
+                <label style="color: #004f5d;">
+                    <input type="radio" name="radio-group" value="option-5" style="accent-color: #b28600">
+                    security breaches
+                </label>
+            </div>
+            <div class="space"></div>
+            <div>
+                <label style="color: #004f5d;">
+                    <input type="radio" name="radio-group" value="option-5" style="accent-color: #b28600">
+                    login authentication issues
+                </label>
+            </div>
+            <div class="space"></div>
+            <div>
+                <label style="color: #004f5d;">
+                    <input id="2007" type="radio" name="radio-group" value="option-6" onclick="specifyOtherReason()" style="accent-color: #b28600">
+                    Other
+                </label>
+            </div>
+            <div class="space"></div>
+            <div id="inputField" style="visibility: hidden">
+                <input type="text" id="text-input" name="user-text" size="80" placeholder="Enter the issue here" style="border: 2px solid #005b6b;background-color: #cceaf0;">
+                <label id="applier4" style="color:#b21b00;visibility: hidden;">*You cannot leave this field empty</label>
+            </div>
+            <label id="applier3" style="color:#b21b00;visibility: hidden;">*You must choose an option</label>
+            <br>
+            <div class="space"></div>
+            <button id="apply" class="button button1" style="background-color: #3eb200;" onclick="ApplyChecker()">ِApply</button>
+            <button class="button button2" onclick="closeDialogRep()" style="background-color: #b21b00;">Cancel</button>
 
         </div>
-      </div>
-         <div class="dialog" id="okMsg" style="display:none;">
-            <div class="dialog-content">
+    </div>
+    <div class="dialog" id="okMsg" style="display:none;">
+        <div class="dialog-content">
 
 
 
-                <label id="bjhnou" style="color:#3eb200;"  >your issue has been sent , it'll be resolved soon</label>
-                <button onclick="eqfl()"> ok</button>
-            </div>
-             
+            <label id="bjhnou" style="color:#3eb200;">your issue has been sent , it'll be resolved soon</label>
+            <button onclick="eqfl()"> ok</button>
+        </div>
 
-         </div>
-   
+
+    </div>
+
     <script>
- function logout() {
-        window.location.href = 'login.html';
-    };
+        function logout() {
+            window.location.href = 'login.html';
+        };
         //Client 2 accept
         // select the button and the div
         const frg = document.getElementById('try');
@@ -537,7 +569,7 @@
         function changeContent() {
             document.getElementById("2501").remove();
             document.getElementById("2500").remove();
-            frg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
+            frg.innerHTML = '<p> Loan request  is <b style="color:green">accepted</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -553,7 +585,7 @@
         function changeContent2() {
             document.getElementById("2501").remove();
             document.getElementById("2500").remove();
-            frgg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
+            frgg.innerHTML = '<p> Loan request  is <b style="color:red">rejected</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -570,7 +602,7 @@
         function changeContentX() {
             document.getElementById("37001").remove();
             document.getElementById("37000").remove();
-            frggg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
+            frggg.innerHTML = '<p> Loan request  is <b style="color:green">accepted</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -585,7 +617,7 @@
         function changeContentY() {
             document.getElementById("37001").remove();
             document.getElementById("37000").remove();
-            frgggg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
+            frgggg.innerHTML = '<p> Loan request  is <b style="color:red">rejected</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -601,7 +633,7 @@
         function changeContentM() {
             document.getElementById("1").remove();
             document.getElementById("2").remove();
-            frggggg.innerHTML = '<p> loan request  is <b style="color:green">accepted</b> Successfully !</p>';
+            frggggg.innerHTML = '<p> Loan request  is <b style="color:green">accepted</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -616,7 +648,7 @@
         function changeContentREJ() {
             document.getElementById("1").remove();
             document.getElementById("2").remove();
-            frgggggg.innerHTML = '<p> loan request  is <b style="color:red">rejected</b> Successfully !</p>';
+            frgggggg.innerHTML = '<p> Loan request  is <b style="color:red">rejected</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -634,7 +666,7 @@
         function changeContentAcc4() {
             document.getElementById("91").remove();
             document.getElementById("92").remove();
-            CC4.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
+            CC4.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -649,7 +681,7 @@
         function changeContentRej4() {
             document.getElementById("91").remove();
             document.getElementById("92").remove();
-            CC4Rej.innerHTML = '<p> Credit Card application  is  <b style="color:red">rejected</b>  Successfully !</p>';
+            CC4Rej.innerHTML = '<p> Credit Card application  is  <b style="color:red">rejected</b>  successfully!</p>';
         }
 
         // add event listener to the button
@@ -664,7 +696,7 @@
         function changeContentAcc5() {
             document.getElementById("94").remove();
             document.getElementById("95").remove();
-            CC5.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
+            CC5.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -679,7 +711,7 @@
         function changeContentRej5() {
             document.getElementById("94").remove();
             document.getElementById("95").remove();
-            CC5Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> Successfully !</p>';
+            CC5Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> successfully!</p>';
         }
 
         // add event listener to the button
@@ -695,7 +727,7 @@
         function changeContentAcc6() {
             document.getElementById("97").remove();
             document.getElementById("98").remove();
-            CC6.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> Successfully !</p>';
+            CC6.innerHTML = '<p> Credit Card application  is <b style="color:green">accepted</b> successfully!</p>';
         }
         // add event listener to the button
         buttonAcc6.addEventListener('click', changeContentAcc6);
@@ -710,266 +742,265 @@
         function changeContentRej6() {
             document.getElementById("97").remove();
             document.getElementById("98").remove();
-            CC6Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> Successfully !</p>';
+            CC6Rej.innerHTML = '<p> Credit Card application  is <b style="color:red">rejected</b> successfully!</p>';
         }
 
         // add event listener to the button
         buttonRej6.addEventListener('click', changeContentRej6);
 
-function  addClick(){
-    document.getElementById("add2023").style.display = "block";
-}
-function remClick(){
-    window.location.href = "BankerCloseAccount.html";
-}
-function openSendDialog(){
-    document.getElementById("dialogSendAnnounce").style.display = "block";
-}
+        function addClick() {
+            document.getElementById("add2023").style.display = "block";
+        }
+        function remClick() {
+            window.location.href = "BankerCloseAccount.html";
+        }
+        function openSendDialog() {
+            document.getElementById("dialogSendAnnounce").style.display = "block";
+        }
 
-function closeDialogSend(){
-    document.getElementById("dialogSendAnnounce").style.display = "none";
-}
-function openSelectDialog(){
-    document.getElementById("dialogInfo").style.display = "block";
-}
+        function closeDialogSend() {
+            document.getElementById("dialogSendAnnounce").style.display = "none";
+        }
+        function openSelectDialog() {
+            document.getElementById("dialogInfo").style.display = "block";
+        }
 
-function closeSelectDialog(){
-    document.getElementById("dialogInfo").style.display = "none";
-}
-function sendChecker(){
-    var txtArea = document.getElementById("2023");
-    var must = document.getElementById("announce");
-    var okDialog = document.getElementById("dialogOkay");
-    if(txtArea.value === "")
-       must.style.visibility = "visible";
-    else{
-      closeDialogSend();  
-      openDialogOk();
-    } 
-}
-function openDialogOk(){
-  document.getElementById("dialogOkay").style.display = "block";
-}
-function closeDialogOk(){
-  document.getElementById("dialogOkay").style.display = "none";
-}
-function returnBack(){
-    closeDialogOk();
-    openSendDialog();
-}
-function doFunc(){
-var selectedOption = document.getElementById("2024").value;
- if(selectedOption === "AccountID")
-   accountID();
- if (selectedOption === "Phone Number")
-   phoneNumber();
- if(selectedOption === "E-mail")
-   Email();  
-}  
-     
-
-function accountID(){
-    var pNum =document.getElementById("phoneNumber");
-    var eM = document.getElementById("E-mail");
-    
-    if(pNum.style.display === "block")
-      pNum.style.display= "none";
-    if(eM.style.display === "block") 
-     eM.style.display = "none";
-
-   var accId = document.getElementById("accountId");
-   accId.style.display = "block" ;
-}
-
-function phoneNumber(){
-    var eM = document.getElementById("E-mail");
-    var accId = document.getElementById("accountId");
-
-    if(eM.style.display === "block") 
-     eM.style.display = "none";
-
-    if(accId.style.display === "block") 
-     accId.style.display = "none";
-
-     var pNum =document.getElementById("phoneNumber");
-     pNum.style.display = "block"; 
-}
-
-function Email(){
-    var accId = document.getElementById("accountId");
-    var pNum =document.getElementById("phoneNumber");
-    if(accId.style.display === "block") 
-     accId.style.display = "none";
-     if(pNum.style.display === "block")
-      pNum.style.display = "none";
-
-      var eM = document.getElementById("E-mail");
-      eM.style.display = "block";  
-}
-
-function displayFunc(){
-    var pNum =document.getElementById("phoneNumber");
-    var eM = document.getElementById("E-mail");
-    var accId = document.getElementById("accountId");
-
-    if(accId.style.display === "block"){
-       var acc = document.getElementById("A1");
-       var msg = document.getElementById("A2"); 
-       var l1 =   document.getElementById("A3");   
-       var s1 = document.getElementById("A4");
-       const specificVal = '1234';
-       var value = acc.value;
-       if(value === ""){
-        l1.style.display = "none";
-        s1.style.display = "none";  
-        msg.style.display = "block";
-       } 
-       else if(!Number.isInteger(parseInt(value))){
-          msg.style.display = "none";
-          s1.style.display = "none";
-          l1.style.display = "block";  
-       } 
-       else if(value === specificVal){
-        window.location.href = "AccountInformation.html";
-       }
-       else{
-          msg.style.display = "none";
-          l1.style.display = "none"; 
-          s1.style.display = "block"; 
-       }
-          
-    }
+        function closeSelectDialog() {
+            document.getElementById("dialogInfo").style.display = "none";
+        }
+        function sendChecker() {
+            var txtArea = document.getElementById("2023");
+            var must = document.getElementById("announce");
+            var okDialog = document.getElementById("dialogOkay");
+            if (txtArea.value === "")
+                must.style.visibility = "visible";
+            else {
+                closeDialogSend();
+                openDialogOk();
+            }
+        }
+        function openDialogOk() {
+            document.getElementById("dialogOkay").style.display = "block";
+        }
+        function closeDialogOk() {
+            document.getElementById("dialogOkay").style.display = "none";
+        }
+        function returnBack() {
+            closeDialogOk();
+            openSendDialog();
+        }
+        function doFunc() {
+            var selectedOption = document.getElementById("2024").value;
+            if (selectedOption === "AccountID")
+                accountID();
+            if (selectedOption === "Phone Number")
+                phoneNumber();
+            if (selectedOption === "E-mail")
+                Email();
+        }
 
 
-    if(pNum.style.display === "block"){
-       var phone = document.getElementById("PN1");
-       var msg2 = document.getElementById("PN2"); 
-       var l2 =   document.getElementById("PN3");
-       var s2 = document.getElementById("PN4");
-       if(phone.value === ""){
-        l2.style.display = "none"; 
-        s2.style.display = "none"; 
-        msg2.style.display = "block";
-       }  
-       else if(!Number.isInteger(parseInt(phone.value))){
-        msg2.style.display = "none";
-        s2.style.display = "none"; 
-        l2.style.display = "block";     
-       }  
-       else if(phone.value ==="0123456789"){
-          window.location.href ="AccountInformation.html" ;
-       }
-       else{
-        msg2.style.display = "none";
-        l2.style.display = "none";  
-        s2.style.display = "block";  
-       }
-    }
+        function accountID() {
+            var pNum = document.getElementById("phoneNumber");
+            var eM = document.getElementById("E-mail");
 
-    if(eM.style.display === "block"){
-       var eM = document.getElementById("E1");
-       var msg3 = document.getElementById("E2");
-       var l3 =   document.getElementById("E3");
-       var s3 = document.getElementById("E4");
-       var value = eM.value;
-       const specificVal2 ="client@QuickBank.com";
-       if(eM.value === ""){
-        l3.style.display = "none";
-        s3.style.display = "none";
-        msg3.style.display = "block";
-       }
-       else if(!value.endsWith("@QuickBank.com")){
-          msg3.style.display = "none";
-          s3.style.display = "none";
-          l3.style.display = "block";
-       } 
-       else if (eM.value === specificVal2){
-          window.location.href = "AccountInformation.html";
-       }
-       else
-       {
-          msg3.style.display = "none";
-          l3.style.display = "none";
-          s3.style.display = "block";
-       }  
-    }
+            if (pNum.style.display === "block")
+                pNum.style.display = "none";
+            if (eM.style.display === "block")
+                eM.style.display = "none";
+
+            var accId = document.getElementById("accountId");
+            accId.style.display = "block";
+        }
+
+        function phoneNumber() {
+            var eM = document.getElementById("E-mail");
+            var accId = document.getElementById("accountId");
+
+            if (eM.style.display === "block")
+                eM.style.display = "none";
+
+            if (accId.style.display === "block")
+                accId.style.display = "none";
+
+            var pNum = document.getElementById("phoneNumber");
+            pNum.style.display = "block";
+        }
+
+        function Email() {
+            var accId = document.getElementById("accountId");
+            var pNum = document.getElementById("phoneNumber");
+            if (accId.style.display === "block")
+                accId.style.display = "none";
+            if (pNum.style.display === "block")
+                pNum.style.display = "none";
+
+            var eM = document.getElementById("E-mail");
+            eM.style.display = "block";
+        }
+
+        function displayFunc() {
+            var pNum = document.getElementById("phoneNumber");
+            var eM = document.getElementById("E-mail");
+            var accId = document.getElementById("accountId");
+
+            if (accId.style.display === "block") {
+                var acc = document.getElementById("A1");
+                var msg = document.getElementById("A2");
+                var l1 = document.getElementById("A3");
+                var s1 = document.getElementById("A4");
+                const specificVal = '1234';
+                var value = acc.value;
+                if (value === "") {
+                    l1.style.display = "none";
+                    s1.style.display = "none";
+                    msg.style.display = "block";
+                }
+                else if (!Number.isInteger(parseInt(value))) {
+                    msg.style.display = "none";
+                    s1.style.display = "none";
+                    l1.style.display = "block";
+                }
+                else if (value === specificVal) {
+                    window.location.href = "AccountInformation.html";
+                }
+                else {
+                    msg.style.display = "none";
+                    l1.style.display = "none";
+                    s1.style.display = "block";
+                }
+
+            }
+
+
+            if (pNum.style.display === "block") {
+                var phone = document.getElementById("PN1");
+                var msg2 = document.getElementById("PN2");
+                var l2 = document.getElementById("PN3");
+                var s2 = document.getElementById("PN4");
+                if (phone.value === "") {
+                    l2.style.display = "none";
+                    s2.style.display = "none";
+                    msg2.style.display = "block";
+                }
+                else if (!Number.isInteger(parseInt(phone.value))) {
+                    msg2.style.display = "none";
+                    s2.style.display = "none";
+                    l2.style.display = "block";
+                }
+                else if (phone.value === "0123456789") {
+                    window.location.href = "AccountInformation.html";
+                }
+                else {
+                    msg2.style.display = "none";
+                    l2.style.display = "none";
+                    s2.style.display = "block";
+                }
+            }
+
+            if (eM.style.display === "block") {
+                var eM = document.getElementById("E1");
+                var msg3 = document.getElementById("E2");
+                var l3 = document.getElementById("E3");
+                var s3 = document.getElementById("E4");
+                var value = eM.value;
+                const specificVal2 = "client@QuickBank.com";
+                if (eM.value === "") {
+                    l3.style.display = "none";
+                    s3.style.display = "none";
+                    msg3.style.display = "block";
+                }
+                //else if (!value.endsWith("@QuickBank.com")) {
+                //    msg3.style.display = "none";
+                //   s3.style.display = "none";
+                //    l3.style.display = "block";
+                //}
+                else if (eM.value === specificVal2) {
+                    window.location.href = "AccountInformation.html";
+                }
+                else {
+                    msg3.style.display = "none";
+                    l3.style.display = "none";
+                    s3.style.display = "block";
+                }
+            }
 
 
 
-}
-function acceptGo(){
-    window.location.href = "bankerOpenAccount.html";
-}
-function closeOpen(){
-    document.getElementById("add2023").style.display = "none";
-}
-function rejFunc10(){
-    var C10 =  document.getElementById("R1");
-    C10.style.visibility = "visible";  
-}
+        }
+        function acceptGo() {
+            window.location.href = "bankerOpenAccount.html";
+        }
+        function closeOpen() {
+            document.getElementById("add2023").style.display = "none";
+        }
+        function rejFunc10() {
+            var C10 = document.getElementById("R1");
+            C10.style.visibility = "visible";
+        }
 
-function rejFunc44(){
-    var C44 =  document.getElementById("R2");
-    C44.style.visibility = "visible"; 
-}
+        function rejFunc44() {
+            var C44 = document.getElementById("R2");
+            C44.style.visibility = "visible";
+        }
 
-function rejFunc33(){
-    var C33 =  document.getElementById("R3");
-    C33.style.visibility = "visible"; 
-}
-function reportAprob(){
-  document.getElementById("Report").style.display = "block";
-}
-function ApplyChecker(){
-var xlk = document.getElementById("okMsg");
-var inputField = document.getElementById("inputField");
-     var txt = document.getElementById("text-input");
-    var radioButtons = document.querySelectorAll('input[type="radio"]');
-    var isChecked = false;
-     for (var i = 0; i < radioButtons.length; i++) {
-       if (radioButtons[i].checked) {
-        isChecked = true;
-           break;
-           }  
-      }
-    
-   var label = document.getElementById("applier3");
-     if(!isChecked){
-        label.style.visibility= "visible";
-     }
-    else{
-          label.style.visibility= "hidden";
-         
-          if(inputField.style.visibility !== "visible" || txt.value !==""){
-            xlk.style.display = "block";
-            closeDialogRep();
-          }
-    }
-  
+        function rejFunc33() {
+            var C33 = document.getElementById("R3");
+            C33.style.visibility = "visible";
+        }
+        function reportAprob() {
+            document.getElementById("Report").style.display = "block";
+        }
+        function ApplyChecker() {
+            var xlk = document.getElementById("okMsg");
+            var inputField = document.getElementById("inputField");
+            var txt = document.getElementById("text-input");
+            var radioButtons = document.querySelectorAll('input[type="radio"]');
+            var isChecked = false;
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
 
-         
-  }
-  function specifyOtherReason(){
-    var inputField = document.getElementById("inputField");
-   var radios = document.getElementsByName("radio-group");
-   inputField.style.visibility = "visible";
-   var oop = document.getElementById("applier4");     
-       //text-input
-     var inputField = document.getElementById("inputField");
-     var txt = document.getElementById("text-input");
-    if(inputField.style.visibility === "visible" && txt.value==="")
-             oop.style.visibility="visible";
-    else
-      oop.style.visibility="hidden";      
-}
-function closeDialogRep() {
-  document.getElementById("Report").style.display = "none";
-} 
+            var label = document.getElementById("applier3");
+            if (!isChecked) {
+                label.style.visibility = "visible";
+            }
+            else {
+                label.style.visibility = "hidden";
 
-function eqfl(){
-    var dfedvfedfv = document.getElementById("okMsg");
-    dfedvfedfv.style.display="none";
-}
+                if (inputField.style.visibility !== "visible" || txt.value !== "") {
+                    xlk.style.display = "block";
+                    closeDialogRep();
+                }
+            }
+
+
+
+        }
+        function specifyOtherReason() {
+            var inputField = document.getElementById("inputField");
+            var radios = document.getElementsByName("radio-group");
+            inputField.style.visibility = "visible";
+            var oop = document.getElementById("applier4");
+            //text-input
+            var inputField = document.getElementById("inputField");
+            var txt = document.getElementById("text-input");
+            if (inputField.style.visibility === "visible" && txt.value === "")
+                oop.style.visibility = "visible";
+            else
+                oop.style.visibility = "hidden";
+        }
+        function closeDialogRep() {
+            document.getElementById("Report").style.display = "none";
+        }
+
+        function eqfl() {
+            var dfedvfedfv = document.getElementById("okMsg");
+            dfedvfedfv.style.display = "none";
+        }
 
 
     </script>
