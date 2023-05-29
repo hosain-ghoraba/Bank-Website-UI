@@ -350,7 +350,7 @@
         
         <h3 style="color: #000708;">For any technical issues :</h3>
         
-        <button class="reportButton button4" id="505"> 
+        <button class="reportButton button4" id="505" onclick="reportAprob()"> 
         <img  src="whitSmallFlag.png" width="60" height="60"/>
         <span>Report a problem </span>  
     
@@ -464,6 +464,52 @@
           <hr>
           <button class="button button2" id="-6" onclick="closeOpen()">cancel</button>
          </div>
+      </div>
+
+      <div id="Report" class="dialog">
+        <div class="dialog-content">
+            <h2 style="color: #b28600;">Please specify the technical issue:</h2>
+            <div class="space"></div>
+            <div><label style="color:#004f5d;">
+                <input type="radio" name="radio-group" value="option-1"style="accent-color: #b28600">
+                server downtime
+              </label></div>
+              <div class="space"></div>
+           <div>  <label style="color: #004f5d;">
+            <input type="radio" name="radio-group" value="option-3" style="accent-color: #b28600">
+            slow loading speed
+          </label></div> 
+          <div class="space"></div>
+          <div>  <label style="color: #004f5d;">
+            <input type="radio" name="radio-group" value="option-4" style="accent-color: #b28600" >
+            broken links
+          </label></div> 
+          <div class="space"></div>
+          <div>  <label style="color: #004f5d;">
+            <input type="radio" name="radio-group" value="option-5" style="accent-color: #b28600">
+            security breaches
+          </label></div>
+          <div class="space"></div>
+          <div>  <label style="color: #004f5d;">
+            <input type="radio" name="radio-group" value="option-5" style="accent-color: #b28600">
+            login authentication issues
+          </label></div>
+          <div class="space"></div>
+          <div>  <label style="color: #004f5d;">
+            <input type="radio" name="radio-group" value="option-6" onclick="specifyOtherReason()" style="accent-color: #b28600">
+            Other 
+          </label></div>
+          <div class="space"></div>
+          <div id="inputField" style="visibility: hidden">
+            <input  type="text"  id="text-input" name="user-text" size="80" placeholder="Enter the issue here" style="border: 2px solid #005b6b;background-color: #cceaf0;">
+          </div>
+          <label id="applier3" style="color:#b21b00;visibility: hidden;"  >*You must choose an option</label>
+          <br>   
+          <div class="space"></div>
+            <button id="apply" class="button button1"  style="background-color: #3eb200;" onclick="ApplyChecker()" >ِApply</button> 
+            <button class="button button2" onclick="closeDialogRep()" style="background-color: #b21b00;"  >Cancel</button>
+
+        </div>
       </div>
 
    
@@ -860,6 +906,35 @@ function rejFunc33(){
     var C33 =  document.getElementById("R3");
     C33.style.visibility = "visible"; 
 }
+function reportAprob(){
+  document.getElementById("Report").style.display = "block";
+}
+function ApplyChecker(){
+
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+    var isChecked = false;
+     for (var i = 0; i < radioButtons.length; i++) {
+       if (radioButtons[i].checked) {
+         isChecked = true;
+           break;
+           }  
+      }
+   var label = document.getElementById("applier3");
+     if(!isChecked){
+        label.style.visibility= "visible";
+     }
+    else
+          label.style.visibility= "hidden";
+  }
+  function specifyOtherReason(){
+    var inputField = document.getElementById("inputField");
+   var radios = document.getElementsByName("radio-group");
+   inputField.style.visibility = "visible";
+}
+function closeDialogRep() {
+  document.getElementById("Report").style.display = "none";
+}
+
 
     </script>
 </body>
