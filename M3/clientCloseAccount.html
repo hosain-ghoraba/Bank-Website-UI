@@ -3,17 +3,25 @@
 <head>
     <link rel="icon" href="Icon.ico">
     <title>Quick Bank - close account</title>
-  <style>
-    /* Styles for the page */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f1f1f1;
-        /* background-color: white; */
-        margin: 0;
-        padding: 0;
-        z-index: 10;
-    }
-    .bankHeader {
+
+    <script src="notificationSystem.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="notificationSystemCSS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        /* Styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            /* background-color: white; */
+            margin: 0;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .bankHeader {
             font-family: Arial, sans-serif;
             background-color: #0097b2 !important;
             margin: 0;
@@ -21,163 +29,169 @@
             height: 150px;
             box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
             z-index: 20;
-    }
-    .welcomeMessage {
-        color: #fff;
-        margin-left: 15px;
-        margin-bottom: 20px;
-        margin-top: 7px;
-        font-size: medium;
-        font-weight: 600;
-    }
+        }
 
-    .logout {
-        float: right;
-        margin-right:50px;
-        margin-top:100px;
-        background-color: transparent;
-    }
+        .welcomeMessage {
+            color: #fff;
+            margin-left: 15px;
+            margin-bottom: 20px;
+            margin-top: 7px;
+            font-size: medium;
+            font-weight: 600;
+        }
 
-    .logoutButton {
-        position: relative;
-        display: inline-block;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
+        .logout {
+            float: right;
+            margin-right: 50px;
+            margin-top: 100px;
+            background-color: transparent;
+        }
 
-    .logoutButton .tooltiptext {
-            visibility: hidden;
-            background-color: #dedede;
-            color: black;
-            font-size: small;
+        .logoutButton {
+            position: relative;
+            display: inline-block;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+            .logoutButton .tooltiptext {
+                visibility: hidden;
+                background-color: #dedede;
+                color: black;
+                font-size: small;
+                text-align: center;
+                border-radius: 6px;
+                padding: 1px 8px;
+                /* Position the tooltip */
+                position: absolute;
+                top: 5px;
+                right: 120%;
+            }
+
+            .logoutButton:hover .tooltiptext {
+                visibility: visible;
+                cursor: pointer;
+            }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
             text-align: center;
-            border-radius: 6px;
-            padding: 1px 8px;
-            /* Position the tooltip */
-            position: absolute;
-            top: 5px;
-            right: 120%;
-    }
+            color: #0097b2;
+            margin-top: 0;
+        }
 
-    .logoutButton:hover .tooltiptext {
-        visibility: visible;
-        cursor: pointer;
-    }
-    .container {
-      max-width: 600px;
-      margin:50px auto;
-      padding: 40px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+        label {
+            display: block;
+            margin-top: 20px;
+            color: #555555;
+        }
 
-    h1 {
-      text-align: center;
-      color: #0097b2;
-      margin-top: 0;
-    }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            box-sizing: border-box;
+        }
 
-    label {
-      display: block;
-      margin-top: 20px;
-      color: #555555;
-    }
+        .button {
+            background-color: #cd1c1c;
+            border: none;
+            color: white;
+            padding: 14px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 20px auto 0;
+            width: 50%;
+        }
 
-    input[type="text"],
-    select {
-      width: 100%;
-      padding: 12px;
-      border-radius: 5px;
-      border: 1px solid #cccccc;
-      box-sizing: border-box;
-    }
+            .button:hover {
+                background-color: #aa250d;
+            }
 
-    .button {
-      background-color: #cd1c1c;
-      border: none;
-      color: white;
-      padding: 14px 30px;
-      text-align: center;
-      text-decoration: none;
-      display: block;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin: 20px auto 0;
-      width: 50%;
-    }
+        .flash-message {
+            background-color: #1697e2;
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+            margin-top: 20px;
+        }
 
-    .button:hover {
-      background-color: #aa250d;
-    }
+        .confirmation-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 100;
+        }
 
-    .flash-message {
-      background-color: #1697e2;
-      color: white;
-      padding: 12px;
-      border-radius: 5px;
-      text-align: center;
-      display: none;
-      margin-top: 20px;
-    }
+        .confirmation-content {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 200px auto;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
 
-    .confirmation-popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 100;
-    }
+            .confirmation-content h2 {
+                margin-top: 0;
+                color: #0097b2;
+            }
 
-    .confirmation-content {
-      background-color: #fff;
-      max-width: 400px;
-      margin: 200px auto;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-    }
+        .confirmation-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-    .confirmation-content h2 {
-      margin-top: 0;
-      color: #0097b2;
-    }
+            .confirmation-buttons button {
+                margin: 0 10px;
+            }
 
-    .confirmation-buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+        .home {
+            appearance: auto;
+        }
 
-    .confirmation-buttons button {
-      margin: 0 10px;
-      
-
-    }
-    .home{
-      appearance: auto;
-    }
-    .home:hover{
-      visibility: visible;
-      cursor: pointer;
-    }
-  </style>
+            .home:hover {
+                visibility: visible;
+                cursor: pointer;
+            }
+    </style>
 </head>
 <body>
     <div class="bankHeader">
         <div style="width:500px; float:left"><img src="logoInHeader.jpeg" class="home" alt="Bank Logo" width="500" onclick="Home()"></div>
         <div class="logout">
+            <button type="button" class="notificationButton" onclick="notificationSystem()">
+                <span class="tooltiptext" id="unreadNotificationsCount">5 unread notifications</span>
+                <img src="notification_icon_2.png" id="notificationImage" width="45" height="45" style="float: left; margin-bottom:5px" />
+            </button>
             <button type="button" class="logoutButton" onclick="logout()">
                 <span class="tooltiptext">Logout?</span>
-                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left">
+                <img src="logout_icon.png" alt="logout" width="30" height="30" style="float:left; margin-bottom:15px" />
             </button>
-            <h1 class="welcomeMessage" style="float:right">HELLO, user.</h1>
+            <h1 class="welcomeMessage" style="float:right">Hello, user.</h1>
         </div>
     </div>
 
